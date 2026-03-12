@@ -584,9 +584,11 @@ footer{background:#030309;border-top:1px solid var(--cbr);padding:80px 0 40px}
       </div>
       <div class="gc cform">
         <h3 style="font-size:21px;margin-bottom:26px">Send Us a Message</h3>
-        <form action="https://formspree.io/f/xpwzgvqe" method="POST" id="contactForm" onsubmit="handleSubmit(event)">
-          <input type="hidden" name="_replyto" value="solutionricmart@gmail.com">
-          <input type="hidden" name="_subject" value="New Project Inquiry — Amiuriq Website">
+        <form action="https://api.web3forms.com/submit" method="POST" id="contactForm" onsubmit="handleSubmit(event)">
+          <input type="hidden" name="access_key" value="3b49a41c-98f8-4edb-a65a-9ff2f194f040">
+          <input type="hidden" name="subject" value="New Project Inquiry — Amiuriq Website">
+          <input type="hidden" name="from_name" value="Amiuriq Website">
+          <input type="checkbox" name="botcheck" style="display:none">
           <div class="frow">
             <div class="fg"><label>First Name</label><input type="text" name="first_name" placeholder="John" required></div>
             <div class="fg"><label>Last Name</label><input type="text" name="last_name" placeholder="Doe" required></div>
