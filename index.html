@@ -192,6 +192,15 @@ section{padding:100px 0;position:relative}
 .tmav{width:88px;height:88px;border-radius:50%;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:700;font-family:'Space Grotesk',sans-serif;color:#fff;position:relative;overflow:hidden}
 .tmav::after{content:'';position:absolute;inset:-3px;border-radius:50%;background:var(--g1);z-index:-1}
 .tmav img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%}
+/* Founder special card */
+.founder-card{position:relative;overflow:visible !important}
+.founder-card::before{content:'';position:absolute;inset:-2px;border-radius:22px;background:var(--g1);z-index:0;opacity:.7;filter:blur(14px)}
+.founder-card .gc-inner{position:relative;z-index:1;background:rgba(10,10,28,.92);border-radius:20px;padding:30px 22px;height:100%}
+.founder-av{width:120px;height:120px;border-radius:50%;margin:0 auto 20px;position:relative;flex-shrink:0}
+.founder-av::before{content:'';position:absolute;inset:-4px;border-radius:50%;background:var(--g1);z-index:0;animation:spin 4s linear infinite}
+.founder-av::after{content:'';position:absolute;inset:-4px;border-radius:50%;background:var(--g1);z-index:0;filter:blur(10px);opacity:.7;animation:spin 4s linear infinite}
+@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.founder-av img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%;position:relative;z-index:2;display:block;border:3px solid #050510}
 .tmname{font-size:17px;margin-bottom:5px}
 .tmrole{font-size:13px;color:var(--muted);margin-bottom:18px}
 .tmsoc{display:flex;justify-content:center;gap:9px}
@@ -597,10 +606,20 @@ footer{background:#030309;border-top:1px solid var(--cbr);padding:80px 0 40px}
       <p class="ssub">A diverse team of passionate engineers, designers, and strategists dedicated to your success.</p>
     </div>
     <div class="tgrid">
-      <div class="gc tmcard fu">
-        <div class="tmav" style="background:linear-gradient(135deg,#6C63FF,#00D4FF)"><img src="founder.jpg" alt="Rifquei Azad" onerror="this.style.display='none';this.parentNode.innerHTML='AR'"></div>
-        <h3 class="tmname">Rifquei Azad</h3><p class="tmrole">Founder & CEO</p>
-        <div class="tmsoc"><a href="#" class="socbtn"><i class="fab fa-linkedin-in"></i></a><a href="#" class="socbtn"><i class="fab fa-github"></i></a><a href="#" class="socbtn"><i class="fab fa-twitter"></i></a></div>
+      <div class="founder-card fu" style="border-radius:22px">
+        <div class="gc-inner tmcard" style="text-align:center">
+          <div class="founder-av">
+            <img src="founder.jpg" alt="Rifquei Azad" onerror="this.style.display='none'">
+          </div>
+          <h3 class="tmname" style="font-size:19px">Rifquei Azad</h3>
+          <p class="tmrole" style="margin-bottom:6px">Founder & CEO</p>
+          <p style="font-size:12px;color:var(--p2);margin-bottom:18px;font-weight:500">✦ Amiuriq Pvt Ltd</p>
+          <div class="tmsoc" style="justify-content:center">
+            <a href="#" class="socbtn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="socbtn"><i class="fab fa-github"></i></a>
+            <a href="#" class="socbtn"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
       </div>
       <div class="gc tmcard fu">
         <div class="tmav" style="background:linear-gradient(135deg,#FF6B9D,#FF8B6B)">SK</div>
