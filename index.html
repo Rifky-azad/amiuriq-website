@@ -584,26 +584,30 @@ footer{background:#030309;border-top:1px solid var(--cbr);padding:80px 0 40px}
       </div>
       <div class="gc cform">
         <h3 style="font-size:21px;margin-bottom:26px">Send Us a Message</h3>
-        <div class="frow">
-          <div class="fg"><label>First Name</label><input type="text" placeholder="John"></div>
-          <div class="fg"><label>Last Name</label><input type="text" placeholder="Doe"></div>
-        </div>
-        <div class="fg"><label>Email Address</label><input type="email" placeholder="john@company.com"></div>
-        <div class="fg">
-          <label>Service Needed</label>
-          <select>
-            <option value="">Select a service...</option>
-            <option>Web Development</option>
-            <option>Mobile App Development</option>
-            <option>AI & Machine Learning</option>
-            <option>Cloud Solutions</option>
-            <option>UI/UX Design</option>
-            <option>Cybersecurity</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="fg"><label>Project Details</label><textarea placeholder="Tell us about your project, goals, and timeline..."></textarea></div>
-        <button class="btn btn-p fsub" onclick="submitForm(this)">Send Message <i class="fas fa-paper-plane"></i></button>
+        <form action="https://formspree.io/f/xpwzgvqe" method="POST" id="contactForm" onsubmit="handleSubmit(event)">
+          <input type="hidden" name="_replyto" value="solutionricmart@gmail.com">
+          <input type="hidden" name="_subject" value="New Project Inquiry — Amiuriq Website">
+          <div class="frow">
+            <div class="fg"><label>First Name</label><input type="text" name="first_name" placeholder="John" required></div>
+            <div class="fg"><label>Last Name</label><input type="text" name="last_name" placeholder="Doe" required></div>
+          </div>
+          <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="john@company.com" required></div>
+          <div class="fg">
+            <label>Service Needed</label>
+            <select name="service" required>
+              <option value="">Select a service...</option>
+              <option>Web Development</option>
+              <option>Mobile App Development</option>
+              <option>AI & Machine Learning</option>
+              <option>Cloud Solutions</option>
+              <option>UI/UX Design</option>
+              <option>Cybersecurity</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="fg"><label>Project Details</label><textarea name="message" placeholder="Tell us about your project, goals, and timeline..." required></textarea></div>
+          <button type="submit" class="btn btn-p fsub" id="submitBtn">Send Message <i class="fas fa-paper-plane"></i></button>
+        </form>
       </div>
     </div>
   </div>
@@ -695,10 +699,28 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',
 }));
 
 // FORM
-function submitForm(btn){
-  btn.innerHTML='<i class="fas fa-check"></i> Message Sent!';
-  btn.style.background='linear-gradient(135deg,#48C78E,#00D4FF)';
-  setTimeout(()=>{btn.innerHTML='Send Message <i class="fas fa-paper-plane"></i>';btn.style.background=''},3500);
+async function handleSubmit(e){
+  e.preventDefault();
+  const btn=document.getElementById('submitBtn');
+  const form=document.getElementById('contactForm');
+  btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending...';
+  btn.disabled=true;
+  try{
+    const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+    if(res.ok){
+      btn.innerHTML='<i class="fas fa-check"></i> Message Sent!';
+      btn.style.background='linear-gradient(135deg,#48C78E,#00D4FF)';
+      form.reset();
+      setTimeout(()=>{btn.innerHTML='Send Message <i class="fas fa-paper-plane"></i>';btn.style.background='';btn.disabled=false},4000);
+    }else{
+      throw new Error();
+    }
+  }catch{
+    btn.innerHTML='<i class="fas fa-times"></i> Failed — Try Again';
+    btn.style.background='linear-gradient(135deg,#FF6B9D,#FF8B6B)';
+    btn.disabled=false;
+    setTimeout(()=>{btn.innerHTML='Send Message <i class="fas fa-paper-plane"></i>';btn.style.background=''},3500);
+  }
 }
 </script>
 </body>
