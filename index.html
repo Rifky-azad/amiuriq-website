@@ -137,7 +137,9 @@ section{padding:100px 0;position:relative}
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .pcard{border-radius:20px;overflow:hidden;border:1px solid var(--cbr);transition:all .3s;cursor:pointer}
 .pcard:hover{transform:translateY(-8px);border-color:rgba(108,99,255,.4);box-shadow:0 20px 60px rgba(108,99,255,.2)}
-.pimg{height:210px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:48px}
+.pimg{height:220px;position:relative;overflow:hidden}
+.pimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.pcard:hover .pimg img{transform:scale(1.08)}
 .pimg::after{content:'';position:absolute;inset:0;background:rgba(5,5,16,.35);transition:.3s}
 .pcard:hover .pimg::after{background:rgba(108,99,255,.28)}
 .pg1{background:linear-gradient(135deg,#6C63FF,#00D4FF)}
@@ -434,12 +436,30 @@ footer{background:#030309;border-top:1px solid var(--cbr);padding:80px 0 40px}
       <button class="pfb" data-f="cloud">Cloud</button>
     </div>
     <div class="pgrid">
-      <div class="pcard fu" data-cat="web"><div class="pimg pg1">🛒</div><div class="pinfo"><div class="pcat">Web App</div><h3 class="ptitle">NexCart E-Commerce Platform</h3><p class="pdesc">Full-featured e-commerce with real-time inventory, AI recommendations & payment gateway.</p><div class="ptags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div></div></div>
-      <div class="pcard fu" data-cat="mobile"><div class="pimg pg2">🏥</div><div class="pinfo"><div class="pcat">Mobile App</div><h3 class="ptitle">MediConnect Health App</h3><p class="pdesc">Telemedicine platform with video consultations and AI-powered symptom checker.</p><div class="ptags"><span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">ML Kit</span></div></div></div>
-      <div class="pcard fu" data-cat="ai"><div class="pimg pg3">🤖</div><div class="pinfo"><div class="pcat">AI/ML</div><h3 class="ptitle">SentimentAI Analytics</h3><p class="pdesc">Real-time sentiment analysis processing millions of social posts for actionable insights.</p><div class="ptags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">AWS</span></div></div></div>
-      <div class="pcard fu" data-cat="web"><div class="pimg pg4">🏦</div><div class="pinfo"><div class="pcat">Web App</div><h3 class="ptitle">FinVault Banking Dashboard</h3><p class="pdesc">Secure fintech dashboard with fraud detection, real-time monitoring & advanced analytics.</p><div class="ptags"><span class="tag">Vue.js</span><span class="tag">Django</span><span class="tag">PostgreSQL</span></div></div></div>
-      <div class="pcard fu" data-cat="cloud"><div class="pimg pg5">📦</div><div class="pinfo"><div class="pcat">Cloud</div><h3 class="ptitle">LogiTrack Supply Chain</h3><p class="pdesc">Cloud-native supply chain with IoT integration, real-time tracking & predictive analytics.</p><div class="ptags"><span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">Kubernetes</span></div></div></div>
-      <div class="pcard fu" data-cat="mobile"><div class="pimg pg6">🎓</div><div class="pinfo"><div class="pcat">Mobile App</div><h3 class="ptitle">EduSpark Learning Platform</h3><p class="pdesc">Interactive e-learning with gamification, live classes & AI tutoring for 10,000+ students.</p><div class="ptags"><span class="tag">React Native</span><span class="tag">GraphQL</span><span class="tag">Redis</span></div></div></div>
+      <div class="pcard fu" data-cat="web">
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80&fit=crop" alt="NexCart E-Commerce Platform" loading="lazy"></div>
+        <div class="pinfo"><div class="pcat">Web App</div><h3 class="ptitle">NexCart E-Commerce Platform</h3><p class="pdesc">Full-featured e-commerce with real-time inventory, AI recommendations & payment gateway.</p><div class="ptags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div></div>
+      </div>
+      <div class="pcard fu" data-cat="mobile">
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80&fit=crop" alt="MediConnect Health App" loading="lazy"></div>
+        <div class="pinfo"><div class="pcat">Mobile App</div><h3 class="ptitle">MediConnect Health App</h3><p class="pdesc">Telemedicine platform with video consultations and AI-powered symptom checker.</p><div class="ptags"><span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">ML Kit</span></div></div>
+      </div>
+      <div class="pcard fu" data-cat="ai">
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80&fit=crop" alt="SentimentAI Analytics" loading="lazy"></div>
+        <div class="pinfo"><div class="pcat">AI/ML</div><h3 class="ptitle">SentimentAI Analytics</h3><p class="pdesc">Real-time sentiment analysis processing millions of social posts for actionable insights.</p><div class="ptags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">AWS</span></div></div>
+      </div>
+      <div class="pcard fu" data-cat="web">
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80&fit=crop" alt="FinVault Banking Dashboard" loading="lazy"></div>
+        <div class="pinfo"><div class="pcat">Web App</div><h3 class="ptitle">FinVault Banking Dashboard</h3><p class="pdesc">Secure fintech dashboard with fraud detection, real-time monitoring & advanced analytics.</p><div class="ptags"><span class="tag">Vue.js</span><span class="tag">Django</span><span class="tag">PostgreSQL</span></div></div>
+      </div>
+      <div class="pcard fu" data-cat="cloud">
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80&fit=crop" alt="LogiTrack Supply Chain" loading="lazy"></div>
+        <div class="pinfo"><div class="pcat">Cloud</div><h3 class="ptitle">LogiTrack Supply Chain</h3><p class="pdesc">Cloud-native supply chain with IoT integration, real-time tracking & predictive analytics.</p><div class="ptags"><span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">Kubernetes</span></div></div>
+      </div>
+      <div class="pcard fu" data-cat="mobile">
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80&fit=crop" alt="EduSpark Learning Platform" loading="lazy"></div>
+        <div class="pinfo"><div class="pcat">Mobile App</div><h3 class="ptitle">EduSpark Learning Platform</h3><p class="pdesc">Interactive e-learning with gamification, live classes & AI tutoring for 10,000+ students.</p><div class="ptags"><span class="tag">React Native</span><span class="tag">GraphQL</span><span class="tag">Redis</span></div></div>
+      </div>
     </div>
   </div>
 </section>
