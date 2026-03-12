@@ -195,6 +195,12 @@ section{padding:100px 0;position:relative}
 /* Founder special card */
 .founder-card{position:relative;overflow:visible !important}
 .founder-card::before{content:'';position:absolute;inset:-2px;border-radius:22px;background:var(--g1);z-index:0;opacity:.7;filter:blur(14px)}
+.founder-card.g2::before{background:var(--g2)}
+.founder-card.g3::before{background:linear-gradient(135deg,#48C78E,#00D4FF)}
+.founder-card.g4::before{background:linear-gradient(135deg,#FFC107,#FF6B9D)}
+.founder-av.g2::before,.founder-av.g2::after{background:var(--g2)}
+.founder-av.g3::before,.founder-av.g3::after{background:linear-gradient(135deg,#48C78E,#00D4FF)}
+.founder-av.g4::before,.founder-av.g4::after{background:linear-gradient(135deg,#FFC107,#FF6B9D)}
 .founder-card .gc-inner{position:relative;z-index:1;background:rgba(10,10,28,.92);border-radius:20px;padding:30px 22px;height:100%}
 .founder-av{width:120px;height:120px;border-radius:50%;margin:0 auto 20px;position:relative;flex-shrink:0}
 .founder-av::before{content:'';position:absolute;inset:-4px;border-radius:50%;background:var(--g1);z-index:0;animation:spin 4s linear infinite}
@@ -621,20 +627,50 @@ footer{background:#030309;border-top:1px solid var(--cbr);padding:80px 0 40px}
           </div>
         </div>
       </div>
-      <div class="gc tmcard fu">
-        <div class="tmav" style="background:linear-gradient(135deg,#FF6B9D,#FF8B6B)">SK</div>
-        <h3 class="tmname">Sarah Kim</h3><p class="tmrole">Lead UI/UX Designer</p>
-        <div class="tmsoc"><a href="#" class="socbtn"><i class="fab fa-linkedin-in"></i></a><a href="#" class="socbtn"><i class="fab fa-dribbble"></i></a><a href="#" class="socbtn"><i class="fab fa-behance"></i></a></div>
+      <div class="founder-card g2 fu" style="border-radius:22px">
+        <div class="gc-inner tmcard" style="text-align:center">
+          <div class="founder-av g2">
+            <div style="width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#FF6B9D,#FF8B6B);display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:700;color:#fff;position:relative;z-index:2;font-family:'Space Grotesk',sans-serif">SK</div>
+          </div>
+          <h3 class="tmname" style="font-size:19px">Sarah Kim</h3>
+          <p class="tmrole" style="margin-bottom:6px">Lead UI/UX Designer</p>
+          <p style="font-size:12px;color:#FF6B9D;margin-bottom:18px;font-weight:500">✦ Amiuriq Pvt Ltd</p>
+          <div class="tmsoc" style="justify-content:center">
+            <a href="#" class="socbtn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="socbtn"><i class="fab fa-dribbble"></i></a>
+            <a href="#" class="socbtn"><i class="fab fa-behance"></i></a>
+          </div>
+        </div>
       </div>
-      <div class="gc tmcard fu">
-        <div class="tmav" style="background:linear-gradient(135deg,#48C78E,#00D4FF)">MP</div>
-        <h3 class="tmname">Marcus Powell</h3><p class="tmrole">Senior Full Stack Engineer</p>
-        <div class="tmsoc"><a href="#" class="socbtn"><i class="fab fa-linkedin-in"></i></a><a href="#" class="socbtn"><i class="fab fa-github"></i></a><a href="#" class="socbtn"><i class="fab fa-stack-overflow"></i></a></div>
+      <div class="founder-card g3 fu" style="border-radius:22px">
+        <div class="gc-inner tmcard" style="text-align:center">
+          <div class="founder-av g3">
+            <div style="width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#48C78E,#00D4FF);display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:700;color:#fff;position:relative;z-index:2;font-family:'Space Grotesk',sans-serif">MP</div>
+          </div>
+          <h3 class="tmname" style="font-size:19px">Marcus Powell</h3>
+          <p class="tmrole" style="margin-bottom:6px">Senior Full Stack Engineer</p>
+          <p style="font-size:12px;color:#48C78E;margin-bottom:18px;font-weight:500">✦ Amiuriq Pvt Ltd</p>
+          <div class="tmsoc" style="justify-content:center">
+            <a href="#" class="socbtn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="socbtn"><i class="fab fa-github"></i></a>
+            <a href="#" class="socbtn"><i class="fab fa-stack-overflow"></i></a>
+          </div>
+        </div>
       </div>
-      <div class="gc tmcard fu">
-        <div class="tmav" style="background:linear-gradient(135deg,#FFC107,#FF6B9D)">ZR</div>
-        <h3 class="tmname">Zara Rahman</h3><p class="tmrole">AI/ML Engineer</p>
-        <div class="tmsoc"><a href="#" class="socbtn"><i class="fab fa-linkedin-in"></i></a><a href="#" class="socbtn"><i class="fab fa-github"></i></a><a href="#" class="socbtn"><i class="fab fa-kaggle"></i></a></div>
+      <div class="founder-card g4 fu" style="border-radius:22px">
+        <div class="gc-inner tmcard" style="text-align:center">
+          <div class="founder-av g4">
+            <div style="width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#FFC107,#FF6B9D);display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:700;color:#fff;position:relative;z-index:2;font-family:'Space Grotesk',sans-serif">ZR</div>
+          </div>
+          <h3 class="tmname" style="font-size:19px">Zara Rahman</h3>
+          <p class="tmrole" style="margin-bottom:6px">AI/ML Engineer</p>
+          <p style="font-size:12px;color:#FFC107;margin-bottom:18px;font-weight:500">✦ Amiuriq Pvt Ltd</p>
+          <div class="tmsoc" style="justify-content:center">
+            <a href="#" class="socbtn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="socbtn"><i class="fab fa-github"></i></a>
+            <a href="#" class="socbtn"><i class="fab fa-kaggle"></i></a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
