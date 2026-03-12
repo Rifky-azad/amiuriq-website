@@ -46,7 +46,10 @@ section{padding:100px 0;position:relative}
 #nav{position:fixed;top:0;width:100%;z-index:1000;padding:20px 0;transition:all .3s}
 #nav.scrolled{background:rgba(5,5,16,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--cbr);padding:14px 0}
 .nc{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:800;text-decoration:none;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.5px}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:800;text-decoration:none;background:linear-gradient(90deg,#6C63FF,#00D4FF,#FF6B9D,#00D4FF,#6C63FF);background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.5px;animation:logoFlow 3s linear infinite,logoGlow 2.5s ease-in-out infinite;transition:transform .3s,filter .3s}
+.logo:hover{transform:scale(1.08);filter:drop-shadow(0 0 20px rgba(108,99,255,.9))}
+@keyframes logoFlow{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+@keyframes logoGlow{0%,100%{filter:drop-shadow(0 0 6px rgba(108,99,255,.5))}50%{filter:drop-shadow(0 0 18px rgba(0,212,255,.8))}}
 .nlinks{display:flex;align-items:center;gap:34px;list-style:none}
 .nlinks a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;transition:color .3s}
 .nlinks a:hover{color:var(--txt)}
@@ -294,7 +297,7 @@ footer{background:#030309;border-top:1px solid var(--cbr);padding:80px 0 40px}
 <!-- NAV -->
 <nav id="nav">
   <div class="nc">
-    <a href="#" class="logo">Amiuriq</a>
+    <a href="#" class="logo" id="navLogo">Amiuriq</a>
     <ul class="nlinks">
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
@@ -750,6 +753,18 @@ footer{background:#030309;border-top:1px solid var(--cbr);padding:80px 0 40px}
 </footer>
 
 <script>
+// LOGO LETTER ANIMATION
+(function(){
+  const el=document.getElementById('navLogo');
+  const text='Amiuriq';
+  el.innerHTML=text.split('').map((l,i)=>
+    `<span style="display:inline-block;opacity:0;transform:translateY(-20px);animation:letterDrop .5s ease forwards;animation-delay:${i*80}ms">${l}</span>`
+  ).join('');
+})();
+const styleEl=document.createElement('style');
+styleEl.textContent=`@keyframes letterDrop{to{opacity:1;transform:translateY(0)}}`;
+document.head.appendChild(styleEl);
+
 // NAV SCROLL
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50));
