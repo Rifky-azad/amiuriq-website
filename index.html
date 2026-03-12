@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amiuriq Pvt Ltd | Next-Gen Software Solutions</title>
+<meta name="description" content="Amiuriq Pvt Ltd — Building tomorrow's digital solutions today. Expert web, mobile, AI, and cloud development.">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --p:#6C63FF;--p2:#8B85FF;--s:#00D4FF;--a:#FF6B9D;--a2:#FF8B6B;
+  --dark:#050510;--dark2:#0A0A1F;--dark3:#0F0F2D;
+  --cb:rgba(255,255,255,.04);--cbr:rgba(255,255,255,.08);--cbh:rgba(108,99,255,.35);
+  --txt:#E8E8F5;--muted:#8888AA;
+  --g1:linear-gradient(135deg,#6C63FF,#00D4FF);
+  --g2:linear-gradient(135deg,#FF6B9D,#FF8B6B);
+  --g3:linear-gradient(135deg,#6C63FF,#FF6B9D);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--txt);overflow-x:hidden;line-height:1.6}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--dark2)}
+::-webkit-scrollbar-thumb{background:var(--p);border-radius:3px}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:700}
+.gt{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gt2{background:var(--g2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+section{padding:100px 0;position:relative}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.slabel{display:inline-flex;align-items:center;gap:8px;background:rgba(108,99,255,.12);border:1px solid rgba(108,99,255,.3);border-radius:50px;padding:6px 16px;font-size:13px;font-weight:500;color:var(--p2);margin-bottom:18px}
+.stitle{font-size:clamp(32px,5vw,52px);line-height:1.1;margin-bottom:14px}
+.ssub{font-size:16px;color:var(--muted);max-width:580px;line-height:1.75}
+.sh{margin-bottom:64px}.sh.c{text-align:center}.sh.c .ssub{margin:0 auto}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:50px;font-size:15px;font-weight:600;font-family:'Space Grotesk',sans-serif;cursor:pointer;border:none;text-decoration:none;transition:all .3s;position:relative;overflow:hidden}
+.btn-p{background:var(--g1);color:#fff;box-shadow:0 4px 30px rgba(108,99,255,.4)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(108,99,255,.6)}
+.btn-s{background:transparent;color:var(--txt);border:1px solid var(--cbr);backdrop-filter:blur(10px)}
+.btn-s:hover{border-color:var(--p);background:rgba(108,99,255,.1);transform:translateY(-2px)}
+.btn::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transition:.5s}
+.btn:hover::after{left:100%}
+.gc{background:var(--cb);border:1px solid var(--cbr);border-radius:20px;backdrop-filter:blur(20px);transition:all .3s}
+.gc:hover{border-color:var(--cbh);background:rgba(108,99,255,.06);transform:translateY(-6px);box-shadow:0 20px 60px rgba(108,99,255,.15)}
+
+/* NAV */
+#nav{position:fixed;top:0;width:100%;z-index:1000;padding:20px 0;transition:all .3s}
+#nav.scrolled{background:rgba(5,5,16,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--cbr);padding:14px 0}
+.nc{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:800;text-decoration:none;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.5px}
+.nlinks{display:flex;align-items:center;gap:34px;list-style:none}
+.nlinks a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;transition:color .3s}
+.nlinks a:hover{color:var(--txt)}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hbg span{width:25px;height:2px;background:var(--txt);border-radius:2px;transition:all .3s}
+.mnav{display:none;position:fixed;inset:0;background:rgba(5,5,16,.97);backdrop-filter:blur(20px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:30px}
+.mnav.open{display:flex}
+.mnav a{color:var(--txt);text-decoration:none;font-size:22px;font-weight:600;font-family:'Space Grotesk',sans-serif;transition:all .3s}
+.mnav a:hover{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.mnav-x{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--txt);font-size:26px;cursor:pointer}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden}
+.hbg-wrap{position:absolute;inset:0;background:var(--dark)}
+.hbg-wrap::before{content:'';position:absolute;top:-40%;left:-15%;width:65%;height:110%;background:radial-gradient(ellipse,rgba(108,99,255,.22) 0%,transparent 70%);animation:orb1 8s ease-in-out infinite}
+.hbg-wrap::after{content:'';position:absolute;top:-15%;right:-15%;width:55%;height:95%;background:radial-gradient(ellipse,rgba(0,212,255,.16) 0%,transparent 70%);animation:orb2 10s ease-in-out infinite}
+.orb3{position:absolute;bottom:-20%;left:30%;width:50%;height:75%;background:radial-gradient(ellipse,rgba(255,107,157,.1) 0%,transparent 70%);animation:orb3 12s ease-in-out infinite}
+@keyframes orb1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(4%,5%) scale(1.1)}}
+@keyframes orb2{0%,100%{transform:translate(0,0)}50%{transform:translate(-4%,3%) scale(.9)}}
+@keyframes orb3{0%,100%{transform:translate(0,0)}50%{transform:translate(3%,-5%) scale(1.05)}}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(108,99,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(108,99,255,.06) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent)}
+.hcontent{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hbadge{display:inline-flex;align-items:center;gap:8px;background:rgba(108,99,255,.12);border:1px solid rgba(108,99,255,.3);border-radius:50px;padding:8px 18px;font-size:13px;font-weight:500;color:var(--p2);margin-bottom:26px}
+.hbadge .dot{width:6px;height:6px;background:var(--s);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
+.htitle{font-size:clamp(42px,6vw,72px);line-height:1.05;letter-spacing:-2px;margin-bottom:22px}
+.htitle span{display:block}
+.hdesc{font-size:17px;color:var(--muted);line-height:1.8;margin-bottom:38px;max-width:480px}
+.hacts{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.hstats{display:flex;gap:40px;margin-top:56px;padding-top:36px;border-top:1px solid var(--cbr)}
+.hsn{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:800;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.hsl{font-size:13px;color:var(--muted);margin-top:4px}
+.hvisual{position:relative;display:flex;align-items:center;justify-content:center}
+.codewin{background:rgba(10,10,32,.95);border:1px solid rgba(108,99,255,.22);border-radius:16px;overflow:hidden;width:100%;max-width:430px;backdrop-filter:blur(20px);box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.chdr{background:rgba(255,255,255,.04);padding:13px 18px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,.06)}
+.cd{width:12px;height:12px;border-radius:50%}
+.cd.r{background:#FF5F57}.cd.y{background:#FFBD2E}.cd.g{background:#28CA41}
+.cfn{margin-left:8px;font-size:12px;color:var(--muted)}
+.cbdy{padding:22px 24px;font-family:'Courier New',monospace;font-size:13px;line-height:1.8}
+.cl{display:flex;gap:16px}
+.ln{color:rgba(255,255,255,.18);min-width:20px;user-select:none}
+.cp{color:#C792EA}.cb2{color:#82AAFF}.cg{color:#C3E88D}.co{color:#FFCB6B}.cc{color:#89DDFF}.cw{color:#E8E8F0}.cm{color:#546E7A}
+.fcard{position:absolute;padding:13px 17px;border-radius:14px;background:rgba(10,10,32,.92);border:1px solid rgba(108,99,255,.25);backdrop-filter:blur(20px);display:flex;align-items:center;gap:12px;font-size:13px;font-weight:500;z-index:3;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+.fc1{top:-20px;right:-28px;animation:fl1 4s ease-in-out infinite}
+.fc2{bottom:20px;left:-28px;animation:fl2 5s ease-in-out infinite}
+@keyframes fl1{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes fl2{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+.fci{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px}
+
+/* SERVICES */
+#services{background:var(--dark2)}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.scard{padding:34px 28px}
+.sicon{width:58px;height:58px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:22px}
+.si1{background:rgba(108,99,255,.15);color:var(--p2)}
+.si2{background:rgba(0,212,255,.12);color:var(--s)}
+.si3{background:rgba(255,107,157,.12);color:var(--a)}
+.si4{background:rgba(255,139,107,.12);color:var(--a2)}
+.si5{background:rgba(72,199,142,.12);color:#48C78E}
+.si6{background:rgba(255,193,7,.12);color:#FFC107}
+.stname{font-size:19px;margin-bottom:11px}
+.stdesc{color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:18px}
+.slink{color:var(--p2);font-size:14px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:gap .3s}
+.slink:hover{gap:10px}
+
+/* ABOUT */
+#about{background:var(--dark)}
+.agrid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.avis{position:relative}
+.acard{padding:36px;border-radius:22px;background:var(--cb);border:1px solid var(--cbr);backdrop-filter:blur(20px);position:relative;z-index:2}
+.agl{position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(108,99,255,.28),transparent);top:-50px;left:-50px;z-index:1}
+.agl2{position:absolute;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,255,.18),transparent);bottom:-30px;right:-30px;z-index:1}
+.sgr{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+.sbox{background:rgba(108,99,255,.08);border:1px solid rgba(108,99,255,.15);border-radius:16px;padding:22px;text-align:center}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:800;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.slb{font-size:13px;color:var(--muted);margin-top:5px}
+.atxt h2{font-size:clamp(30px,4vw,46px);line-height:1.15;margin-bottom:18px;letter-spacing:-1px}
+.atxt p{color:var(--muted);line-height:1.8;margin-bottom:14px;font-size:16px}
+.afeats{margin-top:28px;display:flex;flex-direction:column;gap:13px}
+.afeat{display:flex;align-items:center;gap:12px;font-size:15px}
+.fchk{width:24px;height:24px;border-radius:50%;background:rgba(108,99,255,.15);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--p2);flex-shrink:0}
+
+/* PORTFOLIO */
+#portfolio{background:var(--dark2)}
+.pflts{display:flex;gap:10px;justify-content:center;margin-bottom:48px;flex-wrap:wrap}
+.pfb{padding:8px 22px;border-radius:50px;border:1px solid var(--cbr);background:transparent;color:var(--muted);font-size:14px;font-weight:500;cursor:pointer;transition:all .3s;font-family:'Inter',sans-serif}
+.pfb.active,.pfb:hover{background:var(--p);border-color:var(--p);color:#fff}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pcard{border-radius:20px;overflow:hidden;border:1px solid var(--cbr);transition:all .3s;cursor:pointer}
+.pcard:hover{transform:translateY(-8px);border-color:rgba(108,99,255,.4);box-shadow:0 20px 60px rgba(108,99,255,.2)}
+.pimg{height:210px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:48px}
+.pimg::after{content:'';position:absolute;inset:0;background:rgba(5,5,16,.35);transition:.3s}
+.pcard:hover .pimg::after{background:rgba(108,99,255,.28)}
+.pg1{background:linear-gradient(135deg,#6C63FF,#00D4FF)}
+.pg2{background:linear-gradient(135deg,#FF6B9D,#FF8B6B)}
+.pg3{background:linear-gradient(135deg,#48C78E,#00D4FF)}
+.pg4{background:linear-gradient(135deg,#6C63FF,#FF6B9D)}
+.pg5{background:linear-gradient(135deg,#FFC107,#FF8B6B)}
+.pg6{background:linear-gradient(135deg,#00D4FF,#48C78E)}
+.pinfo{padding:22px;background:rgba(8,8,26,.96)}
+.pcat{font-size:11px;font-weight:700;color:var(--p2);letter-spacing:1px;text-transform:uppercase;margin-bottom:7px}
+.ptitle{font-size:17px;margin-bottom:8px}
+.pdesc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.ptags{display:flex;gap:7px;flex-wrap:wrap}
+.tag{padding:4px 11px;border-radius:50px;background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.2);font-size:11px;color:var(--p2);font-weight:500}
+
+/* TECH */
+#tech{background:var(--dark);overflow:hidden}
+.mwrap{display:flex;flex-direction:column;gap:18px;margin-top:10px}
+.mrow{display:flex;overflow:hidden}
+.mtrack{display:flex;gap:18px;animation:mq 30s linear infinite}
+.mtrack.rev{animation:mqr 25s linear infinite}
+@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes mqr{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+.tpill{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;background:var(--cb);border:1px solid var(--cbr);border-radius:50px;white-space:nowrap;font-size:14px;font-weight:500;flex-shrink:0;transition:all .3s}
+.tpill:hover{border-color:rgba(108,99,255,.4);background:rgba(108,99,255,.08)}
+
+/* TESTIMONIALS */
+#testi{background:var(--dark2)}
+.tslider{overflow:hidden;position:relative}
+.ttrack{display:flex;gap:24px;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.tcard{flex:0 0 calc(33.333% - 16px);padding:34px}
+.tq{font-size:44px;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:14px;font-family:Georgia,serif}
+.ttxt{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:26px;font-style:italic}
+.tauth{display:flex;align-items:center;gap:13px}
+.tav{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;font-family:'Space Grotesk',sans-serif;color:#fff;flex-shrink:0}
+.tan{font-size:15px;font-weight:600}
+.tar{font-size:12px;color:var(--muted);margin-top:2px}
+.tstars{color:#FFC107;font-size:13px;margin-bottom:8px}
+.sctrl{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:40px}
+.sbtn{width:44px;height:44px;border-radius:50%;border:1px solid var(--cbr);background:var(--cb);color:var(--txt);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;transition:all .3s}
+.sbtn:hover{background:var(--p);border-color:var(--p)}
+.sdots{display:flex;gap:8px}
+.sdot{width:8px;height:8px;border-radius:50%;background:var(--cbr);cursor:pointer;transition:all .3s}
+.sdot.active{background:var(--p);width:24px;border-radius:4px}
+
+/* TEAM */
+#team{background:var(--dark)}
+.tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.tmcard{padding:30px 22px;text-align:center}
+.tmav{width:78px;height:78px;border-radius:50%;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:700;font-family:'Space Grotesk',sans-serif;color:#fff;position:relative}
+.tmav::after{content:'';position:absolute;inset:-3px;border-radius:50%;background:var(--g1);z-index:-1}
+.tmname{font-size:17px;margin-bottom:5px}
+.tmrole{font-size:13px;color:var(--muted);margin-bottom:18px}
+.tmsoc{display:flex;justify-content:center;gap:9px}
+.socbtn{width:34px;height:34px;border-radius:9px;background:var(--cb);border:1px solid var(--cbr);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);text-decoration:none;transition:all .3s}
+.socbtn:hover{background:var(--p);border-color:var(--p);color:#fff;transform:translateY(-2px)}
+
+/* CONTACT */
+#contact{background:var(--dark2)}
+.cgrid{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:start}
+.cinfo h2{font-size:clamp(30px,4vw,44px);line-height:1.2;margin-bottom:18px;letter-spacing:-1px}
+.cinfo p{color:var(--muted);line-height:1.8;margin-bottom:36px}
+.citems{display:flex;flex-direction:column;gap:18px}
+.citem{display:flex;align-items:center;gap:15px}
+.cic{width:46px;height:46px;border-radius:12px;background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.2);display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--p2);flex-shrink:0}
+.cilbl{font-size:12px;color:var(--muted)}
+.cival{font-size:15px;font-weight:500;margin-top:2px}
+.cform{padding:38px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.fg{margin-bottom:18px}
+.fg label{display:block;font-size:13px;font-weight:500;color:var(--muted);margin-bottom:7px}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--cbr);border-radius:12px;padding:13px 17px;color:var(--txt);font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:all .3s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--p);background:rgba(108,99,255,.06);box-shadow:0 0 0 3px rgba(108,99,255,.1)}
+.fg select option{background:var(--dark2);color:var(--txt)}
+.fg textarea{height:135px;resize:none}
+.fsub{width:100%;justify-content:center;font-size:16px;padding:15px}
+
+/* FOOTER */
+footer{background:#030309;border-top:1px solid var(--cbr);padding:80px 0 40px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:55px;margin-bottom:56px}
+.fbrand p{color:var(--muted);font-size:14px;line-height:1.7;margin:14px 0 22px;max-width:280px}
+.fsocs{display:flex;gap:9px}
+.fcol h4{font-size:14px;font-weight:600;letter-spacing:.4px;margin-bottom:18px}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.fcol ul li a{text-decoration:none;color:var(--muted);font-size:14px;transition:color .3s}
+.fcol ul li a:hover{color:var(--p2)}
+.fbot{border-top:1px solid var(--cbr);padding-top:30px;display:flex;justify-content:space-between;align-items:center}
+.fbot p,.fblinks a{color:var(--muted);font-size:13px}
+.fblinks{display:flex;gap:22px}
+.fblinks a{text-decoration:none;transition:color .3s}
+.fblinks a:hover{color:var(--p2)}
+
+/* ANIMATIONS */
+.fu{opacity:0;transform:translateY(38px);transition:all .7s cubic-bezier(.4,0,.2,1)}
+.fu.vis{opacity:1;transform:translateY(0)}
+.fu:nth-child(1){transition-delay:0ms}
+.fu:nth-child(2){transition-delay:100ms}
+.fu:nth-child(3){transition-delay:200ms}
+.fu:nth-child(4){transition-delay:300ms}
+.fu:nth-child(5){transition-delay:400ms}
+.fu:nth-child(6){transition-delay:500ms}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .sgrid{grid-template-columns:repeat(2,1fr)}
+  .pgrid{grid-template-columns:repeat(2,1fr)}
+  .tgrid{grid-template-columns:repeat(2,1fr)}
+  .fgrid{grid-template-columns:1fr 1fr;gap:36px}
+  .hcontent{grid-template-columns:1fr}
+  .agrid{grid-template-columns:1fr}
+  .cgrid{grid-template-columns:1fr}
+  .tcard{flex:0 0 calc(50% - 12px)}
+}
+@media(max-width:768px){
+  section{padding:70px 0}
+  .nlinks,.btn-p.desk{display:none}
+  .hbg{display:flex}
+  .sgrid{grid-template-columns:1fr}
+  .pgrid{grid-template-columns:1fr}
+  .tgrid{grid-template-columns:1fr 1fr}
+  .fgrid{grid-template-columns:1fr;gap:28px}
+  .fbot{flex-direction:column;gap:14px;text-align:center}
+  .hstats{gap:22px}
+  .frow{grid-template-columns:1fr}
+  .tcard{flex:0 0 100%}
+  .hvisual{display:none}
+}
+@media(max-width:480px){
+  .tgrid{grid-template-columns:1fr}
+  .hstats{flex-direction:column;gap:14px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nc">
+    <a href="#" class="logo">Amiuriq</a>
+    <ul class="nlinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#tech">Tech Stack</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:14px">
+      <a href="#contact" class="btn btn-p desk">Get Started <i class="fas fa-arrow-right"></i></a>
+      <div class="hbg" id="hbg"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mnav" id="mnav">
+  <button class="mnav-x" id="mnx">✕</button>
+  <a href="#services" class="ml">Services</a>
+  <a href="#about" class="ml">About</a>
+  <a href="#portfolio" class="ml">Portfolio</a>
+  <a href="#tech" class="ml">Tech Stack</a>
+  <a href="#testi" class="ml">Testimonials</a>
+  <a href="#team" class="ml">Team</a>
+  <a href="#contact" class="ml">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hbg-wrap"><div class="orb3"></div></div>
+  <div class="hgrid"></div>
+  <div class="hcontent">
+    <div>
+      <div class="hbadge"><span class="dot"></span> Trusted by 50+ Global Clients</div>
+      <h1 class="htitle">
+        <span>We Build</span>
+        <span class="gt">Next-Gen</span>
+        <span>Digital</span>
+        <span>Solutions.</span>
+      </h1>
+      <p class="hdesc">Amiuriq Pvt Ltd crafts cutting-edge software — from web & mobile apps to AI-powered systems — that drive real business growth.</p>
+      <div class="hacts">
+        <a href="#contact" class="btn btn-p">Start Your Project <i class="fas fa-arrow-right"></i></a>
+        <a href="#portfolio" class="btn btn-s"><i class="fas fa-play-circle"></i> View Portfolio</a>
+      </div>
+      <div class="hstats">
+        <div><div class="hsn">50+</div><div class="hsl">Happy Clients</div></div>
+        <div><div class="hsn">100+</div><div class="hsl">Projects Delivered</div></div>
+        <div><div class="hsn">5+</div><div class="hsl">Years of Excellence</div></div>
+      </div>
+    </div>
+    <div class="hvisual">
+      <div class="codewin">
+        <div class="chdr">
+          <div class="cd r"></div><div class="cd y"></div><div class="cd g"></div>
+          <span class="cfn">amiuriq.solution.ts</span>
+        </div>
+        <div class="cbdy">
+          <div class="cl"><span class="ln">1</span><span class="cm">// Amiuriq Pvt Ltd</span></div>
+          <div class="cl"><span class="ln">2</span><span class="cp">class</span>&nbsp;<span class="cb2">AmiuriqSolution</span>&nbsp;<span class="cw">{</span></div>
+          <div class="cl"><span class="ln">3</span>&nbsp;&nbsp;<span class="cb2">name</span>&nbsp;<span class="cw">=</span>&nbsp;<span class="cg">"Amiuriq Pvt Ltd"</span><span class="cw">;</span></div>
+          <div class="cl"><span class="ln">4</span>&nbsp;&nbsp;<span class="cb2">mission</span>&nbsp;<span class="cw">=</span>&nbsp;<span class="cg">"Build The Future"</span><span class="cw">;</span></div>
+          <div class="cl"><span class="ln">5</span>&nbsp;</div>
+          <div class="cl"><span class="ln">6</span>&nbsp;&nbsp;<span class="cp">async</span>&nbsp;<span class="co">deliver</span><span class="cw">(project) {</span></div>
+          <div class="cl"><span class="ln">7</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="cp">const</span>&nbsp;<span class="cb2">result</span>&nbsp;<span class="cw">=</span>&nbsp;<span class="cp">await</span></div>
+          <div class="cl"><span class="ln">8</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cw">this.</span><span class="co">innovate</span><span class="cw">(project);</span></div>
+          <div class="cl"><span class="ln">9</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="cp">return</span>&nbsp;<span class="cw">{</span></div>
+          <div class="cl"><span class="ln">10</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cb2">quality</span><span class="cw">:</span>&nbsp;<span class="cc">100</span><span class="cw">,</span></div>
+          <div class="cl"><span class="ln">11</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cb2">onTime</span><span class="cw">:</span>&nbsp;<span class="cp">true</span><span class="cw">,</span></div>
+          <div class="cl"><span class="ln">12</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cb2">support</span><span class="cw">:</span>&nbsp;<span class="cg">"24/7"</span></div>
+          <div class="cl"><span class="ln">13</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="cw">};</span></div>
+          <div class="cl"><span class="ln">14</span>&nbsp;&nbsp;<span class="cw">}</span></div>
+          <div class="cl"><span class="ln">15</span><span class="cw">}</span></div>
+        </div>
+      </div>
+      <div class="fcard fc1">
+        <div class="fci" style="background:rgba(72,199,142,.15);color:#48C78E"><i class="fas fa-check"></i></div>
+        <div><div style="font-size:12px;color:var(--muted)">Project Status</div><div style="color:#48C78E;font-weight:600">Delivered ✓</div></div>
+      </div>
+      <div class="fcard fc2">
+        <div class="fci" style="background:rgba(108,99,255,.15);color:var(--p2)"><i class="fas fa-star"></i></div>
+        <div><div style="font-size:12px;color:var(--muted)">Client Rating</div><div style="font-weight:600">⭐ 5.0 / 5.0</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="sh c">
+      <span class="slabel"><i class="fas fa-bolt"></i> What We Offer</span>
+      <h2 class="stitle">Services That <span class="gt">Drive Results</span></h2>
+      <p class="ssub">End-to-end software solutions tailored to your business — built with cutting-edge technologies and delivered by experts.</p>
+    </div>
+    <div class="sgrid">
+      <div class="gc scard fu"><div class="sicon si1"><i class="fas fa-globe"></i></div><h3 class="stname">Web Development</h3><p class="stdesc">High-performance web apps built with React, Next.js & Vue.js that deliver exceptional user experiences and drive conversions.</p><a href="#contact" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
+      <div class="gc scard fu"><div class="sicon si2"><i class="fas fa-mobile-alt"></i></div><h3 class="stname">Mobile App Development</h3><p class="stdesc">Native and cross-platform iOS & Android apps using Flutter and React Native that engage users and scale with your growth.</p><a href="#contact" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
+      <div class="gc scard fu"><div class="sicon si3"><i class="fas fa-brain"></i></div><h3 class="stname">AI & Machine Learning</h3><p class="stdesc">Intelligent solutions powered by ML, NLP, and computer vision — automating operations and delivering smarter business insights.</p><a href="#contact" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
+      <div class="gc scard fu"><div class="sicon si4"><i class="fas fa-cloud"></i></div><h3 class="stname">Cloud Solutions</h3><p class="stdesc">Scalable cloud architecture on AWS, GCP & Azure — DevOps, CI/CD pipelines, microservices, and containerization.</p><a href="#contact" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
+      <div class="gc scard fu"><div class="sicon si5"><i class="fas fa-palette"></i></div><h3 class="stname">UI/UX Design</h3><p class="stdesc">User-centered design that blends aesthetics with functionality — wireframes, prototypes, and pixel-perfect interfaces that convert.</p><a href="#contact" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
+      <div class="gc scard fu"><div class="sicon si6"><i class="fas fa-shield-alt"></i></div><h3 class="stname">Cybersecurity</h3><p class="stdesc">Security audits, penetration testing, and secure architecture to protect your digital assets and ensure full compliance.</p><a href="#contact" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="agrid">
+      <div class="avis">
+        <div class="agl"></div><div class="agl2"></div>
+        <div class="acard">
+          <div style="font-size:14px;color:var(--muted);margin-bottom:7px">Our Mission</div>
+          <div style="font-size:20px;font-weight:700;font-family:'Space Grotesk',sans-serif;line-height:1.4;margin-bottom:18px">Turning complex problems into <span class="gt">elegant solutions</span></div>
+          <div style="height:1px;background:var(--cbr);margin-bottom:18px"></div>
+          <div class="sgr">
+            <div class="sbox"><div class="snum counter" data-t="50">0</div><div class="slb">Happy Clients</div></div>
+            <div class="sbox"><div class="snum counter" data-t="100">0</div><div class="slb">Projects Done</div></div>
+            <div class="sbox"><div class="snum counter" data-t="5">0</div><div class="slb">Years Active</div></div>
+            <div class="sbox"><div class="snum counter" data-t="15">0</div><div class="slb">Team Members</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="atxt">
+        <span class="slabel"><i class="fas fa-building"></i> Who We Are</span>
+        <h2>A <span class="gt">Passionate Team</span> of Digital Innovators</h2>
+        <p>Founded with a vision to bridge the gap between cutting-edge technology and real-world business challenges, Amiuriq Pvt Ltd has grown into a trusted software development partner for businesses worldwide.</p>
+        <p>We don't just write code — we architect digital experiences that transform businesses, streamline operations, and create measurable impact. Our agile approach ensures we deliver on time, every time.</p>
+        <div class="afeats">
+          <div class="afeat"><div class="fchk"><i class="fas fa-check"></i></div>Agile development with transparent communication</div>
+          <div class="afeat"><div class="fchk"><i class="fas fa-check"></i></div>Dedicated team of senior engineers and designers</div>
+          <div class="afeat"><div class="fchk"><i class="fas fa-check"></i></div>Post-launch support and maintenance included</div>
+          <div class="afeat"><div class="fchk"><i class="fas fa-check"></i></div>NDA-protected, fully secure development process</div>
+        </div>
+        <div style="margin-top:36px"><a href="#contact" class="btn btn-p">Work With Us <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="container">
+    <div class="sh c">
+      <span class="slabel"><i class="fas fa-briefcase"></i> Our Work</span>
+      <h2 class="stitle">Featured <span class="gt">Projects</span></h2>
+      <p class="ssub">A showcase of products we've built for clients across diverse industries around the globe.</p>
+    </div>
+    <div class="pflts">
+      <button class="pfb active" data-f="all">All</button>
+      <button class="pfb" data-f="web">Web App</button>
+      <button class="pfb" data-f="mobile">Mobile</button>
+      <button class="pfb" data-f="ai">AI/ML</button>
+      <button class="pfb" data-f="cloud">Cloud</button>
+    </div>
+    <div class="pgrid">
+      <div class="pcard fu" data-cat="web"><div class="pimg pg1">🛒</div><div class="pinfo"><div class="pcat">Web App</div><h3 class="ptitle">NexCart E-Commerce Platform</h3><p class="pdesc">Full-featured e-commerce with real-time inventory, AI recommendations & payment gateway.</p><div class="ptags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div></div></div>
+      <div class="pcard fu" data-cat="mobile"><div class="pimg pg2">🏥</div><div class="pinfo"><div class="pcat">Mobile App</div><h3 class="ptitle">MediConnect Health App</h3><p class="pdesc">Telemedicine platform with video consultations and AI-powered symptom checker.</p><div class="ptags"><span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">ML Kit</span></div></div></div>
+      <div class="pcard fu" data-cat="ai"><div class="pimg pg3">🤖</div><div class="pinfo"><div class="pcat">AI/ML</div><h3 class="ptitle">SentimentAI Analytics</h3><p class="pdesc">Real-time sentiment analysis processing millions of social posts for actionable insights.</p><div class="ptags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">AWS</span></div></div></div>
+      <div class="pcard fu" data-cat="web"><div class="pimg pg4">🏦</div><div class="pinfo"><div class="pcat">Web App</div><h3 class="ptitle">FinVault Banking Dashboard</h3><p class="pdesc">Secure fintech dashboard with fraud detection, real-time monitoring & advanced analytics.</p><div class="ptags"><span class="tag">Vue.js</span><span class="tag">Django</span><span class="tag">PostgreSQL</span></div></div></div>
+      <div class="pcard fu" data-cat="cloud"><div class="pimg pg5">📦</div><div class="pinfo"><div class="pcat">Cloud</div><h3 class="ptitle">LogiTrack Supply Chain</h3><p class="pdesc">Cloud-native supply chain with IoT integration, real-time tracking & predictive analytics.</p><div class="ptags"><span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">Kubernetes</span></div></div></div>
+      <div class="pcard fu" data-cat="mobile"><div class="pimg pg6">🎓</div><div class="pinfo"><div class="pcat">Mobile App</div><h3 class="ptitle">EduSpark Learning Platform</h3><p class="pdesc">Interactive e-learning with gamification, live classes & AI tutoring for 10,000+ students.</p><div class="ptags"><span class="tag">React Native</span><span class="tag">GraphQL</span><span class="tag">Redis</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section id="tech">
+  <div class="container">
+    <div class="sh c">
+      <span class="slabel"><i class="fas fa-code"></i> Technologies</span>
+      <h2 class="stitle">Our <span class="gt">Tech Stack</span></h2>
+      <p class="ssub">We work with the latest and most powerful technologies to build robust, scalable, and future-proof solutions.</p>
+    </div>
+  </div>
+  <div class="mwrap">
+    <div class="mrow">
+      <div class="mtrack">
+        <div class="tpill"><i class="fab fa-react" style="color:#61DAFB"></i> React</div>
+        <div class="tpill"><i class="fab fa-vuejs" style="color:#42b883"></i> Vue.js</div>
+        <div class="tpill"><i class="fab fa-angular" style="color:#DD0031"></i> Angular</div>
+        <div class="tpill">⚡ Next.js</div>
+        <div class="tpill"><i class="fab fa-node-js" style="color:#68A063"></i> Node.js</div>
+        <div class="tpill"><i class="fab fa-python" style="color:#3776AB"></i> Python</div>
+        <div class="tpill">🎯 TypeScript</div>
+        <div class="tpill">🐳 Docker</div>
+        <div class="tpill"><i class="fab fa-aws" style="color:#FF9900"></i> AWS</div>
+        <div class="tpill">☸️ Kubernetes</div>
+        <div class="tpill"><i class="fab fa-react" style="color:#61DAFB"></i> React</div>
+        <div class="tpill"><i class="fab fa-vuejs" style="color:#42b883"></i> Vue.js</div>
+        <div class="tpill"><i class="fab fa-angular" style="color:#DD0031"></i> Angular</div>
+        <div class="tpill">⚡ Next.js</div>
+        <div class="tpill"><i class="fab fa-node-js" style="color:#68A063"></i> Node.js</div>
+        <div class="tpill"><i class="fab fa-python" style="color:#3776AB"></i> Python</div>
+        <div class="tpill">🎯 TypeScript</div>
+        <div class="tpill">🐳 Docker</div>
+        <div class="tpill"><i class="fab fa-aws" style="color:#FF9900"></i> AWS</div>
+        <div class="tpill">☸️ Kubernetes</div>
+      </div>
+    </div>
+    <div class="mrow">
+      <div class="mtrack rev">
+        <div class="tpill">📱 Flutter</div>
+        <div class="tpill"><i class="fab fa-react" style="color:#61DAFB"></i> React Native</div>
+        <div class="tpill">🤖 TensorFlow</div>
+        <div class="tpill">🧠 PyTorch</div>
+        <div class="tpill">🍃 MongoDB</div>
+        <div class="tpill">🐘 PostgreSQL</div>
+        <div class="tpill">⚡ Redis</div>
+        <div class="tpill">☁️ Google Cloud</div>
+        <div class="tpill"><i class="fab fa-java" style="color:#f89820"></i> Java</div>
+        <div class="tpill">🔷 GraphQL</div>
+        <div class="tpill">📱 Flutter</div>
+        <div class="tpill"><i class="fab fa-react" style="color:#61DAFB"></i> React Native</div>
+        <div class="tpill">🤖 TensorFlow</div>
+        <div class="tpill">🧠 PyTorch</div>
+        <div class="tpill">🍃 MongoDB</div>
+        <div class="tpill">🐘 PostgreSQL</div>
+        <div class="tpill">⚡ Redis</div>
+        <div class="tpill">☁️ Google Cloud</div>
+        <div class="tpill"><i class="fab fa-java" style="color:#f89820"></i> Java</div>
+        <div class="tpill">🔷 GraphQL</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testi">
+  <div class="container">
+    <div class="sh c">
+      <span class="slabel"><i class="fas fa-heart"></i> Client Love</span>
+      <h2 class="stitle">What Our <span class="gt">Clients Say</span></h2>
+      <p class="ssub">Don't take our word for it — hear from the businesses we've helped transform.</p>
+    </div>
+    <div class="tslider">
+      <div class="ttrack" id="ttrack">
+        <div class="gc tcard"><div class="tstars">★★★★★</div><div class="tq">"</div><p class="ttxt">Amiuriq transformed our online presence entirely. They delivered our e-commerce platform in 6 weeks — faster than any agency we've worked with. The attention to detail was extraordinary.</p><div class="tauth"><div class="tav" style="background:linear-gradient(135deg,#6C63FF,#00D4FF)">JM</div><div><div class="tan">James Mitchell</div><div class="tar">CEO, NexCommerce Ltd</div></div></div></div>
+        <div class="gc tcard"><div class="tstars">★★★★★</div><div class="tq">"</div><p class="ttxt">The AI solution Amiuriq built processes 2 million data points daily and has saved our team 40+ hours per week. Exceptional technical expertise and professionalism throughout.</p><div class="tauth"><div class="tav" style="background:linear-gradient(135deg,#FF6B9D,#FF8B6B)">SA</div><div><div class="tan">Sarah Al-Hassan</div><div class="tar">CTO, DataVision Analytics</div></div></div></div>
+        <div class="gc tcard"><div class="tstars">★★★★★</div><div class="tq">"</div><p class="ttxt">Our mobile app reached 10,000 downloads in the first month! Amiuriq's Flutter team is world-class. The UI is stunning and performance is flawless on all devices.</p><div class="tauth"><div class="tav" style="background:linear-gradient(135deg,#48C78E,#00D4FF)">RP</div><div><div class="tan">Rahul Patel</div><div class="tar">Founder, EduSpark</div></div></div></div>
+        <div class="gc tcard"><div class="tstars">★★★★★</div><div class="tq">"</div><p class="ttxt">Working with Amiuriq felt like having an in-house tech team. They understood our vision immediately and delivered beyond expectations. The cloud migration was absolutely seamless.</p><div class="tauth"><div class="tav" style="background:linear-gradient(135deg,#FFC107,#FF8B6B)">LT</div><div><div class="tan">Lisa Thompson</div><div class="tar">VP Engineering, LogiTrack</div></div></div></div>
+        <div class="gc tcard"><div class="tstars">★★★★★</div><div class="tq">"</div><p class="ttxt">Amiuriq rebuilt our banking dashboard from scratch — the result is a masterpiece. Secure, fast, and incredibly intuitive. User engagement is up 300% since launch.</p><div class="tauth"><div class="tav" style="background:linear-gradient(135deg,#6C63FF,#FF6B9D)">MK</div><div><div class="tan">Michael Kurosawa</div><div class="tar">Director, FinVault</div></div></div></div>
+        <div class="gc tcard"><div class="tstars">★★★★★</div><div class="tq">"</div><p class="ttxt">The cybersecurity audit discovered critical vulnerabilities we had missed for years. Their thoroughness potentially saved our company from a major breach. Highly recommended.</p><div class="tauth"><div class="tav" style="background:linear-gradient(135deg,#00D4FF,#48C78E)">AN</div><div><div class="tan">Aisha Noor</div><div class="tar">CISO, SecureBank PLC</div></div></div></div>
+      </div>
+    </div>
+    <div class="sctrl">
+      <button class="sbtn" id="tprev"><i class="fas fa-chevron-left"></i></button>
+      <div class="sdots" id="sdots">
+        <div class="sdot active"></div>
+        <div class="sdot"></div>
+      </div>
+      <button class="sbtn" id="tnext"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="container">
+    <div class="sh c">
+      <span class="slabel"><i class="fas fa-users"></i> Meet the Team</span>
+      <h2 class="stitle">The <span class="gt">Minds Behind</span> the Magic</h2>
+      <p class="ssub">A diverse team of passionate engineers, designers, and strategists dedicated to your success.</p>
+    </div>
+    <div class="tgrid">
+      <div class="gc tmcard fu">
+        <div class="tmav" style="background:linear-gradient(135deg,#6C63FF,#00D4FF)">AR</div>
+        <h3 class="tmname">Ahmed Rifque</h3><p class="tmrole">Founder & CEO</p>
+        <div class="tmsoc"><a href="#" class="socbtn"><i class="fab fa-linkedin-in"></i></a><a href="#" class="socbtn"><i class="fab fa-github"></i></a><a href="#" class="socbtn"><i class="fab fa-twitter"></i></a></div>
+      </div>
+      <div class="gc tmcard fu">
+        <div class="tmav" style="background:linear-gradient(135deg,#FF6B9D,#FF8B6B)">SK</div>
+        <h3 class="tmname">Sarah Kim</h3><p class="tmrole">Lead UI/UX Designer</p>
+        <div class="tmsoc"><a href="#" class="socbtn"><i class="fab fa-linkedin-in"></i></a><a href="#" class="socbtn"><i class="fab fa-dribbble"></i></a><a href="#" class="socbtn"><i class="fab fa-behance"></i></a></div>
+      </div>
+      <div class="gc tmcard fu">
+        <div class="tmav" style="background:linear-gradient(135deg,#48C78E,#00D4FF)">MP</div>
+        <h3 class="tmname">Marcus Powell</h3><p class="tmrole">Senior Full Stack Engineer</p>
+        <div class="tmsoc"><a href="#" class="socbtn"><i class="fab fa-linkedin-in"></i></a><a href="#" class="socbtn"><i class="fab fa-github"></i></a><a href="#" class="socbtn"><i class="fab fa-stack-overflow"></i></a></div>
+      </div>
+      <div class="gc tmcard fu">
+        <div class="tmav" style="background:linear-gradient(135deg,#FFC107,#FF6B9D)">ZR</div>
+        <h3 class="tmname">Zara Rahman</h3><p class="tmrole">AI/ML Engineer</p>
+        <div class="tmsoc"><a href="#" class="socbtn"><i class="fab fa-linkedin-in"></i></a><a href="#" class="socbtn"><i class="fab fa-github"></i></a><a href="#" class="socbtn"><i class="fab fa-kaggle"></i></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="cgrid">
+      <div class="cinfo">
+        <span class="slabel"><i class="fas fa-envelope"></i> Get In Touch</span>
+        <h2>Let's Build <span class="gt">Something Great</span> Together</h2>
+        <p>Ready to take your business to the next level? Tell us about your project and we'll respond within 24 hours.</p>
+        <div class="citems">
+          <div class="citem"><div class="cic"><i class="fas fa-envelope"></i></div><div><div class="cilbl">Email Us</div><div class="cival">hello@amiuriq.com</div></div></div>
+          <div class="citem"><div class="cic"><i class="fas fa-phone"></i></div><div><div class="cilbl">Call Us</div><div class="cival">+94 76 759 2562</div></div></div>
+          <div class="citem"><div class="cic"><i class="fas fa-map-marker-alt"></i></div><div><div class="cilbl">Our Office</div><div class="cival">Colombo, Sri Lanka</div></div></div>
+          <div class="citem"><div class="cic"><i class="fas fa-clock"></i></div><div><div class="cilbl">Working Hours</div><div class="cival">Mon – Fri, 9AM – 6PM (IST)</div></div></div>
+        </div>
+      </div>
+      <div class="gc cform">
+        <h3 style="font-size:21px;margin-bottom:26px">Send Us a Message</h3>
+        <div class="frow">
+          <div class="fg"><label>First Name</label><input type="text" placeholder="John"></div>
+          <div class="fg"><label>Last Name</label><input type="text" placeholder="Doe"></div>
+        </div>
+        <div class="fg"><label>Email Address</label><input type="email" placeholder="john@company.com"></div>
+        <div class="fg">
+          <label>Service Needed</label>
+          <select>
+            <option value="">Select a service...</option>
+            <option>Web Development</option>
+            <option>Mobile App Development</option>
+            <option>AI & Machine Learning</option>
+            <option>Cloud Solutions</option>
+            <option>UI/UX Design</option>
+            <option>Cybersecurity</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg"><label>Project Details</label><textarea placeholder="Tell us about your project, goals, and timeline..."></textarea></div>
+        <button class="btn btn-p fsub" onclick="submitForm(this)">Send Message <i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="fgrid">
+      <div class="fbrand">
+        <a href="#" class="logo" style="font-size:26px">Amiuriq</a>
+        <p>Building tomorrow's digital solutions today. We craft software that transforms businesses and drives real growth.</p>
+        <div class="fsocs">
+          <a href="#" class="socbtn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="socbtn"><i class="fab fa-github"></i></a>
+          <a href="#" class="socbtn"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="socbtn"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="fcol"><h4>Company</h4><ul><li><a href="#about">About Us</a></li><li><a href="#team">Our Team</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#contact">Careers</a></li><li><a href="#contact">Blog</a></li></ul></div>
+      <div class="fcol"><h4>Services</h4><ul><li><a href="#services">Web Development</a></li><li><a href="#services">Mobile Apps</a></li><li><a href="#services">AI & ML</a></li><li><a href="#services">Cloud Solutions</a></li><li><a href="#services">Cybersecurity</a></li></ul></div>
+      <div class="fcol"><h4>Legal</h4><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Cookie Policy</a></li><li><a href="#">NDA Template</a></li></ul></div>
+    </div>
+    <div class="fbot">
+      <p>© 2025 Amiuriq Pvt Ltd. All rights reserved.</p>
+      <div class="fblinks"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Sitemap</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// NAV SCROLL
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50));
+
+// MOBILE NAV
+const hbg=document.getElementById('hbg'),mnav=document.getElementById('mnav'),mnx=document.getElementById('mnx');
+hbg.addEventListener('click',()=>{mnav.classList.add('open');document.body.style.overflow='hidden'});
+mnx.addEventListener('click',()=>{mnav.classList.remove('open');document.body.style.overflow=''});
+document.querySelectorAll('.ml').forEach(l=>l.addEventListener('click',()=>{mnav.classList.remove('open');document.body.style.overflow=''}));
+
+// SCROLL REVEAL
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+
+// COUNTER
+function runCounter(el){
+  const t=+el.dataset.t,dur=2000,step=t/(dur/16);let c=0;
+  const timer=setInterval(()=>{c+=step;if(c>=t){c=t;clearInterval(timer)}el.textContent=Math.floor(c)+'+'},16);
+}
+const cobs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){runCounter(x.target);cobs.unobserve(x.target)}}),{threshold:.5});
+document.querySelectorAll('.counter').forEach(el=>cobs.observe(el));
+
+// PORTFOLIO FILTER
+document.querySelectorAll('.pfb').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.pfb').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.f;
+    document.querySelectorAll('.pcard').forEach(c=>{
+      c.style.display=(f==='all'||c.dataset.cat===f)?'block':'none';
+    });
+  });
+});
+
+// TESTIMONIALS SLIDER
+const track=document.getElementById('ttrack'),dots=document.querySelectorAll('.sdot');
+let cur=0;
+function perPage(){return window.innerWidth<768?1:window.innerWidth<1024?2:3}
+function goTo(i){
+  const pp=perPage(),max=6-pp,cards=track.querySelectorAll('.tcard');
+  cur=Math.max(0,Math.min(i,max));
+  const w=cards[0].offsetWidth+24;
+  track.style.transform=`translateX(-${cur*w}px)`;
+  const di=Math.floor(cur/(pp));
+  dots.forEach((d,j)=>d.classList.toggle('active',j===Math.min(di,dots.length-1)));
+}
+document.getElementById('tnext').addEventListener('click',()=>goTo(cur+1));
+document.getElementById('tprev').addEventListener('click',()=>goTo(cur-1));
+dots.forEach((d,i)=>d.addEventListener('click',()=>goTo(i*perPage())));
+let auto=setInterval(()=>goTo(cur+1>=6-perPage()?0:cur+1),5000);
+window.addEventListener('resize',()=>{cur=0;track.style.transform='translateX(0)'});
+
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',function(e){
+  e.preventDefault();
+  const t=document.querySelector(this.getAttribute('href'));
+  if(t)window.scrollTo({top:t.offsetTop-78,behavior:'smooth'});
+}));
+
+// FORM
+function submitForm(btn){
+  btn.innerHTML='<i class="fas fa-check"></i> Message Sent!';
+  btn.style.background='linear-gradient(135deg,#48C78E,#00D4FF)';
+  setTimeout(()=>{btn.innerHTML='Send Message <i class="fas fa-paper-plane"></i>';btn.style.background=''},3500);
+}
+</script>
+</body>
+</html>
