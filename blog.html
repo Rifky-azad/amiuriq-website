@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Amiuriq Pvt Ltd</title>
+<meta name="description" content="Amiuriq Blog — Insights, trends, and deep dives into web development, AI, mobile apps, cloud, and cybersecurity.">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --p:#D94040;--p2:#B83232;--s:#FF6B35;--a:#FF6B9D;--a2:#FF8B6B;
+  --dark:#fff5f5;--dark2:#ffe8e8;--dark3:#ffd5d5;
+  --cb:rgba(255,255,255,.75);--cbr:rgba(217,64,64,.15);--cbh:rgba(217,64,64,.3);
+  --txt:#1a0808;--muted:#7a4040;
+  --g1:linear-gradient(135deg,#D94040,#FF6B35);
+  --g2:linear-gradient(135deg,#FF6B9D,#FF8B6B);
+  --g3:linear-gradient(135deg,#D94040,#FF6B9D);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:radial-gradient(ellipse at 15% 10%,rgba(255,120,100,.28) 0%,transparent 50%),radial-gradient(ellipse at 85% 8%,rgba(255,160,80,.22) 0%,transparent 48%),radial-gradient(ellipse at 50% 92%,rgba(255,100,100,.18) 0%,transparent 52%),#fff5f5;background-attachment:fixed;color:var(--txt);overflow-x:hidden;line-height:1.6}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:#ffe8e8}
+::-webkit-scrollbar-thumb{background:var(--p);border-radius:3px}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:700}
+.gt{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:50px;font-size:15px;font-weight:600;font-family:'Space Grotesk',sans-serif;cursor:pointer;border:none;text-decoration:none;transition:all .3s;position:relative;overflow:hidden}
+.btn-p{background:var(--g1);color:#fff;box-shadow:0 4px 30px rgba(217,64,64,.4)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(217,64,64,.6)}
+.btn-s{background:transparent;color:var(--txt);border:1px solid var(--cbr);backdrop-filter:blur(10px)}
+.btn-s:hover{border-color:var(--p);background:rgba(217,64,64,.08);transform:translateY(-2px)}
+.btn::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transition:.5s}
+.btn:hover::after{left:100%}
+
+/* NAV */
+#nav{position:fixed;top:0;width:100%;z-index:1000;padding:20px 0;transition:all .3s}
+#nav.scrolled{background:rgba(255,245,245,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(217,64,64,.15);padding:14px 0}
+.nc{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;transition:transform .3s;line-height:1}
+.logo:hover{transform:scale(1.04)}
+.logo:hover .logo-icon{box-shadow:0 6px 30px rgba(217,64,64,.7)}
+.logo-icon{width:40px;height:40px;background:linear-gradient(135deg,#D94040,#FF6B35);border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 18px rgba(217,64,64,.45);font-family:'Bebas Neue',sans-serif;font-size:16px;color:#fff;letter-spacing:0;transition:box-shadow .3s}
+.logo-word{font-family:'Space Grotesk',sans-serif;font-size:23px;font-weight:800;background:linear-gradient(90deg,#D94040,#FF6B35);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px;line-height:1}
+.nlinks{display:flex;align-items:center;gap:34px;list-style:none}
+.nlinks a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;transition:color .3s}
+.nlinks a:hover,.nlinks a.active{color:var(--txt)}
+.nlinks a.active{color:var(--p2);font-weight:600}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hbg span{width:25px;height:2px;background:var(--txt);border-radius:2px;transition:all .3s}
+.mnav{display:none;position:fixed;inset:0;background:rgba(255,245,245,.97);backdrop-filter:blur(20px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:30px}
+.mnav.open{display:flex}
+.mnav a{color:#1a1a2e;text-decoration:none;font-size:22px;font-weight:600;font-family:'Space Grotesk',sans-serif;transition:all .3s}
+.mnav a:hover{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.mnav-x{position:absolute;top:24px;right:24px;background:none;border:none;color:#1a1a2e;font-size:26px;cursor:pointer}
+.theme-toggle{background:rgba(60,120,255,.1);border:1px solid rgba(60,120,255,.2);border-radius:50%;width:36px;height:36px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--p);font-size:14px;transition:background .3s,transform .3s;flex-shrink:0}
+.theme-toggle:hover{background:rgba(60,120,255,.22);transform:rotate(20deg)}
+
+/* BLOG HERO */
+.blog-hero{padding:140px 0 90px;background:linear-gradient(135deg,#1a0808 0%,#4a1010 60%,#2a0c0c 100%);text-align:center;position:relative;overflow:hidden}
+.blog-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(217,64,64,.2),transparent 60%),radial-gradient(ellipse at 70% 30%,rgba(255,107,53,.15),transparent 55%)}
+.blog-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(217,64,64,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(217,64,64,.06) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent)}
+.blog-hero .container{position:relative;z-index:2}
+.blog-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(217,64,64,.2);border:1px solid rgba(217,64,64,.4);border-radius:50px;padding:7px 18px;font-size:13px;font-weight:500;color:#ffb3b3;margin-bottom:22px}
+.blog-badge .dot{width:6px;height:6px;background:#FF6B35;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
+.blog-hero-title{font-size:clamp(40px,6vw,68px);color:#fff;margin-bottom:18px;letter-spacing:-2px;line-height:1.05}
+.blog-hero-sub{font-size:17px;color:rgba(255,255,255,.6);max-width:560px;margin:0 auto 36px;line-height:1.8}
+.blog-hero-stats{display:flex;gap:40px;justify-content:center;margin-top:44px;padding-top:36px;border-top:1px solid rgba(255,255,255,.1)}
+.bhs-n{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:800;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.bhs-l{font-size:13px;color:rgba(255,255,255,.5);margin-top:4px}
+
+/* BLOG SEARCH & FILTER */
+.blog-controls{padding:50px 0 0}
+.blog-search-wrap{display:flex;gap:14px;align-items:center;margin-bottom:30px;flex-wrap:wrap}
+.blog-search{flex:1;min-width:240px;position:relative}
+.blog-search input{width:100%;background:rgba(255,255,255,.75);border:1px solid rgba(217,64,64,.18);border-radius:50px;padding:12px 22px 12px 48px;color:var(--txt);font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:all .3s;backdrop-filter:blur(10px)}
+.blog-search input:focus{border-color:var(--p);box-shadow:0 0 0 3px rgba(217,64,64,.1);background:rgba(255,255,255,.9)}
+.blog-search .si{position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:14px;pointer-events:none}
+.blog-cats{display:flex;gap:10px;flex-wrap:wrap}
+.bcat-btn{padding:9px 20px;border-radius:50px;border:1px solid var(--cbr);background:transparent;color:var(--muted);font-size:13px;font-weight:500;cursor:pointer;transition:all .3s;font-family:'Inter',sans-serif}
+.bcat-btn.active,.bcat-btn:hover{background:var(--p);border-color:var(--p);color:#fff}
+
+/* BLOG GRID */
+.blog-wrap{padding:40px 0 100px}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:56px}
+.bcard{border-radius:20px;overflow:hidden;border:1px solid rgba(180,210,255,.35);transition:all .3s;background:rgba(255,255,255,.55);backdrop-filter:blur(18px);box-shadow:0 4px 24px rgba(100,160,255,.08);display:flex;flex-direction:column}
+.bcard:hover{transform:translateY(-8px);border-color:rgba(217,64,64,.3);box-shadow:0 20px 60px rgba(217,64,64,.12);background:rgba(255,255,255,.8)}
+.bcard-img{height:200px;position:relative;overflow:hidden}
+.bcard-img-bg{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:48px;transition:transform .6s ease}
+.bcard:hover .bcard-img-bg{transform:scale(1.08)}
+.bcard-img-bg::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.15)}
+.bi1{background:linear-gradient(135deg,#6C63FF,#00D4FF)}
+.bi2{background:linear-gradient(135deg,#D94040,#FF6B35)}
+.bi3{background:linear-gradient(135deg,#48C78E,#00D4FF)}
+.bi4{background:linear-gradient(135deg,#FF6B9D,#FF8B6B)}
+.bi5{background:linear-gradient(135deg,#FFC107,#FF6B35)}
+.bi6{background:linear-gradient(135deg,#6C63FF,#FF6B9D)}
+.bcard-cat-badge{position:absolute;top:14px;left:14px;background:rgba(0,0,0,.45);backdrop-filter:blur(10px);border-radius:50px;padding:5px 13px;font-size:11px;font-weight:700;color:#fff;letter-spacing:.8px;text-transform:uppercase;z-index:2}
+.bcard-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.bcard-meta{display:flex;align-items:center;gap:14px;margin-bottom:12px;flex-wrap:wrap}
+.bcard-date{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:5px}
+.bcard-read{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:5px}
+.bcard-title{font-size:18px;line-height:1.35;margin-bottom:10px;color:var(--txt);transition:color .3s}
+.bcard:hover .bcard-title{color:var(--p2)}
+.bcard-desc{font-size:13px;color:var(--muted);line-height:1.7;flex:1;margin-bottom:20px}
+.bcard-foot{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(217,64,64,.1)}
+.bcard-author{display:flex;align-items:center;gap:10px}
+.bcard-av{width:30px;height:30px;border-radius:50%;background:var(--g1);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;font-family:'Space Grotesk',sans-serif;flex-shrink:0}
+.bcard-aname{font-size:12px;font-weight:500;color:var(--txt)}
+.bcard-link{font-size:13px;font-weight:600;color:var(--p2);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:gap .3s}
+.bcard-link:hover{gap:9px}
+
+/* FEATURED POST */
+.bfeatured{margin-bottom:48px}
+.bfeat-card{border-radius:24px;overflow:hidden;border:1px solid rgba(217,64,64,.2);background:rgba(255,255,255,.65);backdrop-filter:blur(20px);box-shadow:0 8px 40px rgba(217,64,64,.08);display:grid;grid-template-columns:1.1fr 1fr;transition:all .3s}
+.bfeat-card:hover{transform:translateY(-5px);box-shadow:0 20px 70px rgba(217,64,64,.14);border-color:rgba(217,64,64,.35)}
+.bfeat-img{height:100%;min-height:380px;position:relative;overflow:hidden}
+.bfeat-img-bg{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:72px;transition:transform .7s ease}
+.bfeat-card:hover .bfeat-img-bg{transform:scale(1.06)}
+.bfeat-badge{position:absolute;top:20px;left:20px;background:rgba(0,0,0,.45);backdrop-filter:blur(12px);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;color:#fff;letter-spacing:.8px;text-transform:uppercase;z-index:2}
+.bfeat-label{position:absolute;top:20px;right:20px;background:var(--g1);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;color:#fff;letter-spacing:.8px;z-index:2}
+.bfeat-body{padding:44px 40px;display:flex;flex-direction:column;justify-content:center}
+.bfeat-meta{display:flex;align-items:center;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.bfeat-cat{font-size:12px;font-weight:700;color:var(--p2);letter-spacing:1px;text-transform:uppercase}
+.bfeat-date{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:5px}
+.bfeat-title{font-size:clamp(22px,3vw,30px);line-height:1.25;margin-bottom:16px;letter-spacing:-0.5px;color:var(--txt)}
+.bfeat-desc{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:28px}
+.bfeat-foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.bfeat-author{display:flex;align-items:center;gap:12px}
+.bfeat-av{width:38px;height:38px;border-radius:50%;background:var(--g1);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;font-family:'Space Grotesk',sans-serif;flex-shrink:0}
+.bfeat-ainfo .bfeat-aname{font-size:13px;font-weight:600;color:var(--txt)}
+.bfeat-ainfo .bfeat-arole{font-size:11px;color:var(--muted)}
+
+/* NEWSLETTER */
+.blog-newsletter{padding:70px 0;background:rgba(255,255,255,.5)}
+.newsletter-inner{max-width:640px;margin:0 auto;text-align:center}
+.newsletter-inner .slabel{margin-bottom:16px}
+.newsletter-inner h2{font-size:clamp(28px,4vw,40px);margin-bottom:14px;letter-spacing:-1px}
+.newsletter-inner p{color:var(--muted);line-height:1.75;margin-bottom:32px}
+.newsletter-form{display:flex;gap:12px;max-width:480px;margin:0 auto;flex-wrap:wrap}
+.newsletter-form input{flex:1;min-width:200px;background:rgba(255,255,255,.8);border:1px solid rgba(217,64,64,.2);border-radius:50px;padding:14px 22px;color:var(--txt);font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:all .3s}
+.newsletter-form input:focus{border-color:var(--p);box-shadow:0 0 0 3px rgba(217,64,64,.1);background:#fff}
+.newsletter-form .btn-p{white-space:nowrap}
+.slabel{display:inline-flex;align-items:center;gap:8px;background:rgba(108,99,255,.12);border:1px solid rgba(108,99,255,.3);border-radius:50px;padding:6px 16px;font-size:13px;font-weight:500;color:var(--p2);margin-bottom:18px}
+
+/* PAGINATION */
+.blog-pagination{display:flex;gap:8px;justify-content:center;align-items:center}
+.pag-btn{width:40px;height:40px;border-radius:10px;border:1px solid var(--cbr);background:transparent;color:var(--muted);font-size:14px;font-weight:500;cursor:pointer;transition:all .3s;font-family:'Inter',sans-serif;display:flex;align-items:center;justify-content:center}
+.pag-btn.active,.pag-btn:hover{background:var(--p);border-color:var(--p);color:#fff}
+.pag-btn.arrow{font-size:12px}
+
+/* FOOTER */
+footer{background:rgba(255,224,224,.7);border-top:1px solid rgba(217,64,64,.15);padding:80px 0 40px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:55px;margin-bottom:56px}
+.fbrand p{color:var(--muted);font-size:14px;line-height:1.7;margin:14px 0 22px;max-width:280px}
+.fsocs{display:flex;gap:9px}
+.fcol h4{font-size:14px;font-weight:600;letter-spacing:.4px;margin-bottom:18px}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.fcol ul li a{text-decoration:none;color:var(--muted);font-size:14px;transition:color .3s}
+.fcol ul li a:hover{color:var(--p2)}
+.fbot{border-top:1px solid var(--cbr);padding-top:30px;display:flex;justify-content:space-between;align-items:center}
+.fbot p,.fblinks a{color:var(--muted);font-size:13px}
+.fblinks{display:flex;gap:22px}
+.fblinks a{text-decoration:none;transition:color .3s}
+.fblinks a:hover{color:var(--p2)}
+.socbtn{width:34px;height:34px;border-radius:9px;background:var(--cb);border:1px solid var(--cbr);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);text-decoration:none;transition:all .3s}
+.socbtn:hover{background:var(--p);border-color:var(--p);color:#fff;transform:translateY(-2px)}
+
+/* ANIMATIONS */
+.fu{opacity:0;transform:translateY(38px);transition:all .7s cubic-bezier(.4,0,.2,1)}
+.fu.vis{opacity:1;transform:translateY(0)}
+.fu:nth-child(1){transition-delay:0ms}.fu:nth-child(2){transition-delay:100ms}.fu:nth-child(3){transition-delay:200ms}.fu:nth-child(4){transition-delay:300ms}.fu:nth-child(5){transition-delay:400ms}.fu:nth-child(6){transition-delay:500ms}
+
+/* DARK MODE */
+[data-theme=dark]{--txt:#e2eaf5;--muted:#9ab0cc}
+[data-theme=dark] body{background:radial-gradient(ellipse at 15% 10%,rgba(20,50,140,.35) 0%,transparent 50%),radial-gradient(ellipse at 85% 8%,rgba(10,30,100,.25) 0%,transparent 48%),radial-gradient(ellipse at 50% 92%,rgba(15,40,120,.28) 0%,transparent 52%),#04091a;background-attachment:fixed}
+[data-theme=dark] #nav.scrolled{background:rgba(4,9,26,.95);border-bottom-color:rgba(60,120,255,.18)}
+[data-theme=dark] .hbg span{background:#e2eaf5}
+[data-theme=dark] .mnav{background:rgba(4,9,26,.98)}
+[data-theme=dark] .mnav a{color:#e2eaf5}
+[data-theme=dark] .mnav-x{color:#e2eaf5}
+[data-theme=dark] ::-webkit-scrollbar-track{background:#04091a}
+[data-theme=dark] .slabel{background:rgba(60,120,255,.1);border-color:rgba(60,120,255,.25)}
+[data-theme=dark] .btn-s{border-color:rgba(60,120,255,.28);color:#e2eaf5}
+[data-theme=dark] .bcard{background:rgba(10,22,60,.55);border-color:rgba(60,120,255,.22)}
+[data-theme=dark] .bcard:hover{background:rgba(14,30,75,.72);border-color:rgba(60,120,255,.4)}
+[data-theme=dark] .bcard-title{color:#e2eaf5}
+[data-theme=dark] .bcard:hover .bcard-title{color:#7ab0ff}
+[data-theme=dark] .bcard-foot{border-top-color:rgba(60,120,255,.15)}
+[data-theme=dark] .bcard-aname{color:#e2eaf5}
+[data-theme=dark] .bcard-link{color:#6090ff}
+[data-theme=dark] .bfeat-card{background:rgba(8,18,50,.8);border-color:rgba(60,120,255,.2)}
+[data-theme=dark] .bfeat-title{color:#e2eaf5}
+[data-theme=dark] .bfeat-foot{border-top-color:rgba(60,120,255,.15)}
+[data-theme=dark] .bfeat-aname{color:#e2eaf5}
+[data-theme=dark] .blog-newsletter{background:rgba(6,14,42,.5)}
+[data-theme=dark] .newsletter-form input{background:rgba(255,255,255,.04);border-color:rgba(60,120,255,.22);color:#e2eaf5}
+[data-theme=dark] .newsletter-form input::placeholder{color:rgba(226,234,245,.3)}
+[data-theme=dark] .newsletter-form input:focus{background:rgba(60,120,255,.06);border-color:#6090ff;box-shadow:0 0 0 3px rgba(60,120,255,.12)}
+[data-theme=dark] .blog-search input{background:rgba(255,255,255,.05);border-color:rgba(60,120,255,.22);color:#e2eaf5}
+[data-theme=dark] .blog-search input::placeholder{color:rgba(226,234,245,.3)}
+[data-theme=dark] .blog-search input:focus{background:rgba(60,120,255,.08);border-color:#6090ff}
+[data-theme=dark] .bcat-btn{border-color:rgba(60,120,255,.25);color:#9ab0cc}
+[data-theme=dark] .bcat-btn.active,[data-theme=dark] .bcat-btn:hover{background:#3c78ff;border-color:#3c78ff;color:#fff}
+[data-theme=dark] .pag-btn{border-color:rgba(60,120,255,.25);color:#9ab0cc}
+[data-theme=dark] .pag-btn.active,[data-theme=dark] .pag-btn:hover{background:#3c78ff;border-color:#3c78ff;color:#fff}
+[data-theme=dark] footer{background:rgba(4,10,32,.97);border-top-color:rgba(60,120,255,.15)}
+[data-theme=dark] .fbot{border-top-color:rgba(60,120,255,.15)}
+[data-theme=dark] .fbot p,[data-theme=dark] .fblinks a{color:#9ab0cc}
+[data-theme=dark] .fblinks a:hover{color:#e2eaf5}
+[data-theme=dark] .fcol h4{color:#e2eaf5}
+[data-theme=dark] .fcol ul li a{color:#9ab0cc}
+[data-theme=dark] .fcol ul li a:hover{color:#e2eaf5}
+[data-theme=dark] .fbrand p{color:#9ab0cc}
+[data-theme=dark] .socbtn{background:rgba(60,120,255,.08);border-color:rgba(60,120,255,.18);color:#9ab0cc}
+[data-theme=dark] .socbtn:hover{background:rgba(60,120,255,.22);border-color:rgba(60,120,255,.4);color:#e2eaf5}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .blog-grid{grid-template-columns:repeat(2,1fr)}
+  .bfeat-card{grid-template-columns:1fr}
+  .bfeat-img{min-height:280px}
+  .fgrid{grid-template-columns:1fr 1fr;gap:36px}
+}
+@media(max-width:768px){
+  .nlinks,.btn.desk{display:none}
+  .hbg{display:flex}
+  .blog-grid{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr;gap:28px}
+  .fbot{flex-direction:column;gap:14px;text-align:center}
+  .blog-hero-stats{gap:22px;flex-wrap:wrap}
+  .blog-search-wrap{flex-direction:column;align-items:stretch}
+  .newsletter-form{flex-direction:column}
+  .newsletter-form .btn-p{justify-content:center}
+}
+</style>
+<script>(function(){var t=localStorage.getItem("aq-theme")||"light";document.documentElement.setAttribute("data-theme",t);})()</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nc">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">AQ</div>
+      <span class="logo-word">Amiuriq</span>
+    </a>
+    <ul class="nlinks">
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#portfolio">Portfolio</a></li>
+      <li><a href="index.html#team">Team</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:14px">
+      <a href="index.html#contact" class="btn btn-p desk">Get Started <i class="fas fa-arrow-right"></i></a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+      <div class="hbg" id="hbg"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mnav" id="mnav">
+  <button class="mnav-x" id="mnx">✕</button>
+  <a href="index.html#services" class="ml">Services</a>
+  <a href="index.html#about" class="ml">About</a>
+  <a href="index.html#portfolio" class="ml">Portfolio</a>
+  <a href="index.html#team" class="ml">Team</a>
+  <a href="blog.html" class="ml">Blog</a>
+  <a href="index.html#contact" class="ml">Contact</a>
+</div>
+
+<!-- BLOG HERO -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="blog-badge"><span class="dot"></span> Amiuriq Insights</div>
+    <h1 class="blog-hero-title">Ideas That <span class="gt">Shape</span> the Future</h1>
+    <p class="blog-hero-sub">Dive into expert articles on web development, AI, cloud computing, mobile apps, cybersecurity, and the future of digital business.</p>
+    <a href="#blog-posts" class="btn btn-p">Explore Articles <i class="fas fa-arrow-down"></i></a>
+    <div class="blog-hero-stats">
+      <div><div class="bhs-n">24+</div><div class="bhs-l">Articles Published</div></div>
+      <div><div class="bhs-n">6</div><div class="bhs-l">Topic Categories</div></div>
+      <div><div class="bhs-n">5K+</div><div class="bhs-l">Monthly Readers</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG CONTENT -->
+<div id="blog-posts">
+  <!-- SEARCH & FILTER -->
+  <div class="blog-controls">
+    <div class="container">
+      <div class="blog-search-wrap">
+        <div class="blog-search">
+          <i class="fas fa-search si"></i>
+          <input type="text" id="blogSearch" placeholder="Search articles..." oninput="filterPosts()">
+        </div>
+        <div class="blog-cats">
+          <button class="bcat-btn active" data-cat="all" onclick="setCat(this,'all')">All</button>
+          <button class="bcat-btn" data-cat="ai" onclick="setCat(this,'ai')">AI & ML</button>
+          <button class="bcat-btn" data-cat="web" onclick="setCat(this,'web')">Web Dev</button>
+          <button class="bcat-btn" data-cat="mobile" onclick="setCat(this,'mobile')">Mobile</button>
+          <button class="bcat-btn" data-cat="cloud" onclick="setCat(this,'cloud')">Cloud</button>
+          <button class="bcat-btn" data-cat="security" onclick="setCat(this,'security')">Security</button>
+          <button class="bcat-btn" data-cat="design" onclick="setCat(this,'design')">UI/UX</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURED POST -->
+  <div class="bfeatured">
+    <div class="container">
+      <div class="bfeat-card fu" data-cat="ai">
+        <div class="bfeat-img">
+          <div class="bfeat-img-bg bi1">🤖</div>
+          <div class="bfeat-badge">AI & Machine Learning</div>
+          <div class="bfeat-label">⭐ Featured</div>
+        </div>
+        <div class="bfeat-body">
+          <div class="bfeat-meta">
+            <span class="bfeat-cat">AI & ML</span>
+            <span class="bfeat-date"><i class="fas fa-calendar-alt"></i> March 10, 2026</span>
+            <span class="bfeat-date"><i class="fas fa-clock"></i> 8 min read</span>
+          </div>
+          <h2 class="bfeat-title">How Large Language Models Are Transforming Enterprise Software in 2026</h2>
+          <p class="bfeat-desc">From automated code review to intelligent customer support, LLMs have moved well beyond the hype cycle. We break down real-world enterprise use cases, pitfalls to avoid, and what every CTO should know before their next AI investment.</p>
+          <div class="bfeat-foot">
+            <div class="bfeat-author">
+              <div class="bfeat-av">MA</div>
+              <div class="bfeat-ainfo">
+                <div class="bfeat-aname">Mohamed Suhail</div>
+                <div class="bfeat-arole">Tech Lead, Amiuriq</div>
+              </div>
+            </div>
+            <a href="#" class="btn btn-p" style="padding:10px 22px;font-size:14px">Read Article <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOG GRID -->
+  <div class="blog-wrap">
+    <div class="container">
+      <div class="blog-grid" id="blogGrid">
+
+        <!-- Post 1 -->
+        <article class="bcard fu" data-cat="web" data-title="building scalable web apps with next.js and edge computing">
+          <div class="bcard-img">
+            <div class="bcard-img-bg bi2">🌐</div>
+            <div class="bcard-cat-badge">Web Dev</div>
+          </div>
+          <div class="bcard-body">
+            <div class="bcard-meta">
+              <span class="bcard-date"><i class="fas fa-calendar-alt"></i> Mar 5, 2026</span>
+              <span class="bcard-read"><i class="fas fa-clock"></i> 6 min</span>
+            </div>
+            <h3 class="bcard-title">Building Scalable Web Apps with Next.js and Edge Computing</h3>
+            <p class="bcard-desc">Edge-first architectures are no longer optional. Learn how to leverage Next.js 15 and Vercel Edge Runtime to serve millions of users with sub-50ms latency.</p>
+            <div class="bcard-foot">
+              <div class="bcard-author">
+                <div class="bcard-av">JA</div>
+                <span class="bcard-aname">Jazeel Ahamed</span>
+              </div>
+              <a href="#" class="bcard-link">Read <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="bcard fu" data-cat="mobile" data-title="flutter vs react native the 2026 verdict">
+          <div class="bcard-img">
+            <div class="bcard-img-bg bi3">📱</div>
+            <div class="bcard-cat-badge">Mobile</div>
+          </div>
+          <div class="bcard-body">
+            <div class="bcard-meta">
+              <span class="bcard-date"><i class="fas fa-calendar-alt"></i> Feb 28, 2026</span>
+              <span class="bcard-read"><i class="fas fa-clock"></i> 7 min</span>
+            </div>
+            <h3 class="bcard-title">Flutter vs React Native: The 2026 Verdict</h3>
+            <p class="bcard-desc">After years of debate, which cross-platform framework truly wins for enterprise mobile apps? We tested both on 5 real client projects — here are the honest results.</p>
+            <div class="bcard-foot">
+              <div class="bcard-author">
+                <div class="bcard-av">IA</div>
+                <span class="bcard-aname">Inaam Ahamed</span>
+              </div>
+              <a href="#" class="bcard-link">Read <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="bcard fu" data-cat="cloud" data-title="multi-cloud strategy mistakes that cost companies millions">
+          <div class="bcard-img">
+            <div class="bcard-img-bg bi4">☁️</div>
+            <div class="bcard-cat-badge">Cloud</div>
+          </div>
+          <div class="bcard-body">
+            <div class="bcard-meta">
+              <span class="bcard-date"><i class="fas fa-calendar-alt"></i> Feb 20, 2026</span>
+              <span class="bcard-read"><i class="fas fa-clock"></i> 5 min</span>
+            </div>
+            <h3 class="bcard-title">Multi-Cloud Strategy Mistakes That Cost Companies Millions</h3>
+            <p class="bcard-desc">Multi-cloud promises resilience and cost savings — but poor planning turns it into a budget nightmare. Here are the 7 mistakes we see most often and how to fix them.</p>
+            <div class="bcard-foot">
+              <div class="bcard-author">
+                <div class="bcard-av">MS</div>
+                <span class="bcard-aname">Mohamed Suhail</span>
+              </div>
+              <a href="#" class="bcard-link">Read <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 4 -->
+        <article class="bcard fu" data-cat="security" data-title="zero trust architecture a practical guide for startups">
+          <div class="bcard-img">
+            <div class="bcard-img-bg bi5">🔐</div>
+            <div class="bcard-cat-badge">Security</div>
+          </div>
+          <div class="bcard-body">
+            <div class="bcard-meta">
+              <span class="bcard-date"><i class="fas fa-calendar-alt"></i> Feb 12, 2026</span>
+              <span class="bcard-read"><i class="fas fa-clock"></i> 9 min</span>
+            </div>
+            <h3 class="bcard-title">Zero Trust Architecture: A Practical Guide for Startups</h3>
+            <p class="bcard-desc">Zero Trust isn't just for enterprises. With breaches hitting companies of every size, we walk you through implementing a Zero Trust model on a startup budget.</p>
+            <div class="bcard-foot">
+              <div class="bcard-author">
+                <div class="bcard-av">ZF</div>
+                <span class="bcard-aname">Zeema Fathima</span>
+              </div>
+              <a href="#" class="bcard-link">Read <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 5 -->
+        <article class="bcard fu" data-cat="design" data-title="design systems that scale lessons from 50 product teams">
+          <div class="bcard-img">
+            <div class="bcard-img-bg bi6">🎨</div>
+            <div class="bcard-cat-badge">UI/UX</div>
+          </div>
+          <div class="bcard-body">
+            <div class="bcard-meta">
+              <span class="bcard-date"><i class="fas fa-calendar-alt"></i> Jan 30, 2026</span>
+              <span class="bcard-read"><i class="fas fa-clock"></i> 6 min</span>
+            </div>
+            <h3 class="bcard-title">Design Systems That Scale: Lessons from 50 Product Teams</h3>
+            <p class="bcard-desc">A great design system reduces time-to-ship by up to 60%. We analysed 50 teams' workflows and distilled the patterns that make design systems actually stick.</p>
+            <div class="bcard-foot">
+              <div class="bcard-author">
+                <div class="bcard-av">MS</div>
+                <span class="bcard-aname">Mohamed Suhail</span>
+              </div>
+              <a href="#" class="bcard-link">Read <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 6 -->
+        <article class="bcard fu" data-cat="ai" data-title="building your first rag pipeline with python and vector databases">
+          <div class="bcard-img">
+            <div class="bcard-img-bg bi1">🧠</div>
+            <div class="bcard-cat-badge">AI & ML</div>
+          </div>
+          <div class="bcard-body">
+            <div class="bcard-meta">
+              <span class="bcard-date"><i class="fas fa-calendar-alt"></i> Jan 18, 2026</span>
+              <span class="bcard-read"><i class="fas fa-clock"></i> 11 min</span>
+            </div>
+            <h3 class="bcard-title">Building Your First RAG Pipeline with Python and Vector Databases</h3>
+            <p class="bcard-desc">Retrieval-Augmented Generation is reshaping how we build knowledge-aware AI. This hands-on tutorial takes you from zero to a working RAG system using LangChain and Pinecone.</p>
+            <div class="bcard-foot">
+              <div class="bcard-author">
+                <div class="bcard-av">JA</div>
+                <span class="bcard-aname">Jazeel Ahamed</span>
+              </div>
+              <a href="#" class="bcard-link">Read <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 7 -->
+        <article class="bcard fu" data-cat="web" data-title="api security best practices for rest and graphql in 2026">
+          <div class="bcard-img">
+            <div class="bcard-img-bg bi2">🔗</div>
+            <div class="bcard-cat-badge">Web Dev</div>
+          </div>
+          <div class="bcard-body">
+            <div class="bcard-meta">
+              <span class="bcard-date"><i class="fas fa-calendar-alt"></i> Jan 8, 2026</span>
+              <span class="bcard-read"><i class="fas fa-clock"></i> 7 min</span>
+            </div>
+            <h3 class="bcard-title">API Security Best Practices for REST and GraphQL in 2026</h3>
+            <p class="bcard-desc">APIs are the backbone of modern software — and the #1 attack surface. From rate limiting to schema introspection, here's how to lock down your APIs without slowing developers down.</p>
+            <div class="bcard-foot">
+              <div class="bcard-author">
+                <div class="bcard-av">IA</div>
+                <span class="bcard-aname">Inaam Ahamed</span>
+              </div>
+              <a href="#" class="bcard-link">Read <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 8 -->
+        <article class="bcard fu" data-cat="cloud" data-title="kubernetes cost optimisation cut your cloud bill by 40 percent">
+          <div class="bcard-img">
+            <div class="bcard-img-bg bi3">⚙️</div>
+            <div class="bcard-cat-badge">Cloud</div>
+          </div>
+          <div class="bcard-body">
+            <div class="bcard-meta">
+              <span class="bcard-date"><i class="fas fa-calendar-alt"></i> Dec 22, 2025</span>
+              <span class="bcard-read"><i class="fas fa-clock"></i> 8 min</span>
+            </div>
+            <h3 class="bcard-title">Kubernetes Cost Optimisation: Cut Your Cloud Bill by 40%</h3>
+            <p class="bcard-desc">Over-provisioned pods, idle namespaces, and forgotten PVCs are silently draining budgets. This guide covers the exact techniques our engineers use to cut K8s costs for every client.</p>
+            <div class="bcard-foot">
+              <div class="bcard-author">
+                <div class="bcard-av">MS</div>
+                <span class="bcard-aname">Mohamed Suhail</span>
+              </div>
+              <a href="#" class="bcard-link">Read <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 9 -->
+        <article class="bcard fu" data-cat="mobile" data-title="offline first mobile apps architecture patterns that work">
+          <div class="bcard-img">
+            <div class="bcard-img-bg bi4">📶</div>
+            <div class="bcard-cat-badge">Mobile</div>
+          </div>
+          <div class="bcard-body">
+            <div class="bcard-meta">
+              <span class="bcard-date"><i class="fas fa-calendar-alt"></i> Dec 10, 2025</span>
+              <span class="bcard-read"><i class="fas fa-clock"></i> 6 min</span>
+            </div>
+            <h3 class="bcard-title">Offline-First Mobile Apps: Architecture Patterns That Work</h3>
+            <p class="bcard-desc">Users expect apps to work everywhere — even in the Colombo underground. We explore sync conflict resolution, local-first data models, and the libraries that make offline seamless.</p>
+            <div class="bcard-foot">
+              <div class="bcard-author">
+                <div class="bcard-av">ZF</div>
+                <span class="bcard-aname">Zeema Fathima</span>
+              </div>
+              <a href="#" class="bcard-link">Read <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- No results message -->
+        <div id="noResults" style="display:none;grid-column:1/-1;text-align:center;padding:60px 0">
+          <div style="font-size:48px;margin-bottom:16px">🔍</div>
+          <h3 style="font-size:20px;margin-bottom:10px;color:var(--txt)">No articles found</h3>
+          <p style="color:var(--muted)">Try a different search term or category.</p>
+        </div>
+
+      </div>
+
+      <!-- PAGINATION -->
+      <div class="blog-pagination">
+        <button class="pag-btn arrow"><i class="fas fa-chevron-left"></i></button>
+        <button class="pag-btn active">1</button>
+        <button class="pag-btn">2</button>
+        <button class="pag-btn">3</button>
+        <button class="pag-btn arrow"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="blog-newsletter">
+  <div class="container">
+    <div class="newsletter-inner fu">
+      <span class="slabel"><i class="fas fa-envelope"></i> Stay Updated</span>
+      <h2>Never Miss an <span class="gt">Insight</span></h2>
+      <p>Join 5,000+ developers and tech leaders who get our latest articles, tutorials, and industry trends delivered straight to their inbox — no spam, ever.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+        <input type="email" placeholder="your@email.com" required>
+        <button type="submit" class="btn btn-p">Subscribe <i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="fgrid">
+      <div class="fbrand">
+        <a href="index.html" class="logo" style="gap:9px">
+          <div class="logo-icon" style="width:32px;height:32px;font-size:14px;border-radius:9px">AQ</div>
+          <span class="logo-word" style="font-size:20px">Amiuriq</span>
+        </a>
+        <p>Building tomorrow's digital solutions today. We craft software that transforms businesses and drives real growth.</p>
+        <div class="fsocs">
+          <a href="#" class="socbtn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="socbtn"><i class="fab fa-github"></i></a>
+          <a href="#" class="socbtn"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="socbtn"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="fcol"><h4>Company</h4><ul><li><a href="index.html#about">About Us</a></li><li><a href="index.html#team">Our Team</a></li><li><a href="index.html#portfolio">Portfolio</a></li><li><a href="index.html#contact">Careers</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+      <div class="fcol"><h4>Services</h4><ul><li><a href="web-development.html">Web Development</a></li><li><a href="mobile-app-development.html">Mobile Apps</a></li><li><a href="ai-machine-learning.html">AI & ML</a></li><li><a href="cloud-solutions.html">Cloud Solutions</a></li><li><a href="cybersecurity.html">Cybersecurity</a></li></ul></div>
+      <div class="fcol"><h4>Legal</h4><ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li><li><a href="cookie-policy.html">Cookie Policy</a></li></ul></div>
+    </div>
+    <div class="fbot">
+      <p>© 2026 Amiuriq Pvt Ltd. All rights reserved.</p>
+      <div class="fblinks"><a href="privacy-policy.html">Privacy</a><a href="terms-of-service.html">Terms</a><a href="index.html">Sitemap</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// NAV SCROLL
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50));
+
+// MOBILE NAV
+const hbg=document.getElementById('hbg'),mnav=document.getElementById('mnav'),mnx=document.getElementById('mnx');
+hbg.addEventListener('click',()=>{mnav.classList.add('open');document.body.style.overflow='hidden'});
+mnx.addEventListener('click',()=>{mnav.classList.remove('open');document.body.style.overflow=''});
+document.querySelectorAll('.ml').forEach(l=>l.addEventListener('click',()=>{mnav.classList.remove('open');document.body.style.overflow=''}));
+
+// SCROLL REVEAL
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+
+// THEME TOGGLE
+const themeBtn=document.getElementById('themeToggle');
+function applyTheme(t){
+  document.documentElement.setAttribute('data-theme',t);
+  localStorage.setItem('aq-theme',t);
+  themeBtn.innerHTML=t==='dark'?'<i class="fas fa-sun"></i>':'<i class="fas fa-moon"></i>';
+}
+applyTheme(localStorage.getItem('aq-theme')||'light');
+themeBtn.addEventListener('click',()=>{
+  const cur=document.documentElement.getAttribute('data-theme');
+  applyTheme(cur==='dark'?'light':'dark');
+});
+
+// CATEGORY FILTER
+let activeCategory='all';
+function setCat(btn,cat){
+  document.querySelectorAll('.bcat-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  activeCategory=cat;
+  filterPosts();
+}
+
+function filterPosts(){
+  const query=document.getElementById('blogSearch').value.toLowerCase().trim();
+  const cards=document.querySelectorAll('#blogGrid .bcard');
+  let visible=0;
+  cards.forEach(c=>{
+    const catMatch=activeCategory==='all'||c.dataset.cat===activeCategory;
+    const titleMatch=!query||c.dataset.title.includes(query);
+    const show=catMatch&&titleMatch;
+    c.style.display=show?'flex':'none';
+    if(show)visible++;
+  });
+  document.getElementById('noResults').style.display=visible===0?'block':'none';
+}
+
+// NEWSLETTER
+function handleNewsletter(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('button');
+  btn.innerHTML='<i class="fas fa-check"></i> Subscribed!';
+  btn.style.background='linear-gradient(135deg,#48C78E,#00D4FF)';
+  setTimeout(()=>{btn.innerHTML='Subscribe <i class="fas fa-paper-plane"></i>';btn.style.background='';e.target.reset()},3000);
+}
+</script>
+</body>
+</html>
