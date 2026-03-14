@@ -86,7 +86,7 @@ h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:700}
 footer{background:rgba(26,8,8,.96);color:rgba(255,255,255,.7);padding:60px 0 30px}
 .fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
 .fbrand p{font-size:14px;line-height:1.75;margin-top:14px;color:rgba(255,255,255,.5)}
-.logo-ft{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:800;text-decoration:none;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.logo-ft{display:flex;align-items:center;gap:9px;text-decoration:none}
 .fsocs{display:flex;gap:10px;margin-top:20px}
 .socbtn{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:13px;text-decoration:none;transition:all .3s}
 .socbtn:hover{background:rgba(217,64,64,.2);border-color:var(--p);color:#fff}
@@ -100,7 +100,10 @@ footer{background:rgba(26,8,8,.96);color:rgba(255,255,255,.7);padding:60px 0 30p
 <body>
 <nav id="nav">
   <div class="nc">
-    <a href="index.html" class="logo">Amiuri<span style="font-family:'Bebas Neue',sans-serif;font-weight:900;font-size:1.15em;background:linear-gradient(135deg,#D94040,#FF6B35);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 10px rgba(217,64,64,.6))">Q</span></a>
+    <a href="index.html" class="logo">
+      <div class="logo-icon">A</div>
+      <span class="logo-word">Amiuriq</span>
+    </a>
     <ul class="nlinks">
       <li><a href="index.html">Home</a></li><li><a href="index.html#services">Services</a></li><li><a href="index.html#portfolio">Portfolio</a></li><li><a href="index.html#about">About</a></li>
       <li><a href="index.html#contact" class="btn btn-p" style="padding:9px 20px;font-size:13px">Get a Quote</a></li>
@@ -232,7 +235,7 @@ footer{background:rgba(26,8,8,.96);color:rgba(255,255,255,.7);padding:60px 0 30p
 <footer>
   <div class="container">
     <div class="fgrid">
-      <div class="fbrand"><a href="index.html" class="logo-ft">Amiuriq</a><p>Building tomorrow's digital solutions today. We craft software that transforms businesses and drives real growth.</p><div class="fsocs"><a href="#" class="socbtn"><i class="fab fa-linkedin-in"></i></a><a href="#" class="socbtn"><i class="fab fa-github"></i></a><a href="#" class="socbtn"><i class="fab fa-twitter"></i></a><a href="#" class="socbtn"><i class="fab fa-instagram"></i></a></div></div>
+      <div class="fbrand"><a href="index.html" class="logo-ft"><div class="logo-icon" style="width:30px;height:30px;font-size:18px;border-radius:8px">A</div><span class="logo-word" style="font-size:18px">Amiuriq</span></a><p>Building tomorrow's digital solutions today. We craft software that transforms businesses and drives real growth.</p><div class="fsocs"><a href="#" class="socbtn"><i class="fab fa-linkedin-in"></i></a><a href="#" class="socbtn"><i class="fab fa-github"></i></a><a href="#" class="socbtn"><i class="fab fa-twitter"></i></a><a href="#" class="socbtn"><i class="fab fa-instagram"></i></a></div></div>
       <div class="fcol"><h4>Services</h4><ul><li><a href="web-development.html">Web Development</a></li><li><a href="mobile-app-development.html">Mobile Apps</a></li><li><a href="ai-machine-learning.html">AI &amp; ML</a></li><li><a href="cloud-solutions.html">Cloud Solutions</a></li><li><a href="cybersecurity.html">Cybersecurity</a></li></ul></div>
       <div class="fcol"><h4>Company</h4><ul><li><a href="index.html#about">About Us</a></li><li><a href="index.html#team">Our Team</a></li><li><a href="index.html#portfolio">Portfolio</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
       <div class="fcol"><h4>Legal</h4><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Cookie Policy</a></li></ul></div>

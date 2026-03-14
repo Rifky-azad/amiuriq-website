@@ -46,8 +46,11 @@ section{padding:100px 0;position:relative}
 #nav{position:fixed;top:0;width:100%;z-index:1000;padding:20px 0;transition:all .3s}
 #nav.scrolled{background:rgba(255,245,245,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(217,64,64,.15);padding:14px 0}
 .nc{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:800;text-decoration:none;background:linear-gradient(90deg,#D94040,#FF6B35);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.5px;transition:transform .3s,filter .3s}
-.logo:hover{transform:scale(1.08);filter:drop-shadow(0 0 16px rgba(217,64,64,.7))}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;transition:transform .3s;line-height:1}
+.logo:hover{transform:scale(1.04)}
+.logo:hover .logo-icon{box-shadow:0 6px 30px rgba(217,64,64,.7)}
+.logo-icon{width:40px;height:40px;background:linear-gradient(135deg,#D94040,#FF6B35);border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 18px rgba(217,64,64,.45);font-family:'Bebas Neue',sans-serif;font-size:24px;color:#fff;letter-spacing:0;transition:box-shadow .3s}
+.logo-word{font-family:'Space Grotesk',sans-serif;font-size:23px;font-weight:800;background:linear-gradient(90deg,#D94040,#FF6B35);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px;line-height:1}
 .nlinks{display:flex;align-items:center;gap:34px;list-style:none}
 .nlinks a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;transition:color .3s}
 .nlinks a:hover{color:var(--txt)}
@@ -312,7 +315,10 @@ footer{background:rgba(255,224,224,.7);border-top:1px solid rgba(217,64,64,.15);
 <!-- NAV -->
 <nav id="nav">
   <div class="nc">
-    <a href="#" class="logo" id="navLogo">Amiuriq</a>
+    <a href="#" class="logo" id="navLogo">
+      <div class="logo-icon">A</div>
+      <span class="logo-word">Amiuriq</span>
+    </a>
     <ul class="nlinks">
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
@@ -747,7 +753,10 @@ footer{background:rgba(255,224,224,.7);border-top:1px solid rgba(217,64,64,.15);
   <div class="container">
     <div class="fgrid">
       <div class="fbrand">
-        <a href="#" class="logo" style="font-size:26px">Amiuriq</a>
+        <a href="#" class="logo" style="gap:9px">
+          <div class="logo-icon" style="width:32px;height:32px;font-size:19px;border-radius:9px">A</div>
+          <span class="logo-word" style="font-size:20px">Amiuriq</span>
+        </a>
         <p>Building tomorrow's digital solutions today. We craft software that transforms businesses and drives real growth.</p>
         <div class="fsocs">
           <a href="#" class="socbtn"><i class="fab fa-linkedin-in"></i></a>
@@ -768,20 +777,6 @@ footer{background:rgba(255,224,224,.7);border-top:1px solid rgba(217,64,64,.15);
 </footer>
 
 <script>
-// LOGO LETTER ANIMATION
-(function(){
-  const el=document.getElementById('navLogo');
-  const text='Amiuriq';
-  const styleEl=document.createElement('style');
-  styleEl.textContent=`@keyframes letterDrop{to{opacity:1;transform:translateY(0)}}`;
-  document.head.appendChild(styleEl);
-  el.innerHTML=text.split('').map((l,i)=>{
-    if(i===text.length-1){
-      return `<span style="display:inline-block;opacity:0;transform:translateY(-20px);animation:letterDrop .5s ease ${i*80}ms forwards;font-family:'Bebas Neue',sans-serif;font-size:1.28em;background:linear-gradient(135deg,#D94040,#FF6B35);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 14px rgba(217,64,64,.7)) drop-shadow(0 2px 6px rgba(217,64,64,.4));position:relative;top:1px;margin-left:1px">Q</span>`;
-    }
-    return `<span style="display:inline-block;opacity:0;transform:translateY(-20px);background:linear-gradient(90deg,#D94040,#FF6B35);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:letterDrop .5s ease ${i*80}ms forwards">${l}</span>`;
-  }).join('');
-})();
 
 // NAV SCROLL
 const nav=document.getElementById('nav');
