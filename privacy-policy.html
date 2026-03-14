@@ -121,6 +121,17 @@ footer{background:rgba(26,8,8,.96);color:rgba(255,255,255,.7);padding:60px 0 30p
 [data-theme=dark] .toc-list a:hover{background:rgba(60,120,255,.1)}
 .theme-toggle{background:rgba(60,120,255,.1);border:1px solid rgba(60,120,255,.2);border-radius:50%;width:36px;height:36px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--p);font-size:14px;transition:background .3s,transform .3s;flex-shrink:0}
 .theme-toggle:hover{background:rgba(60,120,255,.22);transform:rotate(20deg)}
+[data-theme=dark] #contact{background:#04091a;position:relative;overflow:hidden}
+[data-theme=dark] #contact::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 55% at 15% 25%,rgba(30,80,220,.32) 0%,transparent 65%),radial-gradient(ellipse 55% 65% at 85% 75%,rgba(60,20,200,.22) 0%,transparent 65%),radial-gradient(ellipse 45% 45% at 55% 45%,rgba(10,50,180,.18) 0%,transparent 60%);animation:cGlow 9s ease-in-out infinite alternate;pointer-events:none;z-index:0}
+[data-theme=dark] #contact::after{content:'';position:absolute;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(60,120,255,.12) 0%,transparent 70%);top:-80px;right:-60px;animation:cOrb 12s ease-in-out infinite;pointer-events:none;z-index:0}
+[data-theme=dark] #contact .container{position:relative;z-index:1}
+[data-theme=dark] #contact .cinfo h2{color:#e2eaf5}
+[data-theme=dark] #contact .cinfo p{color:#9ab0cc}
+[data-theme=dark] #contact .cival{color:#e2eaf5}
+[data-theme=dark] #contact .cilbl{color:#6a88b0}
+[data-theme=dark] #contact .cic{background:rgba(60,120,255,.12);border-color:rgba(60,120,255,.25);color:#6090ff}
+@keyframes cGlow{0%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}100%{opacity:.75;transform:scale(1.02)}}
+@keyframes cOrb{0%{transform:translate(0,0) scale(1)}33%{transform:translate(-40px,30px) scale(1.15)}66%{transform:translate(20px,-20px) scale(.9)}100%{transform:translate(0,0) scale(1)}}
 [data-theme=dark] footer{background:rgba(4,10,32,.97);border-top-color:rgba(60,120,255,.15)}
 [data-theme=dark] .fbot{border-top-color:rgba(60,120,255,.15)}
 [data-theme=dark] .fbot p,[data-theme=dark] .fblinks a{color:#9ab0cc}
