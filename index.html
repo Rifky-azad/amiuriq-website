@@ -777,7 +777,7 @@ footer{background:rgba(255,224,224,.7);border-top:1px solid rgba(217,64,64,.15);
   document.head.appendChild(styleEl);
   el.innerHTML=text.split('').map((l,i)=>{
     if(i===text.length-1){
-      return `<span style="display:inline-block;opacity:0;transform:translateY(-20px);animation:letterDrop .5s ease ${i*80}ms forwards;font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.05em;background:linear-gradient(135deg,#D94040,#FF6B35);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 10px rgba(217,64,64,.55));letter-spacing:-1px;vertical-align:baseline">${l}</span>`;
+      return `<span style="display:inline-block;opacity:0;transform:translateY(-20px);animation:letterDrop .5s ease ${i*80}ms forwards;font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.18em;background:linear-gradient(135deg,#D94040,#FF6B35);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 14px rgba(217,64,64,.7)) drop-shadow(0 2px 6px rgba(217,64,64,.4));position:relative;top:-3px;margin-left:1px">Q</span>`;
     }
     return `<span style="display:inline-block;opacity:0;transform:translateY(-20px);background:linear-gradient(90deg,#D94040,#FF6B35);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:letterDrop .5s ease ${i*80}ms forwards">${l}</span>`;
   }).join('');
