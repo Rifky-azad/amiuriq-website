@@ -309,23 +309,6 @@ footer{background:rgba(0,0,0,.45);border-top:1px solid var(--cbr);padding:80px 0
 /* ===== CURSOR GLOW ===== */
 #cursor-glow{position:fixed;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(108,99,255,.08) 0%,transparent 70%);pointer-events:none;z-index:0;transform:translate(-50%,-50%);transition:left .12s ease,top .12s ease}
 
-/* ===== SECTION ORBS ===== */
-.sec-orbs{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
-.sec-orb{position:absolute;border-radius:50%;filter:blur(110px);opacity:.09}
-.sec-orb.a{width:650px;height:650px;background:#6C63FF;top:-200px;right:-180px;animation:secOrbA 20s ease-in-out infinite}
-.sec-orb.b{width:500px;height:500px;background:#00D4FF;bottom:-160px;left:-120px;animation:secOrbB 24s ease-in-out infinite}
-.sec-orb.c{width:380px;height:380px;background:#FF6B9D;top:35%;left:40%;animation:secOrbC 16s ease-in-out infinite}
-@keyframes secOrbA{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-90px,70px) scale(1.25)}}
-@keyframes secOrbB{0%,100%{transform:translate(0,0)}50%{transform:translate(80px,-55px) scale(.8)}}
-@keyframes secOrbC{0%,100%{transform:translate(0,0)}50%{transform:translate(-55px,65px) scale(1.2)}}
-
-/* ===== FLOATING GEO SHAPES ===== */
-@keyframes floatGeo{0%,100%{transform:translateY(0) rotate(0deg);opacity:.07}50%{transform:translateY(-28px) rotate(180deg);opacity:.16}}
-.geo{position:absolute;pointer-events:none}
-.geo-hex{clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);border:none;background:rgba(108,99,255,.15);animation:floatGeo var(--dur,9s) ease-in-out var(--del,0s) infinite;width:var(--sz,54px);height:var(--sz,54px)}
-.geo-ring{border-radius:50%;border:1px solid rgba(0,212,255,.25);background:transparent;animation:floatGeo var(--dur,11s) ease-in-out var(--del,0s) infinite;width:var(--sz,70px);height:var(--sz,70px)}
-.geo-tri{clip-path:polygon(50% 0%,0% 100%,100% 100%);background:rgba(255,107,157,.12);animation:floatGeo var(--dur,8s) ease-in-out var(--del,0s) infinite;width:var(--sz,44px);height:var(--sz,44px)}
-.geo-sq{border:1px solid rgba(108,99,255,.2);background:transparent;animation:floatGeo var(--dur,10s) ease-in-out var(--del,0s) infinite;width:var(--sz,40px);height:var(--sz,40px);transform:rotate(45deg)}
 
 /* ===== SHOOTING STARS ===== */
 @keyframes shootStar{0%{transform:translate(0,0);opacity:1}70%{opacity:.6}100%{transform:translate(-900px,540px);opacity:0}}
@@ -430,13 +413,6 @@ footer{background:rgba(0,0,0,.45);border-top:1px solid var(--cbr);padding:80px 0
 
 <!-- SERVICES -->
 <section id="services">
-  <div class="sec-orbs">
-    <div class="sec-orb a"></div><div class="sec-orb b"></div>
-    <div class="geo geo-hex" style="--sz:58px;--dur:9s;--del:0s;top:12%;left:4%"></div>
-    <div class="geo geo-ring" style="--sz:90px;--dur:13s;--del:1.5s;top:55%;right:6%"></div>
-    <div class="geo geo-tri" style="--sz:48px;--dur:7s;--del:0.8s;bottom:18%;left:22%"></div>
-    <div class="geo geo-sq" style="--sz:36px;--dur:11s;--del:3s;top:30%;right:20%"></div>
-  </div>
   <div class="container">
     <div class="sh c">
       <span class="slabel"><i class="fas fa-bolt"></i> What We Offer</span>
@@ -456,12 +432,6 @@ footer{background:rgba(0,0,0,.45);border-top:1px solid var(--cbr);padding:80px 0
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="sec-orbs">
-    <div class="sec-orb b"></div><div class="sec-orb c"></div>
-    <div class="geo geo-ring" style="--sz:100px;--dur:15s;--del:0s;top:8%;left:8%"></div>
-    <div class="geo geo-hex" style="--sz:44px;--dur:8s;--del:2s;bottom:20%;right:10%"></div>
-    <div class="geo geo-tri" style="--sz:55px;--dur:10s;--del:0.5s;top:50%;right:25%"></div>
-  </div>
   <div class="container">
     <div class="agrid">
       <div class="avis">
@@ -497,12 +467,6 @@ footer{background:rgba(0,0,0,.45);border-top:1px solid var(--cbr);padding:80px 0
 
 <!-- PORTFOLIO -->
 <section id="portfolio">
-  <div class="sec-orbs">
-    <div class="sec-orb a"></div><div class="sec-orb c"></div>
-    <div class="geo geo-sq" style="--sz:50px;--dur:12s;--del:0s;top:5%;left:12%"></div>
-    <div class="geo geo-ring" style="--sz:75px;--dur:9s;--del:1s;bottom:10%;right:5%"></div>
-    <div class="geo geo-hex" style="--sz:40px;--dur:11s;--del:2.5s;top:45%;left:3%"></div>
-  </div>
   <div class="container">
     <div class="sh c">
       <span class="slabel"><i class="fas fa-briefcase"></i> Our Work</span>
@@ -580,12 +544,6 @@ footer{background:rgba(0,0,0,.45);border-top:1px solid var(--cbr);padding:80px 0
 
 <!-- TECH STACK -->
 <section id="tech">
-  <div class="sec-orbs">
-    <div class="sec-orb b"></div><div class="sec-orb a"></div>
-    <div class="geo geo-tri" style="--sz:60px;--dur:8s;--del:0s;top:15%;right:8%"></div>
-    <div class="geo geo-ring" style="--sz:85px;--dur:14s;--del:1.8s;bottom:12%;left:7%"></div>
-    <div class="geo geo-sq" style="--sz:42px;--dur:9s;--del:3.5s;top:60%;right:18%"></div>
-  </div>
   <div class="container">
     <div class="sh c">
       <span class="slabel"><i class="fas fa-code"></i> Technologies</span>
