@@ -135,8 +135,18 @@ footer{background:rgba(26,8,8,.96);color:rgba(255,255,255,.7);padding:60px 0 30p
 [data-theme=dark] .toc-list a:hover{background:rgba(60,120,255,.1)}
 .theme-toggle{background:rgba(60,120,255,.1);border:1px solid rgba(60,120,255,.2);border-radius:50%;width:36px;height:36px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--p);font-size:14px;transition:background .3s,transform .3s;flex-shrink:0}
 .theme-toggle:hover{background:rgba(60,120,255,.22);transform:rotate(20deg)}
+[data-theme=dark] footer{background:rgba(4,10,32,.97);border-top-color:rgba(60,120,255,.15)}
+[data-theme=dark] .fbot{border-top-color:rgba(60,120,255,.15)}
+[data-theme=dark] .fbot p,[data-theme=dark] .fblinks a{color:#9ab0cc}
+[data-theme=dark] .fblinks a:hover{color:#e2eaf5}
+[data-theme=dark] .fcol h4{color:#e2eaf5}
+[data-theme=dark] .fcol ul li a{color:#9ab0cc}
+[data-theme=dark] .fcol ul li a:hover{color:#e2eaf5}
+[data-theme=dark] .fbrand p{color:#9ab0cc}
+[data-theme=dark] .socbtn{background:rgba(60,120,255,.08);border-color:rgba(60,120,255,.18);color:#9ab0cc}
+[data-theme=dark] .socbtn:hover{background:rgba(60,120,255,.22);border-color:rgba(60,120,255,.4);color:#e2eaf5}
 </style>
-<script>(function(){var t=localStorage.getItem("aq-theme")||(window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t);})()</script>
+<script>(function(){var t=localStorage.getItem("aq-theme")||"light";document.documentElement.setAttribute("data-theme",t);})()</script>
 </head>
 <body>
 <nav id="nav">
