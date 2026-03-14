@@ -39,8 +39,8 @@ section{padding:100px 0;position:relative}
 .btn-s:hover{border-color:var(--p);background:rgba(108,99,255,.1);transform:translateY(-2px)}
 .btn::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transition:.5s}
 .btn:hover::after{left:100%}
-.gc{background:rgba(255,255,255,.75);border:1px solid rgba(108,99,255,.15);border-radius:20px;backdrop-filter:blur(20px);box-shadow:0 4px 24px rgba(108,99,255,.06);transition:all .3s}
-.gc:hover{border-color:rgba(108,99,255,.3);background:rgba(255,255,255,.9);transform:translateY(-6px);box-shadow:0 20px 60px rgba(108,99,255,.12)}
+.gc{background:rgba(255,255,255,.75);border:1px solid rgba(108,99,255,.15);border-radius:20px;backdrop-filter:blur(20px);box-shadow:0 4px 24px rgba(108,99,255,.06);transition:all .45s cubic-bezier(.4,0,.2,1)}
+.gc:hover{border-color:rgba(108,99,255,.3);background:rgba(255,255,255,.9);transform:translateY(-6px);box-shadow:0 24px 64px rgba(108,99,255,.13)}
 
 /* NAV */
 #nav{position:fixed;top:0;width:100%;z-index:1000;padding:20px 0;transition:all .3s}
@@ -97,8 +97,15 @@ section{padding:100px 0;position:relative}
 /* SERVICES */
 #services{background:rgba(255,255,255,.5)}
 .sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.scard{padding:34px 28px}
-.sicon{width:58px;height:58px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:22px}
+.scard{padding:34px 28px;position:relative;overflow:hidden;transition:all .45s cubic-bezier(.4,0,.2,1)}
+.scard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--g1);border-radius:3px 3px 0 0;transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.scard::after{content:'';position:absolute;top:0;left:-100%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);transition:left .65s ease;pointer-events:none;z-index:1}
+.scard:hover{transform:translateY(-10px) scale(1.015);box-shadow:0 30px 70px rgba(217,64,64,.13),0 0 0 1px rgba(217,64,64,.12)!important;background:rgba(255,255,255,.94)!important}
+.scard:hover::before{transform:scaleX(1)}
+.scard:hover::after{left:120%}
+.scard:hover .sicon{transform:translateY(-6px) scale(1.14);box-shadow:0 14px 36px rgba(217,64,64,.22)}
+.scard:hover .slink{gap:12px;color:var(--p)}
+.sicon{width:58px;height:58px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:22px;transition:all .4s cubic-bezier(.34,1.56,.64,1)}
 .si1{background:rgba(108,99,255,.15);color:var(--p2)}
 .si2{background:rgba(0,212,255,.12);color:var(--s)}
 .si3{background:rgba(255,107,157,.12);color:var(--a)}
@@ -107,7 +114,7 @@ section{padding:100px 0;position:relative}
 .si6{background:rgba(255,193,7,.12);color:#FFC107}
 .stname{font-size:19px;margin-bottom:11px}
 .stdesc{color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:18px}
-.slink{color:var(--p2);font-size:14px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:gap .3s}
+.slink{color:var(--p2);font-size:14px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:all .3s}
 .slink:hover{gap:10px}
 
 /* ABOUT */
@@ -118,7 +125,12 @@ section{padding:100px 0;position:relative}
 .agl{position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(217,64,64,.22),transparent);top:-50px;left:-50px;z-index:1}
 .agl2{position:absolute;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,53,.15),transparent);bottom:-30px;right:-30px;z-index:1}
 .sgr{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
-.sbox{background:rgba(217,64,64,.07);border:1px solid rgba(217,64,64,.15);border-radius:16px;padding:22px;text-align:center}
+.sbox{background:rgba(217,64,64,.06);border:1px solid rgba(217,64,64,.15);border-radius:16px;padding:22px;text-align:center;position:relative;overflow:hidden;transition:all .4s cubic-bezier(.4,0,.2,1);cursor:default}
+.sbox::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--g1);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+.sbox::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 120%,rgba(217,64,64,.12),transparent 70%);opacity:0;transition:opacity .4s}
+.sbox:hover{transform:translateY(-5px) scale(1.04);border-color:rgba(217,64,64,.3);box-shadow:0 16px 44px rgba(217,64,64,.13)}
+.sbox:hover::before{transform:scaleX(1)}
+.sbox:hover::after{opacity:1}
 .snum{font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:800;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
 .slb{font-size:13px;color:var(--muted);margin-top:5px}
 .atxt h2{font-size:clamp(30px,4vw,46px);line-height:1.15;margin-bottom:18px;letter-spacing:-1px}
@@ -133,13 +145,16 @@ section{padding:100px 0;position:relative}
 .pfb{padding:8px 22px;border-radius:50px;border:1px solid var(--cbr);background:transparent;color:var(--muted);font-size:14px;font-weight:500;cursor:pointer;transition:all .3s;font-family:'Inter',sans-serif}
 .pfb.active,.pfb:hover{background:var(--p);border-color:var(--p);color:#fff}
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.pcard{border-radius:20px;overflow:hidden;border:1px solid rgba(180,210,255,.35);transition:all .3s;cursor:pointer;background:rgba(255,255,255,.55);backdrop-filter:blur(18px);box-shadow:0 4px 24px rgba(100,160,255,.08)}
-.pcard:hover{transform:translateY(-8px);border-color:rgba(100,180,255,.55);box-shadow:0 20px 60px rgba(80,140,255,.18);background:rgba(255,255,255,.72)}
+.pcard{border-radius:20px;overflow:hidden;border:1px solid rgba(180,210,255,.35);transition:all .45s cubic-bezier(.4,0,.2,1);cursor:pointer;background:rgba(255,255,255,.55);backdrop-filter:blur(18px);box-shadow:0 4px 24px rgba(100,160,255,.08);position:relative}
+.pcard:hover{transform:translateY(-12px);border-color:rgba(217,64,64,.28);box-shadow:0 32px 80px rgba(217,64,64,.14);background:rgba(255,255,255,.88)}
 .pimg{height:220px;position:relative;overflow:hidden}
-.pimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
-.pcard:hover .pimg img{transform:scale(1.08)}
-.pimg::after{content:'';position:absolute;inset:0;background:rgba(100,160,255,.1);transition:.3s}
-.pcard:hover .pimg::after{background:rgba(100,180,255,.18)}
+.pimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.4,0,.2,1)}
+.pcard:hover .pimg img{transform:scale(1.1)}
+.pimg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,5,30,.5) 0%,rgba(10,5,30,.1) 50%,transparent 100%);opacity:0;transition:opacity .45s}
+.pcard:hover .pimg::after{opacity:1}
+.pimg-overlay{position:absolute;bottom:14px;left:14px;z-index:2;opacity:0;transform:translateY(8px);transition:all .4s cubic-bezier(.4,0,.2,1)}
+.pcard:hover .pimg-overlay{opacity:1;transform:translateY(0)}
+.pimg-overlay-badge{background:rgba(255,255,255,.15);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.25);border-radius:50px;padding:5px 14px;font-size:11px;font-weight:600;color:#fff;letter-spacing:.5px}
 .pg1{background:linear-gradient(135deg,#6C63FF,#00D4FF)}
 .pg2{background:linear-gradient(135deg,#FF6B9D,#FF8B6B)}
 .pg3{background:linear-gradient(135deg,#48C78E,#00D4FF)}
@@ -168,11 +183,19 @@ section{padding:100px 0;position:relative}
 #testi{background:var(--dark2)}
 .tslider{overflow:hidden;position:relative}
 .ttrack{display:flex;gap:24px;transition:transform .5s cubic-bezier(.4,0,.2,1)}
-.tcard{flex:0 0 calc(33.333% - 16px);padding:34px}
+.tcard{flex:0 0 calc(33.333% - 16px);padding:34px;position:relative;overflow:hidden;transition:all .45s cubic-bezier(.4,0,.2,1)}
+.tcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--g1);border-radius:3px 3px 0 0;transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.tcard::after{content:'';position:absolute;top:0;left:-100%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent);transition:left .65s ease;pointer-events:none}
+.tcard:hover{transform:translateY(-8px);box-shadow:0 24px 64px rgba(217,64,64,.11)!important;background:rgba(255,255,255,.92)!important}
+.tcard:hover::before{transform:scaleX(1)}
+.tcard:hover::after{left:120%}
+.tcard:hover .tav{transform:scale(1.1);box-shadow:0 8px 28px rgba(217,64,64,.3)}
 .tq{font-size:44px;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:14px;font-family:Georgia,serif}
 .ttxt{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:26px;font-style:italic}
 .tauth{display:flex;align-items:center;gap:13px}
-.tav{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;font-family:'Space Grotesk',sans-serif;color:#fff;flex-shrink:0}
+.tav{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;font-family:'Space Grotesk',sans-serif;color:#fff;flex-shrink:0;transition:all .4s cubic-bezier(.34,1.56,.64,1);position:relative}
+.tav::after{content:'';position:absolute;inset:-3px;border-radius:50%;background:var(--g1);z-index:-1;opacity:0;transition:opacity .4s;filter:blur(6px)}
+.tcard:hover .tav::after{opacity:.5}
 .tan{font-size:15px;font-weight:600}
 .tar{font-size:12px;color:var(--muted);margin-top:2px}
 .tstars{color:#FFC107;font-size:13px;margin-bottom:8px}
@@ -336,7 +359,7 @@ footer{background:rgba(255,224,224,.7);border-top:1px solid rgba(217,64,64,.15);
 [data-theme=dark] .pfb{border-color:rgba(60,120,255,.25);color:#9ab0cc}
 [data-theme=dark] .pcard{border-color:rgba(60,120,255,.22);background:rgba(10,22,60,.55);backdrop-filter:blur(18px)}
 [data-theme=dark] .pinfo{background:rgba(8,18,55,.7);border-top-color:rgba(60,120,255,.2)}
-[data-theme=dark] .pcard:hover{background:rgba(14,30,75,.72);border-color:rgba(60,120,255,.4)}
+[data-theme=dark] .pcard:hover{background:rgba(14,30,75,.72);border-color:rgba(217,64,64,.3);box-shadow:0 32px 80px rgba(217,64,64,.1)}
 [data-theme=dark] .tpill{background:rgba(10,22,60,.92);border-color:rgba(60,120,255,.28);color:#e2eaf5}
 [data-theme=dark] .tpill:hover{background:rgba(60,120,255,.18);color:#fff}
 [data-theme=dark] #services,[data-theme=dark] #portfolio{background:rgba(6,14,42,.5)}
@@ -557,59 +580,59 @@ footer{background:rgba(255,224,224,.7);border-top:1px solid rgba(217,64,64,.15);
     </div>
     <div class="pgrid">
       <div class="pcard fu" data-cat="web">
-        <div class="pimg"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format&q=80" alt="NexCart E-Commerce Platform" loading="lazy"></div>
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format&q=80" alt="NexCart E-Commerce Platform" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">Web App</div><h3 class="ptitle">NexCart E-Commerce Platform</h3><p class="pdesc">Full-featured e-commerce with real-time inventory, AI recommendations & payment gateway.</p><div class="ptags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div></div>
       </div>
       <div class="pcard fu" data-cat="mobile">
-        <div class="pimg"><img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=450&fit=crop&auto=format&q=80" alt="MediConnect Health App" loading="lazy"></div>
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=450&fit=crop&auto=format&q=80" alt="MediConnect Health App" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">Mobile App</div><h3 class="ptitle">MediConnect Health App</h3><p class="pdesc">Telemedicine platform with video consultations and AI-powered symptom checker.</p><div class="ptags"><span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">ML Kit</span></div></div>
       </div>
       <div class="pcard fu" data-cat="ai">
-        <div class="pimg"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format&q=80" alt="SentimentAI Analytics" loading="lazy"></div>
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format&q=80" alt="SentimentAI Analytics" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">AI/ML</div><h3 class="ptitle">SentimentAI Analytics</h3><p class="pdesc">Real-time sentiment analysis processing millions of social posts for actionable insights.</p><div class="ptags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">AWS</span></div></div>
       </div>
       <div class="pcard fu" data-cat="web">
-        <div class="pimg"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=450&fit=crop&auto=format&q=80" alt="FinVault Banking Dashboard" loading="lazy"></div>
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=450&fit=crop&auto=format&q=80" alt="FinVault Banking Dashboard" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">Web App</div><h3 class="ptitle">FinVault Banking Dashboard</h3><p class="pdesc">Secure fintech dashboard with fraud detection, real-time monitoring & advanced analytics.</p><div class="ptags"><span class="tag">Vue.js</span><span class="tag">Django</span><span class="tag">PostgreSQL</span></div></div>
       </div>
       <div class="pcard fu" data-cat="cloud">
-        <div class="pimg"><img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&h=450&fit=crop&auto=format&q=80" alt="LogiTrack Supply Chain" loading="lazy"></div>
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&h=450&fit=crop&auto=format&q=80" alt="LogiTrack Supply Chain" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">Cloud</div><h3 class="ptitle">LogiTrack Supply Chain</h3><p class="pdesc">Cloud-native supply chain with IoT integration, real-time tracking & predictive analytics.</p><div class="ptags"><span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">Kubernetes</span></div></div>
       </div>
       <div class="pcard fu" data-cat="mobile">
-        <div class="pimg"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=450&fit=crop&auto=format&q=80" alt="EduSpark Learning Platform" loading="lazy"></div>
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=450&fit=crop&auto=format&q=80" alt="EduSpark Learning Platform" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">Mobile App</div><h3 class="ptitle">EduSpark Learning Platform</h3><p class="pdesc">Interactive e-learning with gamification, live classes & AI tutoring for 10,000+ students.</p><div class="ptags"><span class="tag">React Native</span><span class="tag">GraphQL</span><span class="tag">Redis</span></div></div>
       </div>
       <div class="pcard fu" data-cat="web">
-        <div class="pimg"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=450&fit=crop&auto=format&q=80" alt="SalesForge CRM" loading="lazy"></div>
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=450&fit=crop&auto=format&q=80" alt="SalesForge CRM" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">Web App</div><h3 class="ptitle">SalesForge CRM Platform</h3><p class="pdesc">Intelligent CRM with sales pipeline automation, lead scoring, and real-time team performance analytics.</p><div class="ptags"><span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span></div></div>
       </div>
       <div class="pcard fu" data-cat="blockchain">
-        <div class="pimg"><img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=450&fit=crop&auto=format&q=80" alt="ChainVault DeFi" loading="lazy"></div>
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=450&fit=crop&auto=format&q=80" alt="ChainVault DeFi" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">Blockchain</div><h3 class="ptitle">ChainVault DeFi Platform</h3><p class="pdesc">Decentralized finance platform with smart contracts, NFT marketplace & crypto wallet integration.</p><div class="ptags"><span class="tag">Solidity</span><span class="tag">Web3.js</span><span class="tag">Ethereum</span></div></div>
       </div>
       <div class="pcard fu" data-cat="ai">
-        <div class="pimg"><img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=450&fit=crop&auto=format&q=80" alt="VisionGuard AI" loading="lazy"></div>
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=450&fit=crop&auto=format&q=80" alt="VisionGuard AI" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">AI/ML</div><h3 class="ptitle">VisionGuard AI Security</h3><p class="pdesc">Real-time computer vision security system with facial recognition, anomaly detection & threat alerts.</p><div class="ptags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">PyTorch</span></div></div>
       </div>
       <div class="pcard fu" data-cat="cloud">
-        <div class="pimg"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=450&fit=crop&auto=format&q=80" alt="SmartHub IoT" loading="lazy"></div>
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=450&fit=crop&auto=format&q=80" alt="SmartHub IoT" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">Cloud</div><h3 class="ptitle">SmartHub IoT Dashboard</h3><p class="pdesc">Centralized IoT management platform monitoring 10,000+ connected devices with predictive maintenance.</p><div class="ptags"><span class="tag">AWS IoT</span><span class="tag">React</span><span class="tag">InfluxDB</span></div></div>
       </div>
       <div class="pcard fu" data-cat="mobile">
-        <div class="pimg"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&h=450&fit=crop&auto=format&q=80" alt="FitPulse Fitness App" loading="lazy"></div>
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&h=450&fit=crop&auto=format&q=80" alt="FitPulse Fitness App" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">Mobile App</div><h3 class="ptitle">FitPulse Fitness Tracker</h3><p class="pdesc">AI-powered fitness app with personalized workout plans, nutrition tracking & wearable device sync.</p><div class="ptags"><span class="tag">Flutter</span><span class="tag">TensorFlow Lite</span><span class="tag">Firebase</span></div></div>
       </div>
       <div class="pcard fu" data-cat="web">
-        <div class="pimg"><img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=450&fit=crop&auto=format&q=80" alt="SocialSphere Platform" loading="lazy"></div>
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=450&fit=crop&auto=format&q=80" alt="SocialSphere Platform" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">Web App</div><h3 class="ptitle">SocialSphere Community</h3><p class="pdesc">Feature-rich social platform with real-time messaging, live streaming, content moderation & monetization.</p><div class="ptags"><span class="tag">React</span><span class="tag">Socket.io</span><span class="tag">MongoDB</span></div></div>
       </div>
       <div class="pcard fu" data-cat="ai">
-        <div class="pimg"><img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=450&fit=crop&auto=format&q=80" alt="PredictIQ Analytics" loading="lazy"></div>
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=450&fit=crop&auto=format&q=80" alt="PredictIQ Analytics" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">AI/ML</div><h3 class="ptitle">PredictIQ Business Analytics</h3><p class="pdesc">Predictive analytics engine using ML to forecast sales trends, customer churn & market opportunities.</p><div class="ptags"><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Tableau</span></div></div>
       </div>
       <div class="pcard fu" data-cat="mobile">
-        <div class="pimg"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&h=450&fit=crop&auto=format&q=80" alt="FoodieGo Delivery App" loading="lazy"></div>
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&h=450&fit=crop&auto=format&q=80" alt="FoodieGo Delivery App" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">Mobile App</div><h3 class="ptitle">FoodieGo Delivery App</h3><p class="pdesc">On-demand food delivery with real-time GPS tracking, restaurant discovery & AI-powered recommendations.</p><div class="ptags"><span class="tag">React Native</span><span class="tag">Node.js</span><span class="tag">Google Maps</span></div></div>
       </div>
     </div>
