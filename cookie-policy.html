@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookie Policy | Amiuriq Pvt Ltd</title>
+<meta name="description" content="Cookie Policy — How Amiuriq Pvt Ltd uses cookies and similar tracking technologies on our website.">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--p:#D94040;--p2:#B83232;--s:#FF6B35;--g1:linear-gradient(135deg,#D94040,#FF6B35);--txt:#1a0808;--muted:#7a4040}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:radial-gradient(ellipse at 15% 10%,rgba(255,120,100,.18) 0%,transparent 50%),radial-gradient(ellipse at 85% 8%,rgba(255,160,80,.14) 0%,transparent 48%),#fff5f5;background-attachment:fixed;color:var(--txt);overflow-x:hidden;line-height:1.6}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#ffe8e8}::-webkit-scrollbar-thumb{background:var(--p);border-radius:3px}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:700}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:50px;font-weight:600;font-size:15px;text-decoration:none;transition:all .3s;cursor:pointer;border:none;font-family:'Inter',sans-serif}
+.btn-p{background:var(--g1);color:#fff;box-shadow:0 4px 20px rgba(217,64,64,.35)}.btn-p:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(217,64,64,.45)}
+
+/* NAV */
+#nav{position:fixed;top:0;width:100%;z-index:1000;padding:20px 0;transition:all .3s}
+#nav.scrolled{background:rgba(255,245,245,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(217,64,64,.15);padding:14px 0}
+.nc{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;transition:transform .3s;line-height:1}
+.logo:hover{transform:scale(1.04)}
+.logo:hover .logo-icon{box-shadow:0 6px 30px rgba(217,64,64,.7)}
+.logo-icon{width:38px;height:38px;background:linear-gradient(135deg,#D94040,#FF6B35);border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 18px rgba(217,64,64,.45);font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:0;transition:box-shadow .3s}
+.logo-word{font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:800;background:linear-gradient(90deg,#D94040,#FF6B35);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px;line-height:1}
+.nlinks{display:flex;align-items:center;gap:28px;list-style:none}
+.nlinks a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;transition:color .3s}
+.nlinks a:hover{color:var(--txt)}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hbg span{width:25px;height:2px;background:var(--txt);border-radius:2px;transition:all .3s}
+.mnav{display:none;position:fixed;inset:0;background:rgba(255,245,245,.97);backdrop-filter:blur(20px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:30px}
+.mnav.open{display:flex}
+.mnav a{color:#1a1a2e;text-decoration:none;font-size:22px;font-weight:600;font-family:'Space Grotesk',sans-serif;transition:all .3s}
+.mnav a:hover{color:var(--p)}
+
+/* LEGAL HERO */
+.legal-hero{padding:140px 0 70px;background:linear-gradient(135deg,#1a0808 0%,#4a1010 60%,#2a0c0c 100%);text-align:center;position:relative;overflow:hidden}
+.legal-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(217,64,64,.2),transparent 60%),radial-gradient(ellipse at 70% 30%,rgba(255,107,53,.15),transparent 55%)}
+.legal-hero .container{position:relative;z-index:2}
+.legal-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(217,64,64,.2);border:1px solid rgba(217,64,64,.4);border-radius:50px;padding:7px 18px;font-size:13px;font-weight:500;color:#ffb3b3;margin-bottom:22px}
+.legal-title{font-size:clamp(36px,5vw,60px);color:#fff;margin-bottom:16px;letter-spacing:-1.5px}
+.legal-meta{color:rgba(255,255,255,.55);font-size:15px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+.legal-meta span{display:flex;align-items:center;gap:6px}
+
+/* LEGAL BODY */
+.legal-wrap{padding:70px 0 90px}
+.legal-layout{display:grid;grid-template-columns:240px 1fr;gap:56px;align-items:start}
+.legal-toc{position:sticky;top:100px;background:rgba(255,255,255,.75);border:1px solid rgba(217,64,64,.12);border-radius:16px;padding:24px;backdrop-filter:blur(20px)}
+.legal-toc h4{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--p);margin-bottom:16px;font-family:'Space Grotesk',sans-serif}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+.toc-list a{text-decoration:none;color:var(--muted);font-size:13px;padding:6px 10px;border-radius:8px;display:block;transition:all .3s;line-height:1.4}
+.toc-list a:hover{background:rgba(217,64,64,.08);color:var(--p)}
+.legal-content{display:flex;flex-direction:column;gap:44px}
+.legal-section{scroll-margin-top:100px}
+.legal-section h2{font-size:22px;color:var(--txt);margin-bottom:16px;padding-left:16px;border-left:3px solid var(--p);line-height:1.3}
+.legal-section p{color:#3a1010;font-size:15px;line-height:1.85;margin-bottom:14px}
+.legal-section p:last-child{margin-bottom:0}
+.legal-section ul{padding-left:20px;margin:12px 0;display:flex;flex-direction:column;gap:8px}
+.legal-section ul li{color:#3a1010;font-size:15px;line-height:1.75}
+.legal-section ul li::marker{color:var(--p)}
+.legal-highlight{background:rgba(217,64,64,.06);border:1px solid rgba(217,64,64,.15);border-radius:12px;padding:18px 22px;margin:16px 0}
+.legal-highlight p{margin:0;font-size:14px}
+.contact-box{background:var(--g1);border-radius:16px;padding:28px;color:#fff}
+.contact-box h3{font-size:18px;margin-bottom:10px;color:#fff}
+.contact-box p{color:rgba(255,255,255,.85);font-size:14px;margin-bottom:6px}
+.contact-box a{color:#fff;font-weight:600}
+
+/* COOKIE TABLE */
+.cookie-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+.cookie-table th{background:var(--g1);color:#fff;padding:12px 16px;text-align:left;font-family:'Space Grotesk',sans-serif;font-size:13px}
+.cookie-table th:first-child{border-radius:10px 0 0 0}
+.cookie-table th:last-child{border-radius:0 10px 0 0}
+.cookie-table td{padding:11px 16px;border-bottom:1px solid rgba(217,64,64,.1);color:#3a1010;vertical-align:top;line-height:1.5}
+.cookie-table tr:last-child td{border-bottom:none}
+.cookie-table tr:nth-child(even) td{background:rgba(217,64,64,.04)}
+.cookie-type-badge{display:inline-block;padding:3px 10px;border-radius:50px;font-size:11px;font-weight:600}
+.badge-essential{background:rgba(72,199,142,.15);color:#2d8a5e}
+.badge-analytics{background:rgba(255,107,53,.15);color:#c04000}
+.badge-pref{background:rgba(108,99,255,.15);color:#4a3da0}
+.badge-marketing{background:rgba(255,107,157,.15);color:#a02060}
+
+/* FOOTER */
+footer{background:rgba(26,8,8,.96);color:rgba(255,255,255,.7);padding:60px 0 30px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.fbrand p{font-size:14px;line-height:1.75;margin-top:14px;color:rgba(255,255,255,.5)}
+.logo-ft{display:flex;align-items:center;gap:9px;text-decoration:none}
+.fsocs{display:flex;gap:10px;margin-top:20px}
+.socbtn{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:13px;text-decoration:none;transition:all .3s}
+.socbtn:hover{background:rgba(217,64,64,.2);border-color:var(--p);color:#fff}
+.fcol h4{font-size:14px;font-weight:600;color:#fff;margin-bottom:18px;font-family:'Space Grotesk',sans-serif}
+.fcol ul{list-style:none}.fcol ul li{margin-bottom:10px}.fcol ul a{text-decoration:none;color:rgba(255,255,255,.5);font-size:14px;transition:color .3s}.fcol ul a:hover{color:#fff}
+.fbot{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:13px;color:rgba(255,255,255,.4)}
+.fblinks{display:flex;gap:20px}.fblinks a{color:rgba(255,255,255,.4);text-decoration:none;font-size:13px}.fblinks a:hover{color:#fff}
+@media(max-width:900px){.legal-layout{grid-template-columns:1fr}.legal-toc{position:static}.cookie-table{font-size:12px}}
+@media(max-width:768px){.fgrid{grid-template-columns:1fr}.hbg{display:flex}.nlinks{display:none}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="nc">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">A</div>
+      <span class="logo-word">Amiuriq</span>
+    </a>
+    <ul class="nlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#portfolio">Portfolio</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact" class="btn btn-p" style="padding:9px 20px;font-size:13px">Get a Quote</a></li>
+    </ul>
+    <div class="hbg" id="hbg"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mnav" id="mnav">
+  <a href="index.html">Home</a>
+  <a href="index.html#services">Services</a>
+  <a href="index.html#portfolio">Portfolio</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#contact" class="btn btn-p">Get a Quote</a>
+</div>
+
+<!-- HERO -->
+<section class="legal-hero">
+  <div class="container">
+    <div class="legal-badge"><i class="fas fa-cookie-bite"></i> Legal Document</div>
+    <h1 class="legal-title">Cookie Policy</h1>
+    <div class="legal-meta">
+      <span><i class="fas fa-calendar"></i> Last Updated: March 14, 2026</span>
+      <span><i class="fas fa-building"></i> Amiuriq Pvt Ltd</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="legal-wrap">
+  <div class="container">
+    <div class="legal-layout">
+
+      <!-- TOC -->
+      <aside class="legal-toc">
+        <h4>Contents</h4>
+        <ul class="toc-list">
+          <li><a href="#what">1. What Are Cookies?</a></li>
+          <li><a href="#why">2. Why We Use Cookies</a></li>
+          <li><a href="#types">3. Types of Cookies</a></li>
+          <li><a href="#list">4. Cookie List</a></li>
+          <li><a href="#third-party">5. Third-Party Cookies</a></li>
+          <li><a href="#duration">6. Cookie Duration</a></li>
+          <li><a href="#manage">7. Managing Cookies</a></li>
+          <li><a href="#consent">8. Your Consent</a></li>
+          <li><a href="#updates">9. Policy Updates</a></li>
+          <li><a href="#contact">10. Contact Us</a></li>
+        </ul>
+      </aside>
+
+      <!-- SECTIONS -->
+      <div class="legal-content">
+
+        <div class="legal-section" id="what">
+          <h2>1. What Are Cookies?</h2>
+          <p>Cookies are small text files placed on your device (computer, smartphone, or tablet) by websites you visit. They are widely used to make websites work efficiently, remember your preferences, and provide information to website owners about how visitors interact with their site.</p>
+          <p>Cookies cannot be used to run programs or deliver viruses to your device. They are unique to your browser and typically contain anonymized identifiers that associate the cookie with a specific website and session.</p>
+          <div class="legal-highlight">
+            <p><strong>Similar Technologies:</strong> In addition to cookies, we may use local storage, session storage, web beacons, and pixel tags. This policy covers all such technologies collectively referred to as "cookies" below.</p>
+          </div>
+        </div>
+
+        <div class="legal-section" id="why">
+          <h2>2. Why We Use Cookies</h2>
+          <p>We use cookies to:</p>
+          <ul>
+            <li>Ensure the website functions correctly and securely</li>
+            <li>Remember your preferences and settings between visits</li>
+            <li>Understand how visitors use our website so we can improve it</li>
+            <li>Measure the effectiveness of our marketing campaigns</li>
+            <li>Provide relevant content and a personalized experience</li>
+            <li>Prevent fraud and protect the security of our website and users</li>
+          </ul>
+          <p>We respect your privacy and use cookies only as described in this policy. We will not use cookies to collect sensitive personal information without your explicit consent.</p>
+        </div>
+
+        <div class="legal-section" id="types">
+          <h2>3. Types of Cookies We Use</h2>
+
+          <p><strong style="color:var(--txt)">Strictly Necessary Cookies</strong></p>
+          <p>These cookies are essential for the website to function and cannot be disabled. They are set in response to actions you take, such as submitting a form or setting your privacy preferences. You can set your browser to block these cookies, but parts of the website may not work as a result.</p>
+
+          <p><strong style="color:var(--txt)">Analytics & Performance Cookies</strong></p>
+          <p>These cookies allow us to measure and improve the performance of our website. They help us understand which pages are popular, how visitors move around the site, and where they encounter errors. All data collected is aggregated and anonymized.</p>
+
+          <p><strong style="color:var(--txt)">Preference Cookies</strong></p>
+          <p>These cookies enable the website to remember choices you make (such as language preference, region, or accessibility settings) and provide enhanced, personalized features. They may be set by us or by third-party services we have added to our pages.</p>
+
+          <p><strong style="color:var(--txt)">Marketing & Targeting Cookies</strong></p>
+          <p>These cookies are set only with your explicit consent. They may be set through our website by our advertising partners to build a profile of your interests and show you relevant advertisements on other sites. They work by uniquely identifying your browser and internet device. If you do not allow these cookies, you will experience less targeted advertising.</p>
+        </div>
+
+        <div class="legal-section" id="list">
+          <h2>4. Cookie List</h2>
+          <p>Below is a list of the main cookies currently in use on amiuriq.com:</p>
+          <table class="cookie-table">
+            <thead>
+              <tr>
+                <th>Cookie Name</th>
+                <th>Provider</th>
+                <th>Type</th>
+                <th>Purpose</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>_session</strong></td>
+                <td>Amiuriq</td>
+                <td><span class="cookie-type-badge badge-essential">Essential</span></td>
+                <td>Maintains your session state and security token</td>
+                <td>Session</td>
+              </tr>
+              <tr>
+                <td><strong>_csrf</strong></td>
+                <td>Amiuriq</td>
+                <td><span class="cookie-type-badge badge-essential">Essential</span></td>
+                <td>Protects against cross-site request forgery attacks</td>
+                <td>Session</td>
+              </tr>
+              <tr>
+                <td><strong>cookie_consent</strong></td>
+                <td>Amiuriq</td>
+                <td><span class="cookie-type-badge badge-essential">Essential</span></td>
+                <td>Records your cookie consent preferences</td>
+                <td>1 year</td>
+              </tr>
+              <tr>
+                <td><strong>_ga</strong></td>
+                <td>Google Analytics</td>
+                <td><span class="cookie-type-badge badge-analytics">Analytics</span></td>
+                <td>Distinguishes unique users by assigning a randomly generated ID</td>
+                <td>2 years</td>
+              </tr>
+              <tr>
+                <td><strong>_gid</strong></td>
+                <td>Google Analytics</td>
+                <td><span class="cookie-type-badge badge-analytics">Analytics</span></td>
+                <td>Stores and updates a unique value for each page visited</td>
+                <td>24 hours</td>
+              </tr>
+              <tr>
+                <td><strong>_gat</strong></td>
+                <td>Google Analytics</td>
+                <td><span class="cookie-type-badge badge-analytics">Analytics</span></td>
+                <td>Throttles request rate to limit data collection on high-traffic sites</td>
+                <td>1 minute</td>
+              </tr>
+              <tr>
+                <td><strong>lang_pref</strong></td>
+                <td>Amiuriq</td>
+                <td><span class="cookie-type-badge badge-pref">Preference</span></td>
+                <td>Remembers your language/region preference</td>
+                <td>6 months</td>
+              </tr>
+              <tr>
+                <td><strong>_fbp</strong></td>
+                <td>Meta (Facebook)</td>
+                <td><span class="cookie-type-badge badge-marketing">Marketing</span></td>
+                <td>Used by Meta to deliver, measure, and improve ads (consent required)</td>
+                <td>3 months</td>
+              </tr>
+              <tr>
+                <td><strong>_gcl_au</strong></td>
+                <td>Google Ads</td>
+                <td><span class="cookie-type-badge badge-marketing">Marketing</span></td>
+                <td>Tracks ad conversion events from Google Ads campaigns (consent required)</td>
+                <td>3 months</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>This list may be updated as our website evolves. We will reflect any changes in this policy promptly.</p>
+        </div>
+
+        <div class="legal-section" id="third-party">
+          <h2>5. Third-Party Cookies</h2>
+          <p>Some cookies on our website are set by third-party services we use to enhance functionality and measure performance. These third parties include:</p>
+          <ul>
+            <li><strong>Google Analytics (Google LLC):</strong> Website traffic analytics and user behavior insights. Data is anonymized before processing.</li>
+            <li><strong>Google Ads:</strong> Conversion tracking for advertising campaigns. Only activated with your consent.</li>
+            <li><strong>Meta Pixel (Meta Platforms):</strong> Advertising and remarketing. Only activated with your consent.</li>
+            <li><strong>Web3Forms:</strong> Contact form submission processing. Receives form data you voluntarily submit.</li>
+            <li><strong>Google Fonts:</strong> Loads web fonts from Google's CDN. May log your IP address.</li>
+            <li><strong>Font Awesome (Fonticons, Inc.):</strong> Loads icon assets. May log basic request data.</li>
+          </ul>
+          <p>We do not control third-party cookies. Please review each third party's privacy and cookie policies for full information on how they handle data.</p>
+        </div>
+
+        <div class="legal-section" id="duration">
+          <h2>6. Cookie Duration</h2>
+          <p>Cookies fall into two categories based on their lifespan:</p>
+          <ul>
+            <li><strong>Session cookies:</strong> Temporary cookies that are deleted when you close your browser. They are used to keep you logged in during a single visit or to pass information between pages.</li>
+            <li><strong>Persistent cookies:</strong> Remain on your device for a set period (ranging from minutes to years) or until you delete them. They are used to remember your preferences across multiple visits.</li>
+          </ul>
+          <p>The specific duration of each cookie is listed in the Cookie List table in Section 4. We do not set persistent cookies for longer than necessary to fulfil their stated purpose.</p>
+        </div>
+
+        <div class="legal-section" id="manage">
+          <h2>7. Managing Your Cookie Preferences</h2>
+          <p>You have several options for managing cookies:</p>
+          <p><strong>Browser Settings:</strong> Most browsers allow you to view, delete, and block cookies. Settings are typically found under "Privacy", "Security", or "Settings". Here are links to cookie management instructions for popular browsers:</p>
+          <ul>
+            <li>Google Chrome: Settings → Privacy and Security → Cookies and other site data</li>
+            <li>Mozilla Firefox: Settings → Privacy & Security → Cookies and Site Data</li>
+            <li>Safari: Preferences → Privacy → Manage Website Data</li>
+            <li>Microsoft Edge: Settings → Privacy, search, and services → Cookies</li>
+          </ul>
+          <p><strong>Our Cookie Consent Banner:</strong> When you first visit our website, you will see a cookie consent banner. You can update your preferences at any time by clicking the "Cookie Settings" link in the footer.</p>
+          <p><strong>Opt-Out Tools:</strong> You can opt out of analytics cookies via the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:var(--p);font-weight:600">Google Analytics Opt-Out Browser Add-on</a>. For advertising cookies, visit the <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener" style="color:var(--p);font-weight:600">Digital Advertising Alliance's opt-out page</a>.</p>
+          <div class="legal-highlight">
+            <p><strong>Note:</strong> Disabling certain cookies may affect website functionality. Essential cookies cannot be disabled as they are required for the site to operate securely.</p>
+          </div>
+        </div>
+
+        <div class="legal-section" id="consent">
+          <h2>8. Your Consent</h2>
+          <p>When you first visit our website, we present a cookie consent banner that allows you to:</p>
+          <ul>
+            <li>Accept all cookies (including analytics and marketing)</li>
+            <li>Accept only essential cookies</li>
+            <li>Customize your preferences by cookie category</li>
+          </ul>
+          <p>We will not activate non-essential cookies (analytics, preference, or marketing) without your explicit consent. Your consent choices are stored in the <strong>cookie_consent</strong> cookie for 12 months, after which we will ask again.</p>
+          <p>You may withdraw or change your consent at any time by clearing your browser cookies or contacting us at <strong>privacy@amiuriq.com</strong>. Withdrawing consent does not affect the lawfulness of processing based on consent before its withdrawal.</p>
+        </div>
+
+        <div class="legal-section" id="updates">
+          <h2>9. Policy Updates</h2>
+          <p>We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or our use of cookies. We will notify you of significant changes by updating the "Last Updated" date at the top of this page and, where appropriate, by displaying a revised consent banner.</p>
+          <p>We encourage you to review this policy periodically to stay informed about how we use cookies.</p>
+        </div>
+
+        <div class="legal-section" id="contact">
+          <h2>10. Contact Us</h2>
+          <p>If you have any questions about our use of cookies or this Cookie Policy, please contact us:</p>
+          <div class="contact-box">
+            <h3>Amiuriq Pvt Ltd — Privacy Office</h3>
+            <p><i class="fas fa-envelope" style="margin-right:8px"></i> Email: <a href="mailto:privacy@amiuriq.com">privacy@amiuriq.com</a></p>
+            <p><i class="fas fa-globe" style="margin-right:8px"></i> Website: <a href="index.html#contact">amiuriq.com/contact</a></p>
+            <p style="margin-top:12px;font-size:13px;color:rgba(255,255,255,.7)">We aim to respond to all cookie-related queries within 5 business days.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="fgrid">
+      <div class="fbrand">
+        <a href="index.html" class="logo-ft"><div class="logo-icon" style="width:30px;height:30px;font-size:18px;border-radius:8px">A</div><span class="logo-word" style="font-size:18px">Amiuriq</span></a>
+        <p>Building tomorrow's digital solutions today. We craft software that transforms businesses and drives real growth.</p>
+        <div class="fsocs"><a href="#" class="socbtn"><i class="fab fa-linkedin-in"></i></a><a href="#" class="socbtn"><i class="fab fa-github"></i></a><a href="#" class="socbtn"><i class="fab fa-twitter"></i></a><a href="#" class="socbtn"><i class="fab fa-instagram"></i></a></div>
+      </div>
+      <div class="fcol"><h4>Services</h4><ul><li><a href="web-development.html">Web Development</a></li><li><a href="mobile-app-development.html">Mobile Apps</a></li><li><a href="ai-machine-learning.html">AI &amp; ML</a></li><li><a href="cloud-solutions.html">Cloud Solutions</a></li><li><a href="cybersecurity.html">Cybersecurity</a></li><li><a href="ui-ux-design.html">UI/UX Design</a></li></ul></div>
+      <div class="fcol"><h4>Company</h4><ul><li><a href="index.html#about">About Us</a></li><li><a href="index.html#team">Our Team</a></li><li><a href="index.html#portfolio">Portfolio</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+      <div class="fcol"><h4>Legal</h4><ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li><li><a href="cookie-policy.html">Cookie Policy</a></li></ul></div>
+    </div>
+    <div class="fbot"><p>© 2026 Amiuriq Pvt Ltd. All rights reserved.</p><div class="fblinks"><a href="privacy-policy.html">Privacy</a><a href="terms-of-service.html">Terms</a><a href="index.html">Home</a></div></div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50));
+const hbg=document.getElementById('hbg'),mnav=document.getElementById('mnav');
+hbg.addEventListener('click',()=>mnav.classList.toggle('open'));
+mnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mnav.classList.remove('open')));
+</script>
+</body>
+</html>

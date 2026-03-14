@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | Amiuriq Pvt Ltd</title>
+<meta name="description" content="Privacy Policy — How Amiuriq Pvt Ltd collects, uses, and protects your personal information.">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--p:#D94040;--p2:#B83232;--s:#FF6B35;--g1:linear-gradient(135deg,#D94040,#FF6B35);--txt:#1a0808;--muted:#7a4040}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:radial-gradient(ellipse at 15% 10%,rgba(255,120,100,.18) 0%,transparent 50%),radial-gradient(ellipse at 85% 8%,rgba(255,160,80,.14) 0%,transparent 48%),#fff5f5;background-attachment:fixed;color:var(--txt);overflow-x:hidden;line-height:1.6}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#ffe8e8}::-webkit-scrollbar-thumb{background:var(--p);border-radius:3px}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:700}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:50px;font-weight:600;font-size:15px;text-decoration:none;transition:all .3s;cursor:pointer;border:none;font-family:'Inter',sans-serif}
+.btn-p{background:var(--g1);color:#fff;box-shadow:0 4px 20px rgba(217,64,64,.35)}.btn-p:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(217,64,64,.45)}
+
+/* NAV */
+#nav{position:fixed;top:0;width:100%;z-index:1000;padding:20px 0;transition:all .3s}
+#nav.scrolled{background:rgba(255,245,245,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(217,64,64,.15);padding:14px 0}
+.nc{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;transition:transform .3s;line-height:1}
+.logo:hover{transform:scale(1.04)}
+.logo:hover .logo-icon{box-shadow:0 6px 30px rgba(217,64,64,.7)}
+.logo-icon{width:38px;height:38px;background:linear-gradient(135deg,#D94040,#FF6B35);border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 18px rgba(217,64,64,.45);font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:0;transition:box-shadow .3s}
+.logo-word{font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:800;background:linear-gradient(90deg,#D94040,#FF6B35);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px;line-height:1}
+.nlinks{display:flex;align-items:center;gap:28px;list-style:none}
+.nlinks a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;transition:color .3s}
+.nlinks a:hover{color:var(--txt)}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hbg span{width:25px;height:2px;background:var(--txt);border-radius:2px;transition:all .3s}
+.mnav{display:none;position:fixed;inset:0;background:rgba(255,245,245,.97);backdrop-filter:blur(20px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:30px}
+.mnav.open{display:flex}
+.mnav a{color:#1a1a2e;text-decoration:none;font-size:22px;font-weight:600;font-family:'Space Grotesk',sans-serif;transition:all .3s}
+.mnav a:hover{color:var(--p)}
+
+/* LEGAL HERO */
+.legal-hero{padding:140px 0 70px;background:linear-gradient(135deg,#1a0808 0%,#4a1010 60%,#2a0c0c 100%);text-align:center;position:relative;overflow:hidden}
+.legal-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(217,64,64,.2),transparent 60%),radial-gradient(ellipse at 70% 30%,rgba(255,107,53,.15),transparent 55%)}
+.legal-hero .container{position:relative;z-index:2}
+.legal-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(217,64,64,.2);border:1px solid rgba(217,64,64,.4);border-radius:50px;padding:7px 18px;font-size:13px;font-weight:500;color:#ffb3b3;margin-bottom:22px}
+.legal-title{font-size:clamp(36px,5vw,60px);color:#fff;margin-bottom:16px;letter-spacing:-1.5px}
+.legal-meta{color:rgba(255,255,255,.55);font-size:15px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+.legal-meta span{display:flex;align-items:center;gap:6px}
+
+/* LEGAL BODY */
+.legal-wrap{padding:70px 0 90px}
+.legal-layout{display:grid;grid-template-columns:240px 1fr;gap:56px;align-items:start}
+.legal-toc{position:sticky;top:100px;background:rgba(255,255,255,.75);border:1px solid rgba(217,64,64,.12);border-radius:16px;padding:24px;backdrop-filter:blur(20px)}
+.legal-toc h4{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--p);margin-bottom:16px;font-family:'Space Grotesk',sans-serif}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+.toc-list a{text-decoration:none;color:var(--muted);font-size:13px;padding:6px 10px;border-radius:8px;display:block;transition:all .3s;line-height:1.4}
+.toc-list a:hover{background:rgba(217,64,64,.08);color:var(--p)}
+.legal-content{display:flex;flex-direction:column;gap:44px}
+.legal-section{scroll-margin-top:100px}
+.legal-section h2{font-size:22px;color:var(--txt);margin-bottom:16px;padding-left:16px;border-left:3px solid var(--p);line-height:1.3}
+.legal-section p{color:#3a1010;font-size:15px;line-height:1.85;margin-bottom:14px}
+.legal-section p:last-child{margin-bottom:0}
+.legal-section ul{padding-left:20px;margin:12px 0;display:flex;flex-direction:column;gap:8px}
+.legal-section ul li{color:#3a1010;font-size:15px;line-height:1.75}
+.legal-section ul li::marker{color:var(--p)}
+.legal-highlight{background:rgba(217,64,64,.06);border:1px solid rgba(217,64,64,.15);border-radius:12px;padding:18px 22px;margin:16px 0}
+.legal-highlight p{margin:0;font-size:14px}
+.contact-box{background:var(--g1);border-radius:16px;padding:28px;color:#fff}
+.contact-box h3{font-size:18px;margin-bottom:10px;color:#fff}
+.contact-box p{color:rgba(255,255,255,.85);font-size:14px;margin-bottom:6px}
+.contact-box a{color:#fff;font-weight:600}
+
+/* FOOTER */
+footer{background:rgba(26,8,8,.96);color:rgba(255,255,255,.7);padding:60px 0 30px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.fbrand p{font-size:14px;line-height:1.75;margin-top:14px;color:rgba(255,255,255,.5)}
+.logo-ft{display:flex;align-items:center;gap:9px;text-decoration:none}
+.fsocs{display:flex;gap:10px;margin-top:20px}
+.socbtn{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:13px;text-decoration:none;transition:all .3s}
+.socbtn:hover{background:rgba(217,64,64,.2);border-color:var(--p);color:#fff}
+.fcol h4{font-size:14px;font-weight:600;color:#fff;margin-bottom:18px;font-family:'Space Grotesk',sans-serif}
+.fcol ul{list-style:none}.fcol ul li{margin-bottom:10px}.fcol ul a{text-decoration:none;color:rgba(255,255,255,.5);font-size:14px;transition:color .3s}.fcol ul a:hover{color:#fff}
+.fbot{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:13px;color:rgba(255,255,255,.4)}
+.fblinks{display:flex;gap:20px}.fblinks a{color:rgba(255,255,255,.4);text-decoration:none;font-size:13px}.fblinks a:hover{color:#fff}
+@media(max-width:900px){.legal-layout{grid-template-columns:1fr}.legal-toc{position:static}}
+@media(max-width:768px){.fgrid{grid-template-columns:1fr}.hbg{display:flex}.nlinks{display:none}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="nc">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">A</div>
+      <span class="logo-word">Amiuriq</span>
+    </a>
+    <ul class="nlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#portfolio">Portfolio</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact" class="btn btn-p" style="padding:9px 20px;font-size:13px">Get a Quote</a></li>
+    </ul>
+    <div class="hbg" id="hbg"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mnav" id="mnav">
+  <a href="index.html">Home</a>
+  <a href="index.html#services">Services</a>
+  <a href="index.html#portfolio">Portfolio</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#contact" class="btn btn-p">Get a Quote</a>
+</div>
+
+<!-- HERO -->
+<section class="legal-hero">
+  <div class="container">
+    <div class="legal-badge"><i class="fas fa-shield-halved"></i> Legal Document</div>
+    <h1 class="legal-title">Privacy Policy</h1>
+    <div class="legal-meta">
+      <span><i class="fas fa-calendar"></i> Last Updated: March 14, 2026</span>
+      <span><i class="fas fa-building"></i> Amiuriq Pvt Ltd</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="legal-wrap">
+  <div class="container">
+    <div class="legal-layout">
+
+      <!-- TOC -->
+      <aside class="legal-toc">
+        <h4>Contents</h4>
+        <ul class="toc-list">
+          <li><a href="#overview">1. Overview</a></li>
+          <li><a href="#collection">2. Information We Collect</a></li>
+          <li><a href="#use">3. How We Use Your Information</a></li>
+          <li><a href="#sharing">4. Information Sharing</a></li>
+          <li><a href="#security">5. Data Security</a></li>
+          <li><a href="#retention">6. Data Retention</a></li>
+          <li><a href="#rights">7. Your Rights</a></li>
+          <li><a href="#cookies">8. Cookies</a></li>
+          <li><a href="#third-party">9. Third-Party Links</a></li>
+          <li><a href="#children">10. Children's Privacy</a></li>
+          <li><a href="#international">11. International Transfers</a></li>
+          <li><a href="#changes">12. Changes to This Policy</a></li>
+          <li><a href="#contact">13. Contact Us</a></li>
+        </ul>
+      </aside>
+
+      <!-- SECTIONS -->
+      <div class="legal-content">
+
+        <div class="legal-section" id="overview">
+          <h2>1. Overview</h2>
+          <p>Amiuriq Pvt Ltd ("Amiuriq", "we", "our", or "us") is committed to protecting and respecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website at amiuriq.com, engage our software development services, or interact with us in any other way.</p>
+          <p>By accessing or using our services, you acknowledge that you have read and understood this Privacy Policy. If you disagree with any terms of this policy, please discontinue use of our services.</p>
+          <div class="legal-highlight">
+            <p><strong>Summary:</strong> We collect only the information we need to deliver our services. We do not sell your personal data to third parties. You have full rights to access, correct, or delete your data at any time.</p>
+          </div>
+        </div>
+
+        <div class="legal-section" id="collection">
+          <h2>2. Information We Collect</h2>
+          <p>We collect information in the following ways:</p>
+          <p><strong>Information You Provide Directly:</strong></p>
+          <ul>
+            <li>Name, email address, and phone number submitted through our contact form</li>
+            <li>Company name and project details provided in project inquiry forms</li>
+            <li>Payment and billing information for contracted services</li>
+            <li>Communications you send us via email, chat, or support tickets</li>
+            <li>Feedback, testimonials, or survey responses you choose to submit</li>
+          </ul>
+          <p><strong>Information Collected Automatically:</strong></p>
+          <ul>
+            <li>IP address and approximate geographic location (country/city level)</li>
+            <li>Browser type, device type, and operating system</li>
+            <li>Pages visited, time spent on pages, and referral sources</li>
+            <li>Cookies and similar tracking technologies (see Section 8)</li>
+          </ul>
+        </div>
+
+        <div class="legal-section" id="use">
+          <h2>3. How We Use Your Information</h2>
+          <p>We use the information we collect for the following purposes:</p>
+          <ul>
+            <li><strong>Service Delivery:</strong> To provide, operate, and maintain our software development services and client projects</li>
+            <li><strong>Communication:</strong> To respond to your inquiries, send project updates, and provide customer support</li>
+            <li><strong>Billing & Payments:</strong> To process invoices, payments, and maintain accurate financial records</li>
+            <li><strong>Improvement:</strong> To understand how visitors use our website and improve our content and user experience</li>
+            <li><strong>Marketing:</strong> To send you relevant content, newsletters, or service updates — only where you have consented</li>
+            <li><strong>Legal Compliance:</strong> To meet our legal obligations, resolve disputes, and enforce our agreements</li>
+            <li><strong>Security:</strong> To detect, prevent, and respond to potential fraud, abuse, or security vulnerabilities</li>
+          </ul>
+          <p>We will never use your data for purposes beyond those stated here without first obtaining your explicit consent.</p>
+        </div>
+
+        <div class="legal-section" id="sharing">
+          <h2>4. Information Sharing</h2>
+          <p>We do not sell, trade, or rent your personal information to any third party. We may share your information only in the following limited circumstances:</p>
+          <ul>
+            <li><strong>Service Providers:</strong> Trusted third-party vendors who assist us in operating our website or services (e.g., cloud hosting, payment processors, email platforms). These parties are bound by strict confidentiality obligations.</li>
+            <li><strong>Business Partners:</strong> With your explicit consent, we may share relevant project details with subcontractors or specialist partners needed to complete your project.</li>
+            <li><strong>Legal Requirements:</strong> When required by law, court order, or government authority, or to protect the rights, property, or safety of Amiuriq, our clients, or others.</li>
+            <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets, your information may be transferred. We will notify you prior to any such transfer.</li>
+          </ul>
+        </div>
+
+        <div class="legal-section" id="security">
+          <h2>5. Data Security</h2>
+          <p>We implement industry-standard technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These include:</p>
+          <ul>
+            <li>SSL/TLS encryption for all data transmitted between your browser and our servers</li>
+            <li>AES-256 encryption for sensitive data stored at rest</li>
+            <li>Access controls ensuring only authorized personnel can access client data</li>
+            <li>Regular security audits and penetration testing of our infrastructure</li>
+            <li>Multi-factor authentication (MFA) on all internal systems</li>
+          </ul>
+          <p>While we take every reasonable precaution, no method of electronic transmission or storage is 100% secure. In the event of a data breach, we will notify affected individuals and relevant authorities within 72 hours as required by applicable law.</p>
+        </div>
+
+        <div class="legal-section" id="retention">
+          <h2>6. Data Retention</h2>
+          <p>We retain your personal information only for as long as necessary to fulfil the purposes outlined in this policy, or as required by law.</p>
+          <ul>
+            <li><strong>Client project data:</strong> Retained for the duration of the engagement plus 3 years for legal and audit purposes</li>
+            <li><strong>Contact/inquiry data:</strong> Retained for 2 years from the date of last contact</li>
+            <li><strong>Marketing consent records:</strong> Retained until you withdraw consent</li>
+            <li><strong>Financial/billing records:</strong> Retained for 7 years as required by tax law</li>
+            <li><strong>Website analytics data:</strong> Retained in anonymized form for up to 26 months</li>
+          </ul>
+          <p>You may request early deletion of your data at any time (see Section 7).</p>
+        </div>
+
+        <div class="legal-section" id="rights">
+          <h2>7. Your Rights</h2>
+          <p>Depending on your location, you may have the following rights regarding your personal information:</p>
+          <ul>
+            <li><strong>Right to Access:</strong> Request a copy of the personal data we hold about you</li>
+            <li><strong>Right to Rectification:</strong> Request correction of inaccurate or incomplete data</li>
+            <li><strong>Right to Erasure:</strong> Request deletion of your personal data ("right to be forgotten")</li>
+            <li><strong>Right to Restriction:</strong> Request that we limit how we process your data</li>
+            <li><strong>Right to Portability:</strong> Receive your data in a structured, machine-readable format</li>
+            <li><strong>Right to Object:</strong> Object to processing based on legitimate interests or for direct marketing</li>
+            <li><strong>Right to Withdraw Consent:</strong> Withdraw any previously given consent at any time</li>
+          </ul>
+          <p>To exercise any of these rights, contact us at <strong>privacy@amiuriq.com</strong>. We will respond to all requests within 30 days.</p>
+        </div>
+
+        <div class="legal-section" id="cookies">
+          <h2>8. Cookies</h2>
+          <p>We use cookies and similar technologies to improve your browsing experience. For full details on the cookies we use and how to manage them, please see our <a href="cookie-policy.html" style="color:var(--p);font-weight:600">Cookie Policy</a>.</p>
+          <p>In summary, we use:</p>
+          <ul>
+            <li><strong>Essential cookies:</strong> Required for the website to function — cannot be disabled</li>
+            <li><strong>Analytics cookies:</strong> Help us understand how visitors use our site (e.g., Google Analytics)</li>
+            <li><strong>Preference cookies:</strong> Remember your settings and preferences</li>
+            <li><strong>Marketing cookies:</strong> Used only with your explicit consent</li>
+          </ul>
+          <p>You can manage your cookie preferences at any time through your browser settings or our cookie consent banner.</p>
+        </div>
+
+        <div class="legal-section" id="third-party">
+          <h2>9. Third-Party Links</h2>
+          <p>Our website may contain links to third-party websites, tools, or services (such as GitHub, LinkedIn, or client portals). These sites operate independently of Amiuriq and have their own privacy policies. We have no responsibility or liability for the content or privacy practices of any third-party sites. We encourage you to review the privacy policy of every website you visit.</p>
+        </div>
+
+        <div class="legal-section" id="children">
+          <h2>10. Children's Privacy</h2>
+          <p>Our services are not directed to individuals under the age of 16. We do not knowingly collect personal information from children. If you believe that a child has provided us with personal information without parental consent, please contact us immediately at <strong>privacy@amiuriq.com</strong> and we will take steps to delete such information promptly.</p>
+        </div>
+
+        <div class="legal-section" id="international">
+          <h2>11. International Data Transfers</h2>
+          <p>Amiuriq Pvt Ltd operates globally and may transfer your personal information to servers or service providers located in countries other than your own. Where such transfers occur, we ensure appropriate safeguards are in place, including:</p>
+          <ul>
+            <li>Standard Contractual Clauses (SCCs) approved by relevant data protection authorities</li>
+            <li>Adequacy decisions recognized under applicable data protection law</li>
+            <li>Binding Corporate Rules where applicable</li>
+          </ul>
+        </div>
+
+        <div class="legal-section" id="changes">
+          <h2>12. Changes to This Policy</h2>
+          <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. We will notify you of any significant changes by:</p>
+          <ul>
+            <li>Updating the "Last Updated" date at the top of this page</li>
+            <li>Sending an email notification to registered clients</li>
+            <li>Displaying a prominent notice on our website</li>
+          </ul>
+          <p>Your continued use of our services after any changes constitutes acceptance of the updated policy.</p>
+        </div>
+
+        <div class="legal-section" id="contact">
+          <h2>13. Contact Us</h2>
+          <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact our Data Protection Officer:</p>
+          <div class="contact-box">
+            <h3>Amiuriq Pvt Ltd — Privacy Office</h3>
+            <p><i class="fas fa-envelope" style="margin-right:8px"></i> Email: <a href="mailto:privacy@amiuriq.com">privacy@amiuriq.com</a></p>
+            <p><i class="fas fa-globe" style="margin-right:8px"></i> Website: <a href="index.html#contact">amiuriq.com/contact</a></p>
+            <p style="margin-top:12px;font-size:13px;color:rgba(255,255,255,.7)">We aim to respond to all privacy-related inquiries within 5 business days.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="fgrid">
+      <div class="fbrand">
+        <a href="index.html" class="logo-ft"><div class="logo-icon" style="width:30px;height:30px;font-size:18px;border-radius:8px">A</div><span class="logo-word" style="font-size:18px">Amiuriq</span></a>
+        <p>Building tomorrow's digital solutions today. We craft software that transforms businesses and drives real growth.</p>
+        <div class="fsocs"><a href="#" class="socbtn"><i class="fab fa-linkedin-in"></i></a><a href="#" class="socbtn"><i class="fab fa-github"></i></a><a href="#" class="socbtn"><i class="fab fa-twitter"></i></a><a href="#" class="socbtn"><i class="fab fa-instagram"></i></a></div>
+      </div>
+      <div class="fcol"><h4>Services</h4><ul><li><a href="web-development.html">Web Development</a></li><li><a href="mobile-app-development.html">Mobile Apps</a></li><li><a href="ai-machine-learning.html">AI &amp; ML</a></li><li><a href="cloud-solutions.html">Cloud Solutions</a></li><li><a href="cybersecurity.html">Cybersecurity</a></li><li><a href="ui-ux-design.html">UI/UX Design</a></li></ul></div>
+      <div class="fcol"><h4>Company</h4><ul><li><a href="index.html#about">About Us</a></li><li><a href="index.html#team">Our Team</a></li><li><a href="index.html#portfolio">Portfolio</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+      <div class="fcol"><h4>Legal</h4><ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li><li><a href="cookie-policy.html">Cookie Policy</a></li></ul></div>
+    </div>
+    <div class="fbot"><p>© 2026 Amiuriq Pvt Ltd. All rights reserved.</p><div class="fblinks"><a href="privacy-policy.html">Privacy</a><a href="terms-of-service.html">Terms</a><a href="index.html">Home</a></div></div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50));
+const hbg=document.getElementById('hbg'),mnav=document.getElementById('mnav');
+hbg.addEventListener('click',()=>mnav.classList.toggle('open'));
+mnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mnav.classList.remove('open')));
+</script>
+</body>
+</html>
