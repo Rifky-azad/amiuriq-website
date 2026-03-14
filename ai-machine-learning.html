@@ -95,7 +95,46 @@ footer{background:rgba(26,8,8,.96);color:rgba(255,255,255,.7);padding:60px 0 30p
 .fbot{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:13px;color:rgba(255,255,255,.4)}
 .fblinks{display:flex;gap:20px}.fblinks a{color:rgba(255,255,255,.4);text-decoration:none;font-size:13px}.fblinks a:hover{color:#fff}
 @media(max-width:768px){.ovgrid,.feat-grid{grid-template-columns:1fr}.proc-grid{grid-template-columns:1fr 1fr}.proc-grid::before{display:none}.fgrid{grid-template-columns:1fr}.svc-hero-stats{flex-wrap:wrap;gap:24px}.hbg{display:flex}.nlinks{display:none}.cta-box{padding:40px 24px}}
+
+/* DARK MODE */
+[data-theme=dark]{--txt:#f0e0e0;--muted:#d4a0a0}
+[data-theme=dark] body{background:radial-gradient(ellipse at 15% 10%,rgba(120,20,20,.3) 0%,transparent 50%),radial-gradient(ellipse at 85% 8%,rgba(150,50,10,.2) 0%,transparent 48%),radial-gradient(ellipse at 50% 92%,rgba(120,10,10,.22) 0%,transparent 52%),#0d0404}
+[data-theme=dark] #nav.scrolled{background:rgba(13,4,4,.93);border-bottom-color:rgba(217,64,64,.2)}
+[data-theme=dark] .gc{background:rgba(28,6,6,.82);border-color:rgba(217,64,64,.22)}
+[data-theme=dark] .gc:hover{background:rgba(38,10,10,.92);transform:translateY(-6px)}
+[data-theme=dark] .hbg span{background:#f0e0e0}
+[data-theme=dark] .mnav{background:rgba(8,1,1,.97)}
+[data-theme=dark] .mnav a{color:#f0e0e0}
+[data-theme=dark] .mnav-x{color:#f0e0e0}
+[data-theme=dark] ::-webkit-scrollbar-track{background:#1a0404}
+[data-theme=dark] .slabel{background:rgba(217,64,64,.12);border-color:rgba(217,64,64,.28)}
+[data-theme=dark] .btn-s{border-color:rgba(217,64,64,.3);color:#f0e0e0}
+[data-theme=dark] .pfb{border-color:rgba(217,64,64,.3);color:#d4a0a0}
+[data-theme=dark] .pcard{border-color:rgba(217,64,64,.2);background:rgba(20,4,4,.6)}
+[data-theme=dark] .tpill{background:rgba(28,6,6,.8);border-color:rgba(217,64,64,.2)}
+[data-theme=dark] .tpill:hover{background:rgba(217,64,64,.15)}
+[data-theme=dark] #services,[data-theme=dark] #portfolio{background:rgba(18,3,3,.45)}
+[data-theme=dark] #tech{background:rgba(12,2,2,.65)}
+[data-theme=dark] #testi{background:rgba(18,3,3,.5)}
+[data-theme=dark] .sbtn{background:rgba(28,6,6,.8);border-color:rgba(217,64,64,.3);color:#f0e0e0}
+[data-theme=dark] .acard{background:rgba(28,6,6,.88);border-color:rgba(217,64,64,.2)}
+[data-theme=dark] .sbox{background:rgba(217,64,64,.1);border-color:rgba(217,64,64,.22)}
+[data-theme=dark] input,[data-theme=dark] textarea,[data-theme=dark] select{background:rgba(255,255,255,.04)!important;color:#f0e0e0!important;border-color:rgba(217,64,64,.25)!important}
+[data-theme=dark] input::placeholder,[data-theme=dark] textarea::placeholder{color:rgba(240,220,220,.3)}
+[data-theme=dark] .legal-toc{background:rgba(28,6,6,.88);border-color:rgba(217,64,64,.2)}
+[data-theme=dark] .legal-section p,[data-theme=dark] .legal-section li{color:#c8a0a0}
+[data-theme=dark] .legal-highlight{background:rgba(217,64,64,.08);border-color:rgba(217,64,64,.2)}
+[data-theme=dark] .cookie-table td{color:#c8a0a0;border-bottom-color:rgba(217,64,64,.1)}
+[data-theme=dark] .cookie-table tr:nth-child(even) td{background:rgba(217,64,64,.05)}
+[data-theme=dark] .hbadge{background:rgba(217,64,64,.15);border-color:rgba(217,64,64,.35)}
+[data-theme=dark] .hstats{border-top-color:rgba(217,64,64,.2)}
+[data-theme=dark] .tag{background:rgba(217,64,64,.12);border-color:rgba(217,64,64,.2);color:#d4a0a0}
+[data-theme=dark] .sdot{background:rgba(217,64,64,.2)}
+[data-theme=dark] .toc-list a:hover{background:rgba(217,64,64,.1)}
+.theme-toggle{background:rgba(217,64,64,.1);border:1px solid rgba(217,64,64,.22);border-radius:50%;width:36px;height:36px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--p);font-size:14px;transition:background .3s,transform .3s;flex-shrink:0}
+.theme-toggle:hover{background:rgba(217,64,64,.22);transform:rotate(20deg)}
 </style>
+<script>(function(){var t=localStorage.getItem("aq-theme")||(window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t);})()</script>
 </head>
 <body>
 <nav id="nav">
@@ -108,6 +147,7 @@ footer{background:rgba(26,8,8,.96);color:rgba(255,255,255,.7);padding:60px 0 30p
       <li><a href="index.html">Home</a></li><li><a href="index.html#services">Services</a></li><li><a href="index.html#portfolio">Portfolio</a></li><li><a href="index.html#about">About</a></li>
       <li><a href="index.html#contact" class="btn btn-p" style="padding:9px 20px;font-size:13px">Get a Quote</a></li>
     </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
     <div class="hbg" id="hbg"><span></span><span></span><span></span></div>
   </div>
 </nav>
@@ -248,6 +288,8 @@ const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50));
 document.getElementById('hbg').addEventListener('click',()=>document.getElementById('mnav').classList.add('open'));
 document.getElementById('mnav-x').addEventListener('click',()=>document.getElementById('mnav').classList.remove('open'));
+// THEME TOGGLE
+(function(){var h=document.documentElement,btn=document.getElementById('themeToggle'),ic=btn.querySelector('i'),cur=h.getAttribute('data-theme')||'light';ic.className=cur==='dark'?'fas fa-sun':'fas fa-moon';btn.addEventListener('click',function(){var t=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',t);localStorage.setItem('aq-theme',t);ic.className=t==='dark'?'fas fa-sun':'fas fa-moon';});})();
 </script>
 </body>
 </html>
