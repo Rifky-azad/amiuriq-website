@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Amiuriq Pvt Ltd | Next-Gen Software Solutions</title>
 <meta name="description" content="Amiuriq Pvt Ltd — Building tomorrow's digital solutions today. Expert web, mobile, AI, and cloud development.">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -777,7 +777,7 @@ footer{background:rgba(255,224,224,.7);border-top:1px solid rgba(217,64,64,.15);
   document.head.appendChild(styleEl);
   el.innerHTML=text.split('').map((l,i)=>{
     if(i===text.length-1){
-      return `<span style="display:inline-block;opacity:0;transform:translateY(-20px);animation:letterDrop .5s ease ${i*80}ms forwards;background:linear-gradient(135deg,#D94040,#FF6B35);border-radius:50%;width:44px;height:44px;line-height:44px;text-align:center;color:#fff;-webkit-text-fill-color:#fff;font-size:0.82em;vertical-align:middle;margin-left:3px;box-shadow:0 4px 16px rgba(217,64,64,.5)">${l}</span>`;
+      return `<span style="display:inline-block;opacity:0;transform:translateY(-20px);animation:letterDrop .5s ease ${i*80}ms forwards;font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.05em;background:linear-gradient(135deg,#D94040,#FF6B35);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 10px rgba(217,64,64,.55));letter-spacing:-1px;vertical-align:baseline">${l}</span>`;
     }
     return `<span style="display:inline-block;opacity:0;transform:translateY(-20px);background:linear-gradient(90deg,#D94040,#FF6B35);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:letterDrop .5s ease ${i*80}ms forwards">${l}</span>`;
   }).join('');
