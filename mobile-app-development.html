@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile App Development | Amiuriq Pvt Ltd</title>
+<meta name="description" content="Native and cross-platform iOS & Android apps using Flutter and React Native — Amiuriq Pvt Ltd">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--p:#D94040;--p2:#B83232;--s:#FF6B35;--a:#FF6B9D;--a2:#FF8B6B;--dark:#fff5f5;--cb:rgba(255,255,255,.75);--cbr:rgba(217,64,64,.15);--txt:#1a0808;--muted:#7a4040;--g1:linear-gradient(135deg,#D94040,#FF6B35);--g2:linear-gradient(135deg,#FF6B9D,#FF8B6B);--g3:linear-gradient(135deg,#D94040,#FF6B9D)}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:radial-gradient(ellipse at 15% 10%,rgba(255,120,100,.28) 0%,transparent 50%),radial-gradient(ellipse at 85% 8%,rgba(255,160,80,.22) 0%,transparent 48%),radial-gradient(ellipse at 50% 92%,rgba(255,100,100,.18) 0%,transparent 52%),#fff5f5;background-attachment:fixed;color:var(--txt);overflow-x:hidden;line-height:1.6}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#ffe8e8}::-webkit-scrollbar-thumb{background:var(--p);border-radius:3px}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:700}
+.gt{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:50px;font-size:15px;font-weight:600;font-family:'Space Grotesk',sans-serif;cursor:pointer;border:none;text-decoration:none;transition:all .3s}
+.btn-p{background:var(--g1);color:#fff;box-shadow:0 4px 30px rgba(217,64,64,.35)}.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(217,64,64,.5)}
+.gc{background:rgba(255,255,255,.75);border:1px solid rgba(217,64,64,.15);border-radius:20px;backdrop-filter:blur(20px);box-shadow:0 4px 24px rgba(217,64,64,.06);transition:all .3s}
+.gc:hover{border-color:rgba(217,64,64,.3);transform:translateY(-6px);box-shadow:0 20px 60px rgba(217,64,64,.12)}
+.slabel{display:inline-flex;align-items:center;gap:8px;background:rgba(217,64,64,.1);border:1px solid rgba(217,64,64,.25);border-radius:50px;padding:6px 16px;font-size:13px;font-weight:500;color:var(--p2);margin-bottom:18px}
+#nav{position:fixed;top:0;width:100%;z-index:1000;padding:20px 0;transition:all .3s}
+#nav.scrolled{background:rgba(255,245,245,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(217,64,64,.15);padding:14px 0}
+.nc{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:800;text-decoration:none;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.5px;transition:transform .3s,filter .3s}
+.logo:hover{transform:scale(1.06)}
+.nlinks{display:flex;align-items:center;gap:28px;list-style:none}
+.nlinks a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;transition:color .3s}
+.nlinks a:hover{color:var(--txt)}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hbg span{width:25px;height:2px;background:var(--txt);border-radius:2px}
+.mnav{display:none;position:fixed;inset:0;background:rgba(255,245,245,.97);backdrop-filter:blur(20px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:30px}
+.mnav.open{display:flex}
+.mnav a{color:#1a1a2e;text-decoration:none;font-size:22px;font-weight:600;font-family:'Space Grotesk',sans-serif}
+.mnav-x{position:absolute;top:24px;right:24px;background:none;border:none;color:#1a1a2e;font-size:26px;cursor:pointer}
+.svc-hero{min-height:80vh;display:flex;align-items:center;padding:130px 0 80px;position:relative;overflow:hidden}
+.svc-hero-img{position:absolute;inset:0;z-index:0}
+.svc-hero-img img{width:100%;height:100%;object-fit:cover}
+.svc-hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,8,8,.85) 0%,rgba(80,20,50,.6) 50%,rgba(26,8,8,.5) 100%)}
+.svc-hero .container{position:relative;z-index:2}
+.svc-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(217,64,64,.2);border:1px solid rgba(217,64,64,.4);border-radius:50px;padding:7px 18px;font-size:13px;font-weight:500;color:#ffb3b3;margin-bottom:22px;backdrop-filter:blur(10px)}
+.svc-title{font-size:clamp(40px,6vw,70px);line-height:1.05;letter-spacing:-2px;margin-bottom:22px;color:#fff}
+.svc-desc{font-size:17px;color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:36px;max-width:560px}
+.svc-hero-acts{display:flex;gap:14px;flex-wrap:wrap}
+.svc-hero-stats{display:flex;gap:40px;margin-top:56px;padding-top:36px;border-top:1px solid rgba(255,255,255,.12)}
+.svc-sn{font-family:'Space Grotesk',sans-serif;font-size:34px;font-weight:800;color:#FF6B35;line-height:1}
+.svc-sl{font-size:13px;color:rgba(255,255,255,.55);margin-top:4px}
+.overview{padding:90px 0}
+.ovgrid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.ov-img{border-radius:24px;overflow:hidden;box-shadow:0 30px 80px rgba(217,64,64,.2);position:relative}
+.ov-img img{width:100%;height:400px;object-fit:cover;display:block}
+.ov-img-badge{position:absolute;bottom:20px;left:20px;background:rgba(10,10,32,.9);color:#e8e8f0;padding:12px 18px;border-radius:12px;font-size:13px;font-weight:600;border:1px solid rgba(217,64,64,.3);backdrop-filter:blur(10px)}
+.ov-txt h2{font-size:clamp(28px,4vw,42px);line-height:1.15;margin-bottom:18px}
+.ov-txt p{color:var(--muted);line-height:1.8;margin-bottom:14px}
+.ov-checks{margin-top:28px;display:flex;flex-direction:column;gap:12px}
+.ovc{display:flex;align-items:flex-start;gap:12px;font-size:15px}
+.ovc-icon{width:24px;height:24px;border-radius:6px;background:rgba(217,64,64,.12);color:var(--p);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;margin-top:1px}
+.features{padding:90px 0;background:rgba(255,255,255,.5)}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.feat-card{padding:32px 26px}
+.feat-icon{width:52px;height:52px;border-radius:14px;background:var(--g1);display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff;margin-bottom:20px;box-shadow:0 8px 24px rgba(217,64,64,.3)}
+.feat-card h3{font-size:17px;margin-bottom:10px}
+.feat-card p{font-size:14px;color:var(--muted);line-height:1.7}
+.process{padding:90px 0}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px;position:relative}
+.proc-grid::before{content:'';position:absolute;top:30px;left:calc(12.5% + 12px);right:calc(12.5% + 12px);height:2px;background:linear-gradient(90deg,var(--p),var(--s));z-index:0;border-radius:2px}
+.proc-step{text-align:center;position:relative;z-index:1}
+.proc-num{width:60px;height:60px;border-radius:50%;background:var(--g1);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;font-family:'Space Grotesk',sans-serif;margin:0 auto 18px;box-shadow:0 8px 24px rgba(217,64,64,.35)}
+.proc-step h3{font-size:16px;margin-bottom:8px}
+.proc-step p{font-size:13px;color:var(--muted);line-height:1.6}
+.tech{padding:90px 0;background:rgba(255,255,255,.5)}
+.tech-grid{display:flex;flex-wrap:wrap;gap:14px;margin-top:48px}
+.tech-tag{padding:10px 20px;border-radius:50px;background:rgba(255,255,255,.8);border:1px solid rgba(217,64,64,.2);font-size:14px;font-weight:500;color:var(--txt);transition:all .3s;display:flex;align-items:center;gap:8px}
+.tech-tag:hover{background:rgba(217,64,64,.08);border-color:var(--p);transform:translateY(-2px)}
+.tech-tag i{color:var(--p);font-size:15px}
+.svc-cta{padding:90px 0}
+.cta-box{background:var(--g1);border-radius:28px;padding:70px;text-align:center;position:relative;overflow:hidden;box-shadow:0 30px 80px rgba(217,64,64,.3)}
+.cta-box::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.08)}
+.cta-box h2{font-size:clamp(28px,4vw,44px);color:#fff;margin-bottom:16px;position:relative;z-index:1}
+.cta-box p{color:rgba(255,255,255,.8);font-size:17px;margin-bottom:36px;position:relative;z-index:1;max-width:500px;margin-left:auto;margin-right:auto}
+.cta-box .cta-acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.btn-white{background:#fff;color:var(--p);font-weight:700}.btn-white:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.2)}
+.btn-outline-white{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6)}.btn-outline-white:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+footer{background:rgba(26,8,8,.96);color:rgba(255,255,255,.7);padding:60px 0 30px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.fbrand p{font-size:14px;line-height:1.75;margin-top:14px;color:rgba(255,255,255,.5)}
+.logo-ft{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:800;text-decoration:none;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.fsocs{display:flex;gap:10px;margin-top:20px}
+.socbtn{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:13px;text-decoration:none;transition:all .3s}
+.socbtn:hover{background:rgba(217,64,64,.2);border-color:var(--p);color:#fff}
+.fcol h4{font-size:14px;font-weight:600;color:#fff;margin-bottom:18px;font-family:'Space Grotesk',sans-serif}
+.fcol ul{list-style:none}.fcol ul li{margin-bottom:10px}.fcol ul a{text-decoration:none;color:rgba(255,255,255,.5);font-size:14px;transition:color .3s}.fcol ul a:hover{color:#fff}
+.fbot{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:13px;color:rgba(255,255,255,.4)}
+.fblinks{display:flex;gap:20px}.fblinks a{color:rgba(255,255,255,.4);text-decoration:none;font-size:13px;transition:color .3s}.fblinks a:hover{color:#fff}
+@media(max-width:768px){.ovgrid,.feat-grid{grid-template-columns:1fr}.proc-grid{grid-template-columns:1fr 1fr}.proc-grid::before{display:none}.fgrid{grid-template-columns:1fr}.svc-hero-stats{flex-wrap:wrap;gap:24px}.hbg{display:flex}.nlinks{display:none}.cta-box{padding:40px 24px}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="nc">
+    <a href="index.html" class="logo">Amiuri<span style="font-family:'Cinzel',serif;font-weight:900;font-size:1.15em;background:linear-gradient(135deg,#D94040,#FF6B35);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 10px rgba(217,64,64,.6))">Q</span></a>
+    <ul class="nlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#portfolio">Portfolio</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact" class="btn btn-p" style="padding:9px 20px;font-size:13px">Get a Quote</a></li>
+    </ul>
+    <div class="hbg" id="hbg"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mnav" id="mnav">
+  <button class="mnav-x" id="mnav-x"><i class="fas fa-times"></i></button>
+  <a href="index.html">Home</a><a href="index.html#services">Services</a><a href="index.html#portfolio">Portfolio</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a>
+</div>
+
+<section class="svc-hero">
+  <div class="svc-hero-img">
+    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1600&h=900&fit=crop&auto=format&q=85" alt="Mobile App Development">
+  </div>
+  <div class="container">
+    <div class="svc-badge"><i class="fas fa-mobile-alt"></i> Mobile App Development</div>
+    <h1 class="svc-title">Apps That Users <span style="background:linear-gradient(135deg,#FF6B35,#FF6B9D);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Love & Keep</span></h1>
+    <p class="svc-desc">Native iOS & Android and cross-platform apps built with Flutter and React Native — polished, fast, and engineered to acquire, engage, and retain users at scale.</p>
+    <div class="svc-hero-acts">
+      <a href="index.html#contact" class="btn btn-p">Start Your App <i class="fas fa-arrow-right"></i></a>
+      <a href="index.html#portfolio" class="btn" style="color:#fff;border:1px solid rgba(255,255,255,.5);background:transparent">See Case Studies <i class="fas fa-external-link-alt"></i></a>
+    </div>
+    <div class="svc-hero-stats">
+      <div><div class="svc-sn">80+</div><div class="svc-sl">Apps Launched</div></div>
+      <div><div class="svc-sn">5M+</div><div class="svc-sl">End Users Served</div></div>
+      <div><div class="svc-sn">4.8★</div><div class="svc-sl">Avg App Store Rating</div></div>
+      <div><div class="svc-sn">60%</div><div class="svc-sl">Avg Cost Saved vs Native</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="overview">
+  <div class="container">
+    <div class="ovgrid">
+      <div class="ov-img">
+        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=500&fit=crop&auto=format&q=85" alt="Mobile Development">
+        <div class="ov-img-badge"><i class="fab fa-apple" style="color:#48C78E;margin-right:6px"></i>iOS &amp; Android Experts</div>
+      </div>
+      <div class="ov-txt">
+        <span class="slabel"><i class="fas fa-info-circle"></i> What We Do</span>
+        <h2>Cross-Platform &amp; Native Apps <span class="gt">That Perform</span></h2>
+        <p>Whether you need a consumer app targeting millions or an enterprise tool for your team, we build mobile experiences that feel natural on every device — fast, reliable, and beautifully designed.</p>
+        <p>We handle the complete lifecycle: UX research, UI design, development, QA, App Store submission, and ongoing updates. One partner, zero handoffs.</p>
+        <div class="ov-checks">
+          <div class="ovc"><div class="ovc-icon"><i class="fas fa-check"></i></div><span>Flutter & React Native for 80% cost savings vs separate native apps</span></div>
+          <div class="ovc"><div class="ovc-icon"><i class="fas fa-check"></i></div><span>Offline-first architecture — works without internet connection</span></div>
+          <div class="ovc"><div class="ovc-icon"><i class="fas fa-check"></i></div><span>App Store & Google Play submission handled end-to-end</span></div>
+          <div class="ovc"><div class="ovc-icon"><i class="fas fa-check"></i></div><span>Push notifications, analytics, in-app purchases built in</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <div style="text-align:center;max-width:580px;margin:0 auto">
+      <span class="slabel"><i class="fas fa-star"></i> What's Included</span>
+      <h2 style="font-size:clamp(28px,4vw,42px);line-height:1.15;margin-bottom:14px">Complete Mobile <span class="gt">App Package</span></h2>
+      <p style="color:var(--muted);font-size:16px;line-height:1.75">Everything from concept to App Store — under one roof.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="gc feat-card"><div class="feat-icon"><i class="fas fa-paint-brush"></i></div><h3>UI/UX Design First</h3><p>Figma prototypes, user flow mapping, and interactive mockups — all approved before development begins.</p></div>
+      <div class="gc feat-card"><div class="feat-icon"><i class="fas fa-bolt"></i></div><h3>60 FPS Performance</h3><p>Smooth animations, optimized rendering, and lazy loading ensure your app feels instant on every device.</p></div>
+      <div class="gc feat-card"><div class="feat-icon"><i class="fas fa-wifi"></i></div><h3>Offline Capability</h3><p>Local storage, background sync, and smart caching so your app works even without an internet connection.</p></div>
+      <div class="gc feat-card"><div class="feat-icon"><i class="fas fa-bell"></i></div><h3>Push Notifications</h3><p>FCM/APNs integration with deep linking, rich media, and targeted segmentation to re-engage users.</p></div>
+      <div class="gc feat-card"><div class="feat-icon"><i class="fas fa-shield-alt"></i></div><h3>Secure Auth & Data</h3><p>Biometric login, JWT tokens, encrypted storage, and secure API communication built in from day one.</p></div>
+      <div class="gc feat-card"><div class="feat-icon"><i class="fas fa-chart-bar"></i></div><h3>Analytics & Crash Reporting</h3><p>Firebase Analytics, Mixpanel, Sentry crash monitoring — full visibility into user behaviour and stability.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="container">
+    <div style="text-align:center;max-width:560px;margin:0 auto">
+      <span class="slabel"><i class="fas fa-route"></i> Our Process</span>
+      <h2 style="font-size:clamp(28px,4vw,42px);line-height:1.15;margin-bottom:14px">From Idea to <span class="gt">App Store in Weeks</span></h2>
+      <p style="color:var(--muted);font-size:16px;line-height:1.75">A streamlined process that eliminates surprises and ships fast.</p>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-step"><div class="proc-num">1</div><h3>Discovery & Scoping</h3><p>User research, competitor analysis, feature prioritization, and project roadmap with clear milestones.</p></div>
+      <div class="proc-step"><div class="proc-num">2</div><h3>UI/UX Design</h3><p>Wireframes → interactive Figma prototype → design sign-off. You see exactly what you're getting.</p></div>
+      <div class="proc-step"><div class="proc-num">3</div><h3>Agile Build</h3><p>2-week sprints, TestFlight/internal track builds weekly, real device testing on 20+ screen sizes.</p></div>
+      <div class="proc-step"><div class="proc-num">4</div><h3>Launch & Scale</h3><p>App Store & Play Store submission, ASO, post-launch monitoring, and version updates handled for you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tech">
+  <div class="container">
+    <div style="text-align:center;max-width:560px;margin:0 auto">
+      <span class="slabel"><i class="fas fa-code"></i> Tech Stack</span>
+      <h2 style="font-size:clamp(28px,4vw,42px);line-height:1.15;margin-bottom:14px">Built With <span class="gt">Proven Mobile Tech</span></h2>
+      <p style="color:var(--muted);font-size:16px;line-height:1.75">We use the tools that ship fast and scale further.</p>
+    </div>
+    <div class="tech-grid">
+      <span class="tech-tag"><i class="fas fa-feather"></i> Flutter</span>
+      <span class="tech-tag"><i class="fab fa-react"></i> React Native</span>
+      <span class="tech-tag"><i class="fab fa-apple"></i> Swift / SwiftUI</span>
+      <span class="tech-tag"><i class="fab fa-android"></i> Kotlin / Jetpack</span>
+      <span class="tech-tag"><i class="fas fa-fire"></i> Firebase</span>
+      <span class="tech-tag"><i class="fab fa-node-js"></i> Node.js Backend</span>
+      <span class="tech-tag"><i class="fas fa-database"></i> SQLite / Hive</span>
+      <span class="tech-tag"><i class="fas fa-map-marked-alt"></i> Google Maps SDK</span>
+      <span class="tech-tag"><i class="fas fa-credit-card"></i> Stripe / RevenueCat</span>
+      <span class="tech-tag"><i class="fas fa-bell"></i> FCM / APNs</span>
+      <span class="tech-tag"><i class="fas fa-chart-line"></i> Mixpanel / Amplitude</span>
+      <span class="tech-tag"><i class="fas fa-bug"></i> Sentry</span>
+    </div>
+  </div>
+</section>
+
+<section class="svc-cta">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Turn Your App Idea Into <br>a Product People Love</h2>
+      <p>Get a free feasibility review and cost estimate for your mobile app project — within 24 hours.</p>
+      <div class="cta-acts">
+        <a href="index.html#contact" class="btn btn-white">Get Free Estimate <i class="fas fa-arrow-right"></i></a>
+        <a href="index.html#portfolio" class="btn btn-outline-white">View App Portfolio <i class="fas fa-eye"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="fgrid">
+      <div class="fbrand"><a href="index.html" class="logo-ft">Amiuriq</a><p>Building tomorrow's digital solutions today. We craft software that transforms businesses and drives real growth.</p><div class="fsocs"><a href="#" class="socbtn"><i class="fab fa-linkedin-in"></i></a><a href="#" class="socbtn"><i class="fab fa-github"></i></a><a href="#" class="socbtn"><i class="fab fa-twitter"></i></a><a href="#" class="socbtn"><i class="fab fa-instagram"></i></a></div></div>
+      <div class="fcol"><h4>Services</h4><ul><li><a href="web-development.html">Web Development</a></li><li><a href="mobile-app-development.html">Mobile Apps</a></li><li><a href="ai-machine-learning.html">AI &amp; ML</a></li><li><a href="cloud-solutions.html">Cloud Solutions</a></li><li><a href="cybersecurity.html">Cybersecurity</a></li></ul></div>
+      <div class="fcol"><h4>Company</h4><ul><li><a href="index.html#about">About Us</a></li><li><a href="index.html#team">Our Team</a></li><li><a href="index.html#portfolio">Portfolio</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+      <div class="fcol"><h4>Legal</h4><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Cookie Policy</a></li></ul></div>
+    </div>
+    <div class="fbot"><p>© 2025 Amiuriq Pvt Ltd. All rights reserved.</p><div class="fblinks"><a href="#">Privacy</a><a href="#">Terms</a><a href="index.html">Home</a></div></div>
+  </div>
+</footer>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50));
+document.getElementById('hbg').addEventListener('click',()=>document.getElementById('mnav').classList.add('open'));
+document.getElementById('mnav-x').addEventListener('click',()=>document.getElementById('mnav').classList.remove('open'));
+</script>
+</body>
+</html>
