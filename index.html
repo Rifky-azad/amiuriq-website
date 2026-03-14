@@ -186,7 +186,16 @@ section{padding:100px 0;position:relative}
 /* TEAM */
 #team{background:transparent}
 .tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.trow2{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:75%;margin:24px auto 0}
+.trow2{display:none;grid-template-columns:repeat(3,1fr);gap:24px;max-width:75%;margin:24px auto 0}
+.tm-hide{display:none !important}
+.tm-fadein{animation:tmIn .5s ease forwards}
+@keyframes tmIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.tgrid.t3col{grid-template-columns:repeat(3,1fr)}
+.tm-loadmore{display:flex;justify-content:center;margin-top:40px}
+.tm-loadmore button{display:inline-flex;align-items:center;gap:9px;padding:13px 32px;border-radius:50px;border:1px solid rgba(100,160,255,.4);background:rgba(225,240,255,.55);backdrop-filter:blur(12px);color:var(--txt);font-size:14px;font-weight:600;cursor:pointer;transition:all .3s;font-family:'Space Grotesk',sans-serif}
+.tm-loadmore button:hover{background:rgba(100,160,255,.2);border-color:rgba(100,160,255,.7);transform:translateY(-2px);box-shadow:0 8px 28px rgba(100,160,255,.18)}
+[data-theme=dark] .tm-loadmore button{background:rgba(10,22,60,.55);border-color:rgba(60,120,255,.3);color:#e2eaf5}
+[data-theme=dark] .tm-loadmore button:hover{background:rgba(60,120,255,.18);border-color:rgba(60,120,255,.6)}
 .tmcard{padding:30px 22px;text-align:center}
 .tmav{width:88px;height:88px;border-radius:50%;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:700;font-family:'Space Grotesk',sans-serif;color:#fff;position:relative;overflow:hidden}
 .tmav::after{content:'';position:absolute;inset:-3px;border-radius:50%;background:var(--g1);z-index:-1}
@@ -765,7 +774,7 @@ footer{background:rgba(255,224,224,.7);border-top:1px solid rgba(217,64,64,.15);
         </div>
       </div>
     </div>
-    <div class="trow2">
+    <div class="trow2" id="tmRow2">
       <div class="founder-card g3 fu" style="border-radius:22px">
         <div class="gc-inner tmcard" style="text-align:center">
           <div class="founder-av g3">
@@ -812,6 +821,7 @@ footer{background:rgba(255,224,224,.7);border-top:1px solid rgba(217,64,64,.15);
         </div>
       </div>
     </div>
+    <div class="tm-loadmore"><button id="tmLoadMore"><i class="fas fa-users"></i> Load More</button></div>
   </div>
 </section>
 
@@ -1025,6 +1035,30 @@ async function handleSubmit(e){
 }
 // THEME TOGGLE
 (function(){var h=document.documentElement,btn=document.getElementById('themeToggle'),ic=btn.querySelector('i'),cur=h.getAttribute('data-theme')||'light';ic.className=cur==='dark'?'fas fa-sun':'fas fa-moon';btn.addEventListener('click',function(){var t=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',t);localStorage.setItem('aq-theme',t);ic.className=t==='dark'?'fas fa-sun':'fas fa-moon';});})();
+// TEAM LOAD MORE
+(function(){
+  var grid=document.querySelector('.tgrid'),row2=document.getElementById('tmRow2'),btn=document.getElementById('tmLoadMore');
+  if(!grid||!btn)return;
+  var cards=grid.querySelectorAll('.founder-card'),expanded=false;
+  // Hide cards after first 3 and hide row2 initially
+  grid.classList.add('t3col');
+  for(var i=3;i<cards.length;i++) cards[i].classList.add('tm-hide');
+  btn.addEventListener('click',function(){
+    expanded=!expanded;
+    if(expanded){
+      grid.classList.remove('t3col');
+      for(var i=3;i<cards.length;i++){cards[i].classList.remove('tm-hide');cards[i].classList.add('tm-fadein');}
+      row2.style.display='grid';
+      row2.querySelectorAll('.founder-card').forEach(function(c,i){c.style.animationDelay=(i*0.1)+'s';c.classList.add('tm-fadein');});
+      btn.innerHTML='<i class="fas fa-chevron-up"></i> Show Less';
+    } else {
+      grid.classList.add('t3col');
+      for(var i=3;i<cards.length;i++){cards[i].classList.add('tm-hide');cards[i].classList.remove('tm-fadein');}
+      row2.style.display='none';
+      btn.innerHTML='<i class="fas fa-users"></i> Load More';
+    }
+  });
+})();
 </script>
 </body>
 </html>
