@@ -96,26 +96,31 @@ section{padding:100px 0;position:relative}
 
 /* SERVICES */
 #services{background:rgba(255,255,255,.5)}
-.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.scard{padding:34px 28px;position:relative;overflow:hidden;transition:all .45s cubic-bezier(.4,0,.2,1)}
-.scard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--g1);border-radius:3px 3px 0 0;transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.4,0,.2,1)}
-.scard::after{content:'';position:absolute;top:0;left:-100%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);transition:left .65s ease;pointer-events:none;z-index:1}
-.scard:hover{transform:translateY(-10px) scale(1.015);box-shadow:0 30px 70px rgba(217,64,64,.13),0 0 0 1px rgba(217,64,64,.12)!important;background:rgba(255,255,255,.94)!important}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.scard{padding:36px 30px;position:relative;overflow:hidden;transition:all .5s cubic-bezier(.4,0,.2,1)}
+.scard-num{position:absolute;top:18px;right:22px;font-family:'Space Grotesk',sans-serif;font-size:42px;font-weight:800;color:rgba(217,64,64,.055);line-height:1;user-select:none;transition:all .5s;pointer-events:none}
+.scard:hover .scard-num{color:rgba(217,64,64,.1);transform:scale(1.1) translateY(-2px)}
+.scard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--g1);border-radius:3px 3px 0 0;transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.scard::after{content:'';position:absolute;top:0;left:-100%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);transition:left .75s ease;pointer-events:none;z-index:2}
+.scard:hover{transform:translateY(-14px) scale(1.02);box-shadow:0 40px 90px rgba(217,64,64,.16),0 0 0 1.5px rgba(217,64,64,.2)!important;background:rgba(255,255,255,.97)!important}
 .scard:hover::before{transform:scaleX(1)}
 .scard:hover::after{left:120%}
-.scard:hover .sicon{transform:translateY(-6px) scale(1.14);box-shadow:0 14px 36px rgba(217,64,64,.22)}
-.scard:hover .slink{gap:12px;color:var(--p)}
-.sicon{width:58px;height:58px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:22px;transition:all .4s cubic-bezier(.34,1.56,.64,1)}
-.si1{background:rgba(108,99,255,.15);color:var(--p2)}
-.si2{background:rgba(0,212,255,.12);color:var(--s)}
-.si3{background:rgba(255,107,157,.12);color:var(--a)}
-.si4{background:rgba(255,139,107,.12);color:var(--a2)}
-.si5{background:rgba(72,199,142,.12);color:#48C78E}
-.si6{background:rgba(255,193,7,.12);color:#FFC107}
-.stname{font-size:19px;margin-bottom:11px}
-.stdesc{color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:18px}
-.slink{color:var(--p2);font-size:14px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:all .3s}
-.slink:hover{gap:10px}
+.scard:hover .sicon{transform:translateY(-7px) scale(1.18) rotate(-4deg);box-shadow:0 16px 40px rgba(217,64,64,.25)}
+.scard:hover .slink{gap:13px;color:var(--p)}
+.scard:hover .stname{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sicon{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:24px;transition:all .45s cubic-bezier(.34,1.56,.64,1);box-shadow:0 4px 16px rgba(0,0,0,.07)}
+.si1{background:linear-gradient(135deg,rgba(108,99,255,.22),rgba(108,99,255,.07));color:#6C63FF;border:1px solid rgba(108,99,255,.2)}
+.si2{background:linear-gradient(135deg,rgba(0,212,255,.22),rgba(0,212,255,.07));color:#00AAC4;border:1px solid rgba(0,212,255,.2)}
+.si3{background:linear-gradient(135deg,rgba(255,107,157,.22),rgba(255,107,157,.07));color:#d94d88;border:1px solid rgba(255,107,157,.2)}
+.si4{background:linear-gradient(135deg,rgba(255,139,107,.22),rgba(255,139,107,.07));color:#c95e28;border:1px solid rgba(255,139,107,.2)}
+.si5{background:linear-gradient(135deg,rgba(72,199,142,.22),rgba(72,199,142,.07));color:#33a46e;border:1px solid rgba(72,199,142,.2)}
+.si6{background:linear-gradient(135deg,rgba(255,193,7,.22),rgba(255,193,7,.07));color:#c48b00;border:1px solid rgba(255,193,7,.2)}
+.stname{font-size:20px;margin-bottom:12px;font-weight:700;transition:all .35s}
+.stdesc{color:var(--muted);font-size:14px;line-height:1.78;margin-bottom:22px}
+.slink{color:var(--p2);font-size:14px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .35s;padding:8px 0}
+.slink i{transition:transform .35s}
+.slink:hover{gap:11px}
+.slink:hover i{transform:translateX(4px)}
 
 /* ABOUT */
 #about{background:transparent}
@@ -125,14 +130,15 @@ section{padding:100px 0;position:relative}
 .agl{position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(217,64,64,.22),transparent);top:-50px;left:-50px;z-index:1}
 .agl2{position:absolute;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,53,.15),transparent);bottom:-30px;right:-30px;z-index:1}
 .sgr{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
-.sbox{background:rgba(217,64,64,.06);border:1px solid rgba(217,64,64,.15);border-radius:16px;padding:22px;text-align:center;position:relative;overflow:hidden;transition:all .4s cubic-bezier(.4,0,.2,1);cursor:default}
-.sbox::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--g1);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
-.sbox::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 120%,rgba(217,64,64,.12),transparent 70%);opacity:0;transition:opacity .4s}
-.sbox:hover{transform:translateY(-5px) scale(1.04);border-color:rgba(217,64,64,.3);box-shadow:0 16px 44px rgba(217,64,64,.13)}
-.sbox:hover::before{transform:scaleX(1)}
-.sbox:hover::after{opacity:1}
-.snum{font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:800;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
-.slb{font-size:13px;color:var(--muted);margin-top:5px}
+.sbox{background:rgba(255,255,255,.82);border:1px solid rgba(217,64,64,.14);border-radius:18px;padding:26px 20px;text-align:center;position:relative;overflow:hidden;transition:all .45s cubic-bezier(.4,0,.2,1);cursor:default;backdrop-filter:blur(14px);box-shadow:0 4px 20px rgba(217,64,64,.05)}
+.sbox::before{content:'';position:absolute;inset:0;background:var(--g1);opacity:0;transition:opacity .45s;z-index:0;border-radius:18px}
+.sbox::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--g1);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.4,0,.2,1);z-index:2}
+.sbox:hover{transform:translateY(-7px) scale(1.06);border-color:rgba(217,64,64,.38);box-shadow:0 22px 55px rgba(217,64,64,.17)}
+.sbox:hover::before{opacity:.07}
+.sbox:hover::after{transform:scaleX(1)}
+.sbox:hover .slb{color:var(--p2)}
+.snum{font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:800;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;position:relative;z-index:1}
+.slb{font-size:13px;color:var(--muted);margin-top:7px;font-weight:500;position:relative;z-index:1;transition:color .35s}
 .atxt h2{font-size:clamp(30px,4vw,46px);line-height:1.15;margin-bottom:18px;letter-spacing:-1px}
 .atxt p{color:var(--muted);line-height:1.8;margin-bottom:14px;font-size:16px}
 .afeats{margin-top:28px;display:flex;flex-direction:column;gap:13px}
@@ -145,28 +151,32 @@ section{padding:100px 0;position:relative}
 .pfb{padding:8px 22px;border-radius:50px;border:1px solid var(--cbr);background:transparent;color:var(--muted);font-size:14px;font-weight:500;cursor:pointer;transition:all .3s;font-family:'Inter',sans-serif}
 .pfb.active,.pfb:hover{background:var(--p);border-color:var(--p);color:#fff}
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.pcard{border-radius:20px;overflow:hidden;border:1px solid rgba(180,210,255,.35);transition:all .45s cubic-bezier(.4,0,.2,1);cursor:pointer;background:rgba(255,255,255,.55);backdrop-filter:blur(18px);box-shadow:0 4px 24px rgba(100,160,255,.08);position:relative}
-.pcard:hover{transform:translateY(-12px);border-color:rgba(217,64,64,.28);box-shadow:0 32px 80px rgba(217,64,64,.14);background:rgba(255,255,255,.88)}
-.pimg{height:220px;position:relative;overflow:hidden}
-.pimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.4,0,.2,1)}
-.pcard:hover .pimg img{transform:scale(1.1)}
-.pimg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,5,30,.5) 0%,rgba(10,5,30,.1) 50%,transparent 100%);opacity:0;transition:opacity .45s}
+.pcard{border-radius:22px;overflow:hidden;border:1px solid rgba(217,64,64,.1);transition:all .5s cubic-bezier(.4,0,.2,1);cursor:pointer;background:rgba(255,255,255,.72);backdrop-filter:blur(20px);box-shadow:0 4px 30px rgba(217,64,64,.06);position:relative}
+.pcard:hover{transform:translateY(-16px) scale(1.01);border-color:rgba(217,64,64,.32);box-shadow:0 44px 100px rgba(217,64,64,.17);background:rgba(255,255,255,.94)}
+.pimg{height:230px;position:relative;overflow:hidden}
+.pimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.4,0,.2,1)}
+.pcard:hover .pimg img{transform:scale(1.13)}
+.pimg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(8,0,20,.7) 0%,rgba(8,0,20,.18) 50%,transparent 100%);opacity:0;transition:opacity .5s}
 .pcard:hover .pimg::after{opacity:1}
-.pimg-overlay{position:absolute;bottom:14px;left:14px;z-index:2;opacity:0;transform:translateY(8px);transition:all .4s cubic-bezier(.4,0,.2,1)}
+.pimg-overlay{position:absolute;bottom:16px;left:16px;z-index:2;opacity:0;transform:translateY(14px);transition:all .45s cubic-bezier(.4,0,.2,1)}
 .pcard:hover .pimg-overlay{opacity:1;transform:translateY(0)}
-.pimg-overlay-badge{background:rgba(255,255,255,.15);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.25);border-radius:50px;padding:5px 14px;font-size:11px;font-weight:600;color:#fff;letter-spacing:.5px}
+.pimg-overlay-badge{background:rgba(255,255,255,.16);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.3);border-radius:50px;padding:8px 18px;font-size:12px;font-weight:600;color:#fff;letter-spacing:.5px;display:flex;align-items:center;gap:7px}
 .pg1{background:linear-gradient(135deg,#6C63FF,#00D4FF)}
 .pg2{background:linear-gradient(135deg,#FF6B9D,#FF8B6B)}
 .pg3{background:linear-gradient(135deg,#48C78E,#00D4FF)}
 .pg4{background:linear-gradient(135deg,#6C63FF,#FF6B9D)}
 .pg5{background:linear-gradient(135deg,#FFC107,#FF8B6B)}
 .pg6{background:linear-gradient(135deg,#00D4FF,#48C78E)}
-.pinfo{padding:22px;background:rgba(235,245,255,.6);backdrop-filter:blur(16px);border-top:1px solid rgba(180,220,255,.45)}
-.pcat{font-size:11px;font-weight:700;color:var(--p2);letter-spacing:1px;text-transform:uppercase;margin-bottom:7px}
-.ptitle{font-size:17px;margin-bottom:8px}
-.pdesc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.pinfo{padding:22px 24px;background:rgba(255,255,255,.6);backdrop-filter:blur(16px);border-top:1px solid rgba(217,64,64,.08);transition:background .4s}
+.pcard:hover .pinfo{background:rgba(255,255,255,.88)}
+.pcat{font-size:10px;font-weight:700;color:var(--p2);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:9px;display:flex;align-items:center;gap:7px}
+.pcat::before{content:'';width:18px;height:2px;background:var(--g1);border-radius:2px;display:inline-block;flex-shrink:0}
+.ptitle{font-size:17px;margin-bottom:9px;font-weight:700;transition:color .35s;line-height:1.35}
+.pcard:hover .ptitle{color:var(--p2)}
+.pdesc{font-size:13px;color:var(--muted);line-height:1.68;margin-bottom:14px}
 .ptags{display:flex;gap:7px;flex-wrap:wrap}
-.tag{padding:4px 11px;border-radius:50px;background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.2);font-size:11px;color:var(--p2);font-weight:500}
+.tag{padding:5px 12px;border-radius:50px;background:rgba(217,64,64,.07);border:1px solid rgba(217,64,64,.14);font-size:11px;color:var(--p2);font-weight:500;transition:all .3s}
+.pcard:hover .tag{background:rgba(217,64,64,.13);border-color:rgba(217,64,64,.26)}
 
 /* TECH */
 #tech{background:var(--dark);overflow:hidden}
@@ -176,29 +186,31 @@ section{padding:100px 0;position:relative}
 .mtrack.rev{animation:mqr 25s linear infinite}
 @keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @keyframes mqr{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
-.tpill{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;background:var(--cb);border:1px solid var(--cbr);border-radius:50px;white-space:nowrap;font-size:14px;font-weight:500;flex-shrink:0;transition:all .3s}
-.tpill:hover{border-color:rgba(108,99,255,.4);background:rgba(108,99,255,.08)}
+.tpill{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;background:rgba(255,255,255,.78);border:1px solid rgba(217,64,64,.12);border-radius:50px;white-space:nowrap;font-size:14px;font-weight:500;flex-shrink:0;transition:all .4s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 12px rgba(217,64,64,.05);backdrop-filter:blur(10px)}
+.tpill:hover{border-color:rgba(217,64,64,.35);background:rgba(255,255,255,.96);transform:translateY(-3px) scale(1.04);box-shadow:0 10px 30px rgba(217,64,64,.14)}
 
 /* TESTIMONIALS */
 #testi{background:var(--dark2)}
 .tslider{overflow:hidden;position:relative}
 .ttrack{display:flex;gap:24px;transition:transform .5s cubic-bezier(.4,0,.2,1)}
-.tcard{flex:0 0 calc(33.333% - 16px);padding:34px;position:relative;overflow:hidden;transition:all .45s cubic-bezier(.4,0,.2,1)}
-.tcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--g1);border-radius:3px 3px 0 0;transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.4,0,.2,1)}
-.tcard::after{content:'';position:absolute;top:0;left:-100%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent);transition:left .65s ease;pointer-events:none}
-.tcard:hover{transform:translateY(-8px);box-shadow:0 24px 64px rgba(217,64,64,.11)!important;background:rgba(255,255,255,.92)!important}
+.tcard{flex:0 0 calc(33.333% - 16px);padding:36px 32px;position:relative;overflow:hidden;transition:all .5s cubic-bezier(.4,0,.2,1)}
+.tcard-bg-q{position:absolute;top:-20px;right:20px;font-size:130px;line-height:1;font-family:Georgia,serif;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.06;pointer-events:none;transition:opacity .5s,transform .5s;user-select:none}
+.tcard:hover .tcard-bg-q{opacity:.13;transform:scale(1.08) rotate(-5deg)}
+.tcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--g1);border-radius:3px 3px 0 0;transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.tcard::after{content:'';position:absolute;top:0;left:-100%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);transition:left .75s ease;pointer-events:none}
+.tcard:hover{transform:translateY(-11px);box-shadow:0 32px 80px rgba(217,64,64,.13)!important;background:rgba(255,255,255,.96)!important}
 .tcard:hover::before{transform:scaleX(1)}
 .tcard:hover::after{left:120%}
-.tcard:hover .tav{transform:scale(1.1);box-shadow:0 8px 28px rgba(217,64,64,.3)}
-.tq{font-size:44px;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:14px;font-family:Georgia,serif}
-.ttxt{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:26px;font-style:italic}
-.tauth{display:flex;align-items:center;gap:13px}
-.tav{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;font-family:'Space Grotesk',sans-serif;color:#fff;flex-shrink:0;transition:all .4s cubic-bezier(.34,1.56,.64,1);position:relative}
-.tav::after{content:'';position:absolute;inset:-3px;border-radius:50%;background:var(--g1);z-index:-1;opacity:0;transition:opacity .4s;filter:blur(6px)}
-.tcard:hover .tav::after{opacity:.5}
-.tan{font-size:15px;font-weight:600}
+.tcard:hover .tav{transform:scale(1.12);box-shadow:0 10px 32px rgba(217,64,64,.38)}
+.tq{font-size:40px;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:12px;font-family:Georgia,serif;position:relative;z-index:1}
+.ttxt{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:26px;font-style:italic;position:relative;z-index:1}
+.tauth{display:flex;align-items:center;gap:14px;position:relative;z-index:1}
+.tav{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;font-family:'Space Grotesk',sans-serif;color:#fff;flex-shrink:0;transition:all .45s cubic-bezier(.34,1.56,.64,1);position:relative;box-shadow:0 4px 18px rgba(217,64,64,.22)}
+.tav::before{content:'';position:absolute;inset:-3px;border-radius:50%;background:var(--g1);z-index:-1;opacity:.35;filter:blur(8px);transition:opacity .4s,filter .4s}
+.tcard:hover .tav::before{opacity:.75;filter:blur(12px)}
+.tan{font-size:15px;font-weight:700}
 .tar{font-size:12px;color:var(--muted);margin-top:2px}
-.tstars{color:#FFC107;font-size:13px;margin-bottom:8px}
+.tstars{color:#FFC107;font-size:12px;margin-bottom:10px;letter-spacing:1px;position:relative;z-index:1}
 .sctrl{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:40px}
 .sbtn{width:44px;height:44px;border-radius:50%;border:1px solid var(--cbr);background:var(--cb);color:var(--txt);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;transition:all .3s}
 .sbtn:hover{background:var(--p);border-color:var(--p)}
@@ -232,7 +244,8 @@ section{padding:100px 0;position:relative}
 .founder-av.g2::before,.founder-av.g2::after{background:var(--g2)}
 .founder-av.g3::before,.founder-av.g3::after{background:linear-gradient(135deg,#48C78E,#00D4FF)}
 .founder-av.g4::before,.founder-av.g4::after{background:linear-gradient(135deg,#FFC107,#FF6B9D)}
-.founder-card .gc-inner{position:relative;z-index:1;background:rgba(225,240,255,.55);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(180,215,255,.55);border-radius:20px;padding:30px 22px;height:100%;box-shadow:0 4px 24px rgba(100,160,255,.08)}
+.founder-card .gc-inner{position:relative;z-index:1;background:rgba(232,244,255,.62);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(180,215,255,.62);border-radius:20px;padding:32px 24px;height:100%;box-shadow:0 8px 36px rgba(100,160,255,.1);transition:all .5s cubic-bezier(.4,0,.2,1)}
+.founder-card:hover .gc-inner{background:rgba(240,248,255,.86);border-color:rgba(140,195,255,.78);box-shadow:0 24px 70px rgba(100,160,255,.2);transform:translateY(-5px)}
 .founder-av{width:120px;height:120px;border-radius:50%;margin:0 auto 20px;position:relative;flex-shrink:0}
 .founder-av::before{content:'';position:absolute;inset:-4px;border-radius:50%;background:var(--g1);z-index:0;animation:spin 4s linear infinite}
 .founder-av::after{content:'';position:absolute;inset:-4px;border-radius:50%;background:var(--g1);z-index:0;filter:blur(10px);opacity:.7;animation:spin 4s linear infinite}
@@ -517,12 +530,12 @@ footer{background:rgba(255,224,224,.7);border-top:1px solid rgba(217,64,64,.15);
       <p class="ssub">End-to-end software solutions tailored to your business — built with cutting-edge technologies and delivered by experts.</p>
     </div>
     <div class="sgrid">
-      <div class="gc scard fu"><div class="sicon si1"><i class="fas fa-globe"></i></div><h3 class="stname">Web Development</h3><p class="stdesc">High-performance web apps built with React, Next.js & Vue.js that deliver exceptional user experiences and drive conversions.</p><a href="web-development.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
-      <div class="gc scard fu"><div class="sicon si2"><i class="fas fa-mobile-alt"></i></div><h3 class="stname">Mobile App Development</h3><p class="stdesc">Native and cross-platform iOS & Android apps using Flutter and React Native that engage users and scale with your growth.</p><a href="mobile-app-development.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
-      <div class="gc scard fu"><div class="sicon si3"><i class="fas fa-brain"></i></div><h3 class="stname">AI & Machine Learning</h3><p class="stdesc">Intelligent solutions powered by ML, NLP, and computer vision — automating operations and delivering smarter business insights.</p><a href="ai-machine-learning.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
-      <div class="gc scard fu"><div class="sicon si4"><i class="fas fa-cloud"></i></div><h3 class="stname">Cloud Solutions</h3><p class="stdesc">Scalable cloud architecture on AWS, GCP & Azure — DevOps, CI/CD pipelines, microservices, and containerization.</p><a href="cloud-solutions.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
-      <div class="gc scard fu"><div class="sicon si5"><i class="fas fa-palette"></i></div><h3 class="stname">UI/UX Design</h3><p class="stdesc">User-centered design that blends aesthetics with functionality — wireframes, prototypes, and pixel-perfect interfaces that convert.</p><a href="ui-ux-design.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
-      <div class="gc scard fu"><div class="sicon si6"><i class="fas fa-shield-alt"></i></div><h3 class="stname">Cybersecurity</h3><p class="stdesc">Security audits, penetration testing, and secure architecture to protect your digital assets and ensure full compliance.</p><a href="cybersecurity.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
+      <div class="gc scard fu"><span class="scard-num">01</span><div class="sicon si1"><i class="fas fa-globe"></i></div><h3 class="stname">Web Development</h3><p class="stdesc">High-performance web apps built with React, Next.js & Vue.js that deliver exceptional user experiences and drive conversions.</p><a href="web-development.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
+      <div class="gc scard fu"><span class="scard-num">02</span><div class="sicon si2"><i class="fas fa-mobile-alt"></i></div><h3 class="stname">Mobile App Development</h3><p class="stdesc">Native and cross-platform iOS & Android apps using Flutter and React Native that engage users and scale with your growth.</p><a href="mobile-app-development.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
+      <div class="gc scard fu"><span class="scard-num">03</span><div class="sicon si3"><i class="fas fa-brain"></i></div><h3 class="stname">AI & Machine Learning</h3><p class="stdesc">Intelligent solutions powered by ML, NLP, and computer vision — automating operations and delivering smarter business insights.</p><a href="ai-machine-learning.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
+      <div class="gc scard fu"><span class="scard-num">04</span><div class="sicon si4"><i class="fas fa-cloud"></i></div><h3 class="stname">Cloud Solutions</h3><p class="stdesc">Scalable cloud architecture on AWS, GCP & Azure — DevOps, CI/CD pipelines, microservices, and containerization.</p><a href="cloud-solutions.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
+      <div class="gc scard fu"><span class="scard-num">05</span><div class="sicon si5"><i class="fas fa-palette"></i></div><h3 class="stname">UI/UX Design</h3><p class="stdesc">User-centered design that blends aesthetics with functionality — wireframes, prototypes, and pixel-perfect interfaces that convert.</p><a href="ui-ux-design.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
+      <div class="gc scard fu"><span class="scard-num">06</span><div class="sicon si6"><i class="fas fa-shield-alt"></i></div><h3 class="stname">Cybersecurity</h3><p class="stdesc">Security audits, penetration testing, and secure architecture to protect your digital assets and ensure full compliance.</p><a href="cybersecurity.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
     </div>
   </div>
 </section>
@@ -710,12 +723,12 @@ footer{background:rgba(255,224,224,.7);border-top:1px solid rgba(217,64,64,.15);
     </div>
     <div class="tslider">
       <div class="ttrack" id="ttrack">
-        <div class="gc tcard"><div class="tstars">★★★★★</div><div class="tq">"</div><p class="ttxt">Amiuriq transformed our online presence entirely. They delivered our e-commerce platform in 6 weeks — faster than any agency we've worked with. The attention to detail was extraordinary.</p><div class="tauth"><div class="tav" style="background:linear-gradient(135deg,#6C63FF,#00D4FF)">JM</div><div><div class="tan">James Mitchell</div><div class="tar">CEO, NexCommerce Ltd</div></div></div></div>
-        <div class="gc tcard"><div class="tstars">★★★★★</div><div class="tq">"</div><p class="ttxt">The AI solution Amiuriq built processes 2 million data points daily and has saved our team 40+ hours per week. Exceptional technical expertise and professionalism throughout.</p><div class="tauth"><div class="tav" style="background:linear-gradient(135deg,#FF6B9D,#FF8B6B)">SA</div><div><div class="tan">Sarah Al-Hassan</div><div class="tar">CTO, DataVision Analytics</div></div></div></div>
-        <div class="gc tcard"><div class="tstars">★★★★★</div><div class="tq">"</div><p class="ttxt">Our mobile app reached 10,000 downloads in the first month! Amiuriq's Flutter team is world-class. The UI is stunning and performance is flawless on all devices.</p><div class="tauth"><div class="tav" style="background:linear-gradient(135deg,#48C78E,#00D4FF)">RP</div><div><div class="tan">Rahul Patel</div><div class="tar">Founder, EduSpark</div></div></div></div>
-        <div class="gc tcard"><div class="tstars">★★★★★</div><div class="tq">"</div><p class="ttxt">Working with Amiuriq felt like having an in-house tech team. They understood our vision immediately and delivered beyond expectations. The cloud migration was absolutely seamless.</p><div class="tauth"><div class="tav" style="background:linear-gradient(135deg,#FFC107,#FF8B6B)">LT</div><div><div class="tan">Lisa Thompson</div><div class="tar">VP Engineering, LogiTrack</div></div></div></div>
-        <div class="gc tcard"><div class="tstars">★★★★★</div><div class="tq">"</div><p class="ttxt">Amiuriq rebuilt our banking dashboard from scratch — the result is a masterpiece. Secure, fast, and incredibly intuitive. User engagement is up 300% since launch.</p><div class="tauth"><div class="tav" style="background:linear-gradient(135deg,#6C63FF,#FF6B9D)">MK</div><div><div class="tan">Michael Kurosawa</div><div class="tar">Director, FinVault</div></div></div></div>
-        <div class="gc tcard"><div class="tstars">★★★★★</div><div class="tq">"</div><p class="ttxt">The cybersecurity audit discovered critical vulnerabilities we had missed for years. Their thoroughness potentially saved our company from a major breach. Highly recommended.</p><div class="tauth"><div class="tav" style="background:linear-gradient(135deg,#00D4FF,#48C78E)">AN</div><div><div class="tan">Aisha Noor</div><div class="tar">CISO, SecureBank PLC</div></div></div></div>
+        <div class="gc tcard"><div class="tcard-bg-q">"</div><div class="tstars">★★★★★</div><div class="tq">"</div><p class="ttxt">Amiuriq transformed our online presence entirely. They delivered our e-commerce platform in 6 weeks — faster than any agency we've worked with. The attention to detail was extraordinary.</p><div class="tauth"><div class="tav" style="background:linear-gradient(135deg,#6C63FF,#00D4FF)">JM</div><div><div class="tan">James Mitchell</div><div class="tar">CEO, NexCommerce Ltd</div></div></div></div>
+        <div class="gc tcard"><div class="tcard-bg-q">"</div><div class="tstars">★★★★★</div><div class="tq">"</div><p class="ttxt">The AI solution Amiuriq built processes 2 million data points daily and has saved our team 40+ hours per week. Exceptional technical expertise and professionalism throughout.</p><div class="tauth"><div class="tav" style="background:linear-gradient(135deg,#FF6B9D,#FF8B6B)">SA</div><div><div class="tan">Sarah Al-Hassan</div><div class="tar">CTO, DataVision Analytics</div></div></div></div>
+        <div class="gc tcard"><div class="tcard-bg-q">"</div><div class="tstars">★★★★★</div><div class="tq">"</div><p class="ttxt">Our mobile app reached 10,000 downloads in the first month! Amiuriq's Flutter team is world-class. The UI is stunning and performance is flawless on all devices.</p><div class="tauth"><div class="tav" style="background:linear-gradient(135deg,#48C78E,#00D4FF)">RP</div><div><div class="tan">Rahul Patel</div><div class="tar">Founder, EduSpark</div></div></div></div>
+        <div class="gc tcard"><div class="tcard-bg-q">"</div><div class="tstars">★★★★★</div><div class="tq">"</div><p class="ttxt">Working with Amiuriq felt like having an in-house tech team. They understood our vision immediately and delivered beyond expectations. The cloud migration was absolutely seamless.</p><div class="tauth"><div class="tav" style="background:linear-gradient(135deg,#FFC107,#FF8B6B)">LT</div><div><div class="tan">Lisa Thompson</div><div class="tar">VP Engineering, LogiTrack</div></div></div></div>
+        <div class="gc tcard"><div class="tcard-bg-q">"</div><div class="tstars">★★★★★</div><div class="tq">"</div><p class="ttxt">Amiuriq rebuilt our banking dashboard from scratch — the result is a masterpiece. Secure, fast, and incredibly intuitive. User engagement is up 300% since launch.</p><div class="tauth"><div class="tav" style="background:linear-gradient(135deg,#6C63FF,#FF6B9D)">MK</div><div><div class="tan">Michael Kurosawa</div><div class="tar">Director, FinVault</div></div></div></div>
+        <div class="gc tcard"><div class="tcard-bg-q">"</div><div class="tstars">★★★★★</div><div class="tq">"</div><p class="ttxt">The cybersecurity audit discovered critical vulnerabilities we had missed for years. Their thoroughness potentially saved our company from a major breach. Highly recommended.</p><div class="tauth"><div class="tav" style="background:linear-gradient(135deg,#00D4FF,#48C78E)">AN</div><div><div class="tan">Aisha Noor</div><div class="tar">CISO, SecureBank PLC</div></div></div></div>
       </div>
     </div>
     <div class="sctrl">
