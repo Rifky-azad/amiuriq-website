@@ -245,15 +245,19 @@ section{padding:100px 0;position:relative}
 .tmav img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%}
 /* Founder special card */
 .founder-card{position:relative;overflow:visible !important}
-.founder-card::before{content:'';position:absolute;inset:-2px;border-radius:22px;background:linear-gradient(135deg,rgba(100,180,255,.35),rgba(180,220,255,.2));z-index:0;opacity:.8;filter:blur(16px)}
-.founder-card.g2::before{background:linear-gradient(135deg,rgba(120,160,255,.35),rgba(200,220,255,.2))}
-.founder-card.g3::before{background:linear-gradient(135deg,rgba(80,200,220,.3),rgba(100,180,255,.25))}
-.founder-card.g4::before{background:linear-gradient(135deg,rgba(100,160,255,.3),rgba(160,200,255,.2))}
+.founder-card::before{content:'';position:absolute;inset:-2px;border-radius:22px;background:linear-gradient(135deg,rgba(212,148,10,.3),rgba(245,197,0,.15));z-index:0;opacity:.8;filter:blur(16px)}
+.founder-card.g2::before{background:linear-gradient(135deg,rgba(255,196,0,.28),rgba(255,220,80,.15))}
+.founder-card.g3::before{background:linear-gradient(135deg,rgba(212,148,10,.25),rgba(255,210,50,.18))}
+.founder-card.g4::before{background:linear-gradient(135deg,rgba(255,193,7,.28),rgba(255,220,60,.15))}
 .founder-av.g2::before,.founder-av.g2::after{background:var(--g2)}
-.founder-av.g3::before,.founder-av.g3::after{background:linear-gradient(135deg,#48C78E,#00D4FF)}
+.founder-av.g3::before,.founder-av.g3::after{background:linear-gradient(135deg,#F5C500,#FFD060)}
 .founder-av.g4::before,.founder-av.g4::after{background:linear-gradient(135deg,#FFC107,#FFD060)}
-.founder-card .gc-inner{position:relative;z-index:1;background:rgba(232,244,255,.62);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(180,215,255,.62);border-radius:20px;padding:32px 24px;height:100%;box-shadow:0 8px 36px rgba(100,160,255,.1);transition:all .5s cubic-bezier(.4,0,.2,1)}
-.founder-card:hover .gc-inner{background:rgba(240,248,255,.86);border-color:rgba(140,195,255,.78);box-shadow:0 24px 70px rgba(100,160,255,.2);transform:translateY(-5px)}
+.founder-card .gc-inner{position:relative;z-index:1;background:rgba(255,252,220,.32);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border:1px solid rgba(255,220,80,.45);border-radius:20px;padding:32px 24px;height:100%;box-shadow:0 8px 36px rgba(212,148,10,.1);transition:all .5s cubic-bezier(.4,0,.2,1);overflow:hidden}
+.founder-card:hover .gc-inner{background:rgba(255,252,230,.52);border-color:rgba(212,148,10,.55);box-shadow:0 24px 70px rgba(212,148,10,.18);transform:translateY(-5px)}
+.tmcard-bg{position:absolute;inset:0;z-index:0;overflow:hidden;border-radius:inherit}
+.tmcard-bg img{width:100%;height:100%;object-fit:cover;opacity:.18;filter:saturate(1.3) brightness(.9);transition:opacity .5s cubic-bezier(.4,0,.2,1)}
+.founder-card:hover .tmcard-bg img{opacity:.3}
+.gc-inner.tmcard>*:not(.tmcard-bg){position:relative;z-index:2}
 .founder-av{width:120px;height:120px;border-radius:50%;margin:0 auto 20px;position:relative;flex-shrink:0}
 .founder-av::before{content:'';position:absolute;inset:-4px;border-radius:50%;background:var(--g1);z-index:0;animation:spin 4s linear infinite}
 .founder-av::after{content:'';position:absolute;inset:-4px;border-radius:50%;background:var(--g1);z-index:0;filter:blur(10px);opacity:.7;animation:spin 4s linear infinite}
@@ -423,7 +427,7 @@ footer .container{position:relative;z-index:1}
 [data-theme=dark] #contact .cic{background:rgba(60,120,255,.12);border-color:rgba(60,120,255,.25);color:#6090ff}
 @keyframes cGlow{0%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}100%{opacity:.75;transform:scale(1.02)}}
 @keyframes cOrb{0%{transform:translate(0,0) scale(1)}33%{transform:translate(-40px,30px) scale(1.15)}66%{transform:translate(20px,-20px) scale(.9)}100%{transform:translate(0,0) scale(1)}}
-[data-theme=dark] .founder-card .gc-inner{background:rgba(8,22,60,.55);border-color:rgba(60,120,255,.22);box-shadow:0 4px 24px rgba(20,60,160,.15)}
+[data-theme=dark] .founder-card .gc-inner{background:rgba(30,18,0,.62);border-color:rgba(212,148,10,.22);box-shadow:0 4px 24px rgba(120,80,0,.2)}
 [data-theme=dark] .founder-card::before{opacity:.4}
 [data-theme=dark] footer{background:linear-gradient(135deg,#0a0600 0%,#150d00 40%,#0a0600 70%,#050300 100%);border-top:none}
 [data-theme=dark] .fbot{border-top-color:rgba(60,120,255,.15)}
@@ -806,6 +810,7 @@ footer .container{position:relative;z-index:1}
     <div class="tgrid">
       <div class="founder-card fu" style="border-radius:22px">
         <div class="gc-inner tmcard" style="text-align:center">
+          <div class="tmcard-bg"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=500&h=600&fit=crop&q=80" alt="" loading="lazy"></div>
           <div class="founder-av">
             <img src="founder.jpg" alt="Rifquei Azad" onerror="this.style.display='none'">
           </div>
@@ -821,6 +826,7 @@ footer .container{position:relative;z-index:1}
       </div>
       <div class="founder-card g2 fu" style="border-radius:22px">
         <div class="gc-inner tmcard" style="text-align:center">
+          <div class="tmcard-bg"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=600&fit=crop&q=80" alt="" loading="lazy"></div>
           <div class="founder-av g2">
             <img src="team-suhail.jpeg" alt="Mohamed Suhail" style="width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;position:relative;z-index:2;">
           </div>
@@ -836,6 +842,7 @@ footer .container{position:relative;z-index:1}
       </div>
       <div class="founder-card g3 fu" style="border-radius:22px">
         <div class="gc-inner tmcard" style="text-align:center">
+          <div class="tmcard-bg"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=600&fit=crop&q=80" alt="" loading="lazy"></div>
           <div class="founder-av g3">
             <img src="team-jazeel.jpeg" alt="Jazeel Ahamed" style="width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;position:relative;z-index:2;">
           </div>
@@ -851,6 +858,7 @@ footer .container{position:relative;z-index:1}
       </div>
       <div class="founder-card g4 fu" style="border-radius:22px">
         <div class="gc-inner tmcard" style="text-align:center">
+          <div class="tmcard-bg"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=600&fit=crop&q=80" alt="" loading="lazy"></div>
           <div class="founder-av g4">
             <img src="team-inaam.png" alt="Inaam Ahamed" style="width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;position:relative;z-index:2;">
           </div>
@@ -868,6 +876,7 @@ footer .container{position:relative;z-index:1}
     <div class="trow2" id="tmRow2">
       <div class="founder-card g3 fu" style="border-radius:22px">
         <div class="gc-inner tmcard" style="text-align:center">
+          <div class="tmcard-bg"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500&h=600&fit=crop&q=80" alt="" loading="lazy"></div>
           <div class="founder-av g3">
             <div style="width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#48C78E,#00D4FF);display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:700;color:#fff;position:relative;z-index:2;font-family:'Space Grotesk',sans-serif">ZF</div>
           </div>
@@ -883,6 +892,7 @@ footer .container{position:relative;z-index:1}
       </div>
       <div class="founder-card fu" style="border-radius:22px">
         <div class="gc-inner tmcard" style="text-align:center">
+          <div class="tmcard-bg"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&h=600&fit=crop&q=80" alt="" loading="lazy"></div>
           <div class="founder-av">
             <img src="team-zibras.jpeg" alt="Mohamed Zibras" style="width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;position:relative;z-index:2;">
           </div>
@@ -898,6 +908,7 @@ footer .container{position:relative;z-index:1}
       </div>
       <div class="founder-card g2 fu" style="border-radius:22px">
         <div class="gc-inner tmcard" style="text-align:center">
+          <div class="tmcard-bg"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&h=600&fit=crop&q=80" alt="" loading="lazy"></div>
           <div class="founder-av g2">
             <img src="team-asnaff.jpeg" alt="Mohamed Asnaff" style="width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;position:relative;z-index:2;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div style="display:none;width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#FFD060,#FFC860);align-items:center;justify-content:center;font-size:32px;font-weight:700;color:#fff;position:relative;z-index:2;font-family:'Space Grotesk',sans-serif">MA</div>
           </div>
