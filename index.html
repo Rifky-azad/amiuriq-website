@@ -155,6 +155,11 @@ section{padding:100px 0;position:relative}
 .pfb{padding:8px 22px;border-radius:50px;border:1px solid var(--cbr);background:transparent;color:var(--muted);font-size:14px;font-weight:500;cursor:pointer;transition:all .3s;font-family:'Inter',sans-serif}
 .pfb.active,.pfb:hover{background:var(--p);border-color:var(--p);color:#fff}
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pcard.pmore{display:none}
+.pload-wrap{text-align:center;margin-top:40px}
+.pload-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 36px;border-radius:50px;background:var(--g1);color:#fff;font-size:15px;font-weight:600;font-family:'Space Grotesk',sans-serif;border:none;cursor:pointer;box-shadow:0 6px 30px rgba(212,148,10,.35);transition:all .3s}
+.pload-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(212,148,10,.5)}
+.pload-btn.hidden{display:none}
 .pcard{border-radius:22px;overflow:hidden;border:1px solid rgba(212,148,10,.1);transition:all .5s cubic-bezier(.4,0,.2,1);cursor:pointer;background:rgba(255,255,255,.72);backdrop-filter:blur(20px);box-shadow:0 4px 30px rgba(212,148,10,.06);position:relative}
 .pcard:hover{transform:translateY(-16px) scale(1.01);border-color:rgba(217,64,64,.32);box-shadow:0 44px 100px rgba(217,64,64,.17);background:rgba(255,255,255,.94)}
 .pimg{height:230px;position:relative;overflow:hidden}
@@ -659,38 +664,41 @@ footer .container{position:relative;z-index:1}
         <div class="pimg"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=450&fit=crop&auto=format&q=80" alt="EduSpark Learning Platform" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">Mobile App</div><h3 class="ptitle">EduSpark Learning Platform</h3><p class="pdesc">Interactive e-learning with gamification, live classes & AI tutoring for 10,000+ students.</p><div class="ptags"><span class="tag">React Native</span><span class="tag">GraphQL</span><span class="tag">Redis</span></div></div>
       </div>
-      <div class="pcard fu" data-cat="web">
+      <div class="pcard fu pmore" data-cat="web">
         <div class="pimg"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=450&fit=crop&auto=format&q=80" alt="SalesForge CRM" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">Web App</div><h3 class="ptitle">SalesForge CRM Platform</h3><p class="pdesc">Intelligent CRM with sales pipeline automation, lead scoring, and real-time team performance analytics.</p><div class="ptags"><span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span></div></div>
       </div>
-      <div class="pcard fu" data-cat="blockchain">
+      <div class="pcard fu pmore" data-cat="blockchain">
         <div class="pimg"><img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=450&fit=crop&auto=format&q=80" alt="ChainVault DeFi" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">Blockchain</div><h3 class="ptitle">ChainVault DeFi Platform</h3><p class="pdesc">Decentralized finance platform with smart contracts, NFT marketplace & crypto wallet integration.</p><div class="ptags"><span class="tag">Solidity</span><span class="tag">Web3.js</span><span class="tag">Ethereum</span></div></div>
       </div>
-      <div class="pcard fu" data-cat="ai">
+      <div class="pcard fu pmore" data-cat="ai">
         <div class="pimg"><img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=450&fit=crop&auto=format&q=80" alt="VisionGuard AI" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">AI/ML</div><h3 class="ptitle">VisionGuard AI Security</h3><p class="pdesc">Real-time computer vision security system with facial recognition, anomaly detection & threat alerts.</p><div class="ptags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">PyTorch</span></div></div>
       </div>
-      <div class="pcard fu" data-cat="cloud">
+      <div class="pcard fu pmore" data-cat="cloud">
         <div class="pimg"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=450&fit=crop&auto=format&q=80" alt="SmartHub IoT" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">Cloud</div><h3 class="ptitle">SmartHub IoT Dashboard</h3><p class="pdesc">Centralized IoT management platform monitoring 10,000+ connected devices with predictive maintenance.</p><div class="ptags"><span class="tag">AWS IoT</span><span class="tag">React</span><span class="tag">InfluxDB</span></div></div>
       </div>
-      <div class="pcard fu" data-cat="mobile">
+      <div class="pcard fu pmore" data-cat="mobile">
         <div class="pimg"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&h=450&fit=crop&auto=format&q=80" alt="FitPulse Fitness App" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">Mobile App</div><h3 class="ptitle">FitPulse Fitness Tracker</h3><p class="pdesc">AI-powered fitness app with personalized workout plans, nutrition tracking & wearable device sync.</p><div class="ptags"><span class="tag">Flutter</span><span class="tag">TensorFlow Lite</span><span class="tag">Firebase</span></div></div>
       </div>
-      <div class="pcard fu" data-cat="web">
+      <div class="pcard fu pmore" data-cat="web">
         <div class="pimg"><img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=450&fit=crop&auto=format&q=80" alt="SocialSphere Platform" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">Web App</div><h3 class="ptitle">SocialSphere Community</h3><p class="pdesc">Feature-rich social platform with real-time messaging, live streaming, content moderation & monetization.</p><div class="ptags"><span class="tag">React</span><span class="tag">Socket.io</span><span class="tag">MongoDB</span></div></div>
       </div>
-      <div class="pcard fu" data-cat="ai">
+      <div class="pcard fu pmore" data-cat="ai">
         <div class="pimg"><img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=450&fit=crop&auto=format&q=80" alt="PredictIQ Analytics" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">AI/ML</div><h3 class="ptitle">PredictIQ Business Analytics</h3><p class="pdesc">Predictive analytics engine using ML to forecast sales trends, customer churn & market opportunities.</p><div class="ptags"><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Tableau</span></div></div>
       </div>
-      <div class="pcard fu" data-cat="mobile">
+      <div class="pcard fu pmore" data-cat="mobile">
         <div class="pimg"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&h=450&fit=crop&auto=format&q=80" alt="FoodieGo Delivery App" loading="lazy"><div class="pimg-overlay"><span class="pimg-overlay-badge"><i class="fas fa-eye"></i> View Project</span></div></div>
         <div class="pinfo"><div class="pcat">Mobile App</div><h3 class="ptitle">FoodieGo Delivery App</h3><p class="pdesc">On-demand food delivery with real-time GPS tracking, restaurant discovery & AI-powered recommendations.</p><div class="ptags"><span class="tag">React Native</span><span class="tag">Node.js</span><span class="tag">Google Maps</span></div></div>
       </div>
+    </div>
+    <div class="pload-wrap">
+      <button class="pload-btn" id="ploadBtn"><i class="fas fa-plus"></i> Load More Projects</button>
     </div>
   </div>
 </section>
@@ -978,17 +986,38 @@ function runCounter(el){
 const cobs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){runCounter(x.target);cobs.unobserve(x.target)}}),{threshold:.5});
 document.querySelectorAll('.counter').forEach(el=>cobs.observe(el));
 
-// PORTFOLIO FILTER
+// PORTFOLIO FILTER + LOAD MORE
+let pExpanded=false;
+function updateLoadBtn(){
+  const btn=document.getElementById('ploadBtn');
+  if(!btn)return;
+  const f=document.querySelector('.pfb.active')?.dataset.f||'all';
+  const hidden=document.querySelectorAll('.pcard.pmore:not([style*="display: none"]),.pcard.pmore:not([style])');
+  const anyMore=[...document.querySelectorAll('.pcard.pmore')].some(c=>f==='all'||c.dataset.cat===f);
+  btn.classList.toggle('hidden',pExpanded||!anyMore);
+}
 document.querySelectorAll('.pfb').forEach(btn=>{
   btn.addEventListener('click',()=>{
     document.querySelectorAll('.pfb').forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
     const f=btn.dataset.f;
     document.querySelectorAll('.pcard').forEach(c=>{
-      c.style.display=(f==='all'||c.dataset.cat===f)?'block':'none';
+      const match=f==='all'||c.dataset.cat===f;
+      const isMore=c.classList.contains('pmore')&&!pExpanded;
+      c.style.display=(match&&!isMore)?'block':'none';
     });
+    updateLoadBtn();
   });
 });
+document.getElementById('ploadBtn')?.addEventListener('click',()=>{
+  pExpanded=true;
+  const f=document.querySelector('.pfb.active')?.dataset.f||'all';
+  document.querySelectorAll('.pcard.pmore').forEach(c=>{
+    if(f==='all'||c.dataset.cat===f)c.style.display='block';
+  });
+  updateLoadBtn();
+});
+updateLoadBtn();
 
 // TESTIMONIALS SLIDER
 const track=document.getElementById('ttrack'),dots=document.querySelectorAll('.sdot');
