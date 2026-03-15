@@ -239,27 +239,27 @@ section{padding:100px 0;position:relative}
 .tmav{width:88px;height:88px;border-radius:50%;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:700;font-family:'Space Grotesk',sans-serif;color:#fff;position:relative;overflow:hidden}
 .tmav::after{content:'';position:absolute;inset:-3px;border-radius:50%;background:var(--g1);z-index:-1}
 .tmav img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%}
-/* Founder special card */
+/* Professional Team Cards */
 .founder-card{position:relative;overflow:visible !important}
-.founder-card::before{content:'';position:absolute;inset:-2px;border-radius:22px;background:linear-gradient(135deg,rgba(212,148,10,.3),rgba(245,197,0,.15));z-index:0;opacity:.8;filter:blur(16px)}
-.founder-card.g2::before{background:linear-gradient(135deg,rgba(255,196,0,.28),rgba(255,220,80,.15))}
-.founder-card.g3::before{background:linear-gradient(135deg,rgba(212,148,10,.25),rgba(255,210,50,.18))}
-.founder-card.g4::before{background:linear-gradient(135deg,rgba(255,193,7,.28),rgba(255,220,60,.15))}
-.founder-av.g2::before,.founder-av.g2::after{background:var(--g2)}
-.founder-av.g3::before,.founder-av.g3::after{background:linear-gradient(135deg,#F5C500,#FFD060)}
-.founder-av.g4::before,.founder-av.g4::after{background:linear-gradient(135deg,#FFC107,#FFD060)}
-.founder-card .gc-inner{position:relative;z-index:1;background:rgba(255,252,220,.32);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border:1px solid rgba(255,220,80,.45);border-radius:20px;padding:32px 24px;height:100%;box-shadow:0 8px 36px rgba(212,148,10,.1);transition:all .5s cubic-bezier(.4,0,.2,1);overflow:hidden}
-.founder-card:hover .gc-inner{background:rgba(255,252,230,.52);border-color:rgba(212,148,10,.55);box-shadow:0 24px 70px rgba(212,148,10,.18);transform:translateY(-5px)}
-.founder-card:hover .founder-av{width:120px;height:120px;border-radius:50%;margin:0 auto 20px;position:relative;flex-shrink:0}
-.founder-av::before{content:'';position:absolute;inset:-4px;border-radius:50%;background:var(--g1);z-index:0;animation:spin 4s linear infinite}
-.founder-av::after{content:'';position:absolute;inset:-4px;border-radius:50%;background:var(--g1);z-index:0;filter:blur(10px);opacity:.7;animation:spin 4s linear infinite}
-@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.founder-card::before{display:none}
+.founder-card .gc-inner{position:relative;z-index:1;background:#fff;border:1px solid rgba(212,148,10,.13);border-top:3px solid #D4940A;border-radius:0 0 18px 18px;padding:30px 24px 26px;height:100%;box-shadow:0 4px 20px rgba(0,0,0,.07);transition:all .35s cubic-bezier(.4,0,.2,1);overflow:hidden;text-align:center}
+.founder-card.g2 .gc-inner{border-top-color:#F5C500}
+.founder-card.g3 .gc-inner{border-top-color:#D4940A}
+.founder-card.g4 .gc-inner{border-top-color:#FFC107}
+.founder-card:hover .gc-inner{box-shadow:0 18px 52px rgba(212,148,10,.14);transform:translateY(-7px);border-color:rgba(212,148,10,.28);border-top-width:3px}
+.founder-av{width:92px;height:92px;border-radius:50%;margin:0 auto 18px;position:relative;flex-shrink:0}
+.founder-av::before{content:'';position:absolute;inset:-3px;border-radius:50%;background:var(--g1);z-index:0}
+.founder-av::after{display:none}
+.founder-av.g2::before{background:var(--g2)}
+.founder-av.g3::before{background:linear-gradient(135deg,#D4940A,#F5C500)}
+.founder-av.g4::before{background:linear-gradient(135deg,#FFC107,#FFD060)}
 .founder-av img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%;position:relative;z-index:2;display:block;border:3px solid #fff}
-.tmname{font-size:17px;margin-bottom:5px}
-.tmrole{font-size:13px;color:var(--muted);margin-bottom:18px}
-.tmsoc{display:flex;justify-content:center;gap:9px}
-.socbtn{width:34px;height:34px;border-radius:9px;background:var(--cb);border:1px solid var(--cbr);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);text-decoration:none;transition:all .3s}
-.socbtn:hover{background:var(--p);border-color:var(--p);color:#fff;transform:translateY(-2px)}
+.tmname{font-size:17px;font-weight:700;letter-spacing:-.3px;margin-bottom:4px;color:var(--txt)}
+.tmrole{font-size:11.5px;color:var(--muted);margin-bottom:0;font-weight:600;text-transform:uppercase;letter-spacing:.6px}
+.tm-company{display:inline-flex;align-items:center;gap:5px;background:rgba(212,148,10,.08);border:1px solid rgba(212,148,10,.18);border-radius:50px;padding:3px 12px;font-size:11px;font-weight:600;color:var(--p2);margin:10px 0 18px}
+.tmsoc{display:flex;justify-content:center;gap:8px;padding-top:16px;border-top:1px solid rgba(212,148,10,.1)}
+.socbtn{width:32px;height:32px;border-radius:8px;background:rgba(212,148,10,.07);border:1px solid rgba(212,148,10,.15);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--p2);text-decoration:none;transition:all .3s}
+.socbtn:hover{background:var(--g1);border-color:transparent;color:#fff;transform:translateY(-2px)}
 
 /* CONTACT */
 #contact{background:rgba(255,255,255,.5)}
@@ -419,7 +419,7 @@ footer .container{position:relative;z-index:1}
 [data-theme=dark] #contact .cic{background:rgba(60,120,255,.12);border-color:rgba(60,120,255,.25);color:#6090ff}
 @keyframes cGlow{0%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}100%{opacity:.75;transform:scale(1.02)}}
 @keyframes cOrb{0%{transform:translate(0,0) scale(1)}33%{transform:translate(-40px,30px) scale(1.15)}66%{transform:translate(20px,-20px) scale(.9)}100%{transform:translate(0,0) scale(1)}}
-[data-theme=dark] .founder-card .gc-inner{background:rgba(30,18,0,.62);border-color:rgba(212,148,10,.22);box-shadow:0 4px 24px rgba(120,80,0,.2)}
+[data-theme=dark] .founder-card .gc-inner{background:#1a1000;border-color:rgba(212,148,10,.22);box-shadow:0 4px 24px rgba(0,0,0,.3)}
 [data-theme=dark] .founder-card::before{opacity:.4}
 [data-theme=dark] footer{background:linear-gradient(135deg,#0a0600 0%,#150d00 40%,#0a0600 70%,#050300 100%);border-top:none}
 [data-theme=dark] .fbot{border-top-color:rgba(60,120,255,.15)}
@@ -794,14 +794,14 @@ footer .container{position:relative;z-index:1}
       <p class="ssub">A diverse team of passionate engineers, designers, and strategists dedicated to your success.</p>
     </div>
     <div class="tgrid">
-      <div class="founder-card fu" style="border-radius:22px">
-        <div class="gc-inner tmcard" style="text-align:center">
+      <div class="founder-card fu" >
+        <div class="gc-inner tmcard">
           <div class="founder-av">
             <img src="founder.jpg" alt="Rifquei Azad" onerror="this.style.display='none'">
           </div>
           <h3 class="tmname" style="font-size:19px">Rifquei Azad</h3>
           <p class="tmrole" style="margin-bottom:6px">Founder & CEO</p>
-          <p style="font-size:12px;color:var(--p2);margin-bottom:18px;font-weight:500">✦ Amiuriq Pvt Ltd</p>
+          <div class="tm-company"><i class="fas fa-building" style="font-size:10px"></i> Amiuriq Pvt Ltd</div>
           <div class="tmsoc" style="justify-content:center">
             <a href="coming-soon.html" class="socbtn"><i class="fab fa-linkedin-in"></i></a>
             <a href="coming-soon.html" class="socbtn"><i class="fab fa-github"></i></a>
@@ -809,14 +809,14 @@ footer .container{position:relative;z-index:1}
           </div>
         </div>
       </div>
-      <div class="founder-card g2 fu" style="border-radius:22px">
-        <div class="gc-inner tmcard" style="text-align:center">
+      <div class="founder-card g2 fu" >
+        <div class="gc-inner tmcard">
           <div class="founder-av g2">
             <img src="team-suhail.jpeg" alt="Mohamed Suhail" style="width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;position:relative;z-index:2;">
           </div>
           <h3 class="tmname" style="font-size:19px">Mohamed Suhail</h3>
           <p class="tmrole" style="margin-bottom:6px">Tech Lead</p>
-          <p style="font-size:12px;color:#FFD060;margin-bottom:18px;font-weight:500">✦ Amiuriq Pvt Ltd</p>
+          <div class="tm-company"><i class="fas fa-building" style="font-size:10px"></i> Amiuriq Pvt Ltd</div>
           <div class="tmsoc" style="justify-content:center">
             <a href="coming-soon.html" class="socbtn"><i class="fab fa-linkedin-in"></i></a>
             <a href="coming-soon.html" class="socbtn"><i class="fab fa-github"></i></a>
@@ -824,14 +824,14 @@ footer .container{position:relative;z-index:1}
           </div>
         </div>
       </div>
-      <div class="founder-card g3 fu" style="border-radius:22px">
-        <div class="gc-inner tmcard" style="text-align:center">
+      <div class="founder-card g3 fu" >
+        <div class="gc-inner tmcard">
           <div class="founder-av g3">
             <img src="team-jazeel.jpeg" alt="Jazeel Ahamed" style="width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;position:relative;z-index:2;">
           </div>
           <h3 class="tmname" style="font-size:19px">Jazeel Ahamed</h3>
           <p class="tmrole" style="margin-bottom:6px">Senior Data Engineer</p>
-          <p style="font-size:12px;color:#48C78E;margin-bottom:18px;font-weight:500">✦ Amiuriq Pvt Ltd</p>
+          <div class="tm-company"><i class="fas fa-building" style="font-size:10px"></i> Amiuriq Pvt Ltd</div>
           <div class="tmsoc" style="justify-content:center">
             <a href="coming-soon.html" class="socbtn"><i class="fab fa-linkedin-in"></i></a>
             <a href="coming-soon.html" class="socbtn"><i class="fab fa-github"></i></a>
@@ -839,14 +839,14 @@ footer .container{position:relative;z-index:1}
           </div>
         </div>
       </div>
-      <div class="founder-card g4 fu" style="border-radius:22px">
-        <div class="gc-inner tmcard" style="text-align:center">
+      <div class="founder-card g4 fu" >
+        <div class="gc-inner tmcard">
           <div class="founder-av g4">
             <img src="team-inaam.png" alt="Inaam Ahamed" style="width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;position:relative;z-index:2;">
           </div>
           <h3 class="tmname" style="font-size:19px">Inaam Ahamed</h3>
           <p class="tmrole" style="margin-bottom:6px">Software Engineer</p>
-          <p style="font-size:12px;color:#FFC107;margin-bottom:18px;font-weight:500">✦ Amiuriq Pvt Ltd</p>
+          <div class="tm-company"><i class="fas fa-building" style="font-size:10px"></i> Amiuriq Pvt Ltd</div>
           <div class="tmsoc" style="justify-content:center">
             <a href="coming-soon.html" class="socbtn"><i class="fab fa-linkedin-in"></i></a>
             <a href="coming-soon.html" class="socbtn"><i class="fab fa-github"></i></a>
@@ -856,14 +856,14 @@ footer .container{position:relative;z-index:1}
       </div>
     </div>
     <div class="trow2" id="tmRow2">
-      <div class="founder-card g3 fu" style="border-radius:22px">
-        <div class="gc-inner tmcard" style="text-align:center">
+      <div class="founder-card g3 fu" >
+        <div class="gc-inner tmcard">
           <div class="founder-av g3">
             <div style="width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#48C78E,#00D4FF);display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:700;color:#fff;position:relative;z-index:2;font-family:'Space Grotesk',sans-serif">ZF</div>
           </div>
           <h3 class="tmname" style="font-size:19px">Zeema Fathima</h3>
           <p class="tmrole" style="margin-bottom:6px">Business Analyst</p>
-          <p style="font-size:12px;color:#48C78E;margin-bottom:18px;font-weight:500">✦ Amiuriq Pvt Ltd</p>
+          <div class="tm-company"><i class="fas fa-building" style="font-size:10px"></i> Amiuriq Pvt Ltd</div>
           <div class="tmsoc" style="justify-content:center">
             <a href="coming-soon.html" class="socbtn"><i class="fab fa-linkedin-in"></i></a>
             <a href="coming-soon.html" class="socbtn"><i class="fab fa-github"></i></a>
@@ -871,14 +871,14 @@ footer .container{position:relative;z-index:1}
           </div>
         </div>
       </div>
-      <div class="founder-card fu" style="border-radius:22px">
-        <div class="gc-inner tmcard" style="text-align:center">
+      <div class="founder-card fu" >
+        <div class="gc-inner tmcard">
           <div class="founder-av">
             <img src="team-zibras.jpeg" alt="Mohamed Zibras" style="width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;position:relative;z-index:2;">
           </div>
           <h3 class="tmname" style="font-size:19px">Mohamed Zibras</h3>
           <p class="tmrole" style="margin-bottom:6px">Senior AI / ML Engineer</p>
-          <p style="font-size:12px;color:var(--p2);margin-bottom:18px;font-weight:500">✦ Amiuriq Pvt Ltd</p>
+          <div class="tm-company"><i class="fas fa-building" style="font-size:10px"></i> Amiuriq Pvt Ltd</div>
           <div class="tmsoc" style="justify-content:center">
             <a href="coming-soon.html" class="socbtn"><i class="fab fa-linkedin-in"></i></a>
             <a href="coming-soon.html" class="socbtn"><i class="fab fa-github"></i></a>
@@ -886,14 +886,14 @@ footer .container{position:relative;z-index:1}
           </div>
         </div>
       </div>
-      <div class="founder-card g2 fu" style="border-radius:22px">
-        <div class="gc-inner tmcard" style="text-align:center">
+      <div class="founder-card g2 fu" >
+        <div class="gc-inner tmcard">
           <div class="founder-av g2">
             <img src="team-asnaff.jpeg" alt="Mohamed Asnaff" style="width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;position:relative;z-index:2;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div style="display:none;width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#FFD060,#FFC860);align-items:center;justify-content:center;font-size:32px;font-weight:700;color:#fff;position:relative;z-index:2;font-family:'Space Grotesk',sans-serif">MA</div>
           </div>
           <h3 class="tmname" style="font-size:19px">Mohamed Asnaff</h3>
           <p class="tmrole" style="margin-bottom:6px">Cloud Engineer</p>
-          <p style="font-size:12px;color:#FFD060;margin-bottom:18px;font-weight:500">✦ Amiuriq Pvt Ltd</p>
+          <div class="tm-company"><i class="fas fa-building" style="font-size:10px"></i> Amiuriq Pvt Ltd</div>
           <div class="tmsoc" style="justify-content:center">
             <a href="coming-soon.html" class="socbtn"><i class="fab fa-linkedin-in"></i></a>
             <a href="coming-soon.html" class="socbtn"><i class="fab fa-github"></i></a>
