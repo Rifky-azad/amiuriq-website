@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coming Soon | Amiuriq Pvt Ltd</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--p:#D4940A;--s:#F5C500;--g1:linear-gradient(135deg,#D4940A,#F5C500);--txt:#1a1200;--muted:#7a5c20}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:radial-gradient(ellipse at 15% 10%,rgba(255,210,50,.28) 0%,transparent 50%),radial-gradient(ellipse at 85% 8%,rgba(255,220,60,.22) 0%,transparent 48%),radial-gradient(ellipse at 50% 92%,rgba(255,200,50,.18) 0%,transparent 52%),#fffdf0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--txt);overflow:hidden;text-align:center;padding:24px}
+.logo{display:inline-flex;align-items:center;gap:11px;text-decoration:none;margin-bottom:56px;animation:fadeDown .8s ease both}
+.logo-icon{width:48px;height:48px;background:var(--g1);border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(212,148,10,.45),inset 0 1px 0 rgba(255,255,255,.25);position:relative;overflow:hidden}
+.logo-icon::after{content:'';position:absolute;top:0;left:-100%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);animation:shimmer 3s ease-in-out infinite}
+@keyframes shimmer{0%{left:-100%}60%,100%{left:160%}}
+.logo-word{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:800;background:linear-gradient(90deg,#D4940A,#F5C500);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px}
+.wrap{animation:fadeUp .9s .1s ease both}
+.wip-icon{width:90px;height:90px;background:rgba(212,148,10,.1);border:2px solid rgba(212,148,10,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 32px;font-size:36px;position:relative}
+.wip-icon i{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.wip-icon::before{content:'';position:absolute;inset:-8px;border-radius:50%;border:2px dashed rgba(212,148,10,.2);animation:spin 12s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,6vw,64px);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:18px}
+h1 span{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+p.sub{font-size:17px;color:var(--muted);max-width:480px;margin:0 auto 40px;line-height:1.75}
+.social-chips{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:52px}
+.chip{display:inline-flex;align-items:center;gap:9px;padding:10px 22px;border-radius:50px;background:rgba(255,255,255,.75);border:1px solid rgba(212,148,10,.2);font-size:14px;font-weight:500;color:var(--muted);backdrop-filter:blur(12px);transition:all .3s;text-decoration:none}
+.chip:hover{background:rgba(212,148,10,.08);border-color:var(--p);color:var(--txt);transform:translateY(-3px);box-shadow:0 8px 24px rgba(212,148,10,.15)}
+.chip i{font-size:16px;color:var(--p)}
+.back-btn{display:inline-flex;align-items:center;gap:9px;padding:13px 28px;border-radius:50px;background:var(--g1);color:#fff;font-size:15px;font-weight:600;font-family:'Space Grotesk',sans-serif;text-decoration:none;box-shadow:0 6px 30px rgba(212,148,10,.35);transition:all .3s}
+.back-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(212,148,10,.5)}
+.dots{display:flex;gap:7px;justify-content:center;margin-top:20px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--p);opacity:.25;animation:pulse 1.4s ease-in-out infinite}
+.dot:nth-child(2){animation-delay:.2s}.dot:nth-child(3){animation-delay:.4s}
+@keyframes pulse{0%,100%{opacity:.25;transform:scale(1)}50%{opacity:.8;transform:scale(1.3)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+<a href="index.html" class="logo">
+  <div class="logo-icon"><svg width="22" height="22" viewBox="0 0 20 20" fill="none"><path d="M10 1.5L2 6.5v7L10 18.5l8-5v-7L10 1.5z" fill="rgba(255,255,255,0.13)" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"/><path d="M6.5 14.5L10 5l3.5 9.5M8.2 11.5h3.6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <span class="logo-word">Amiuriq</span>
+</a>
+
+<div class="wrap">
+  <div class="wip-icon"><i class="fas fa-rocket"></i></div>
+  <h1>We're <span>Building</span> Something<br>Exciting</h1>
+  <p class="sub">Our social media pages are currently a work in progress. Follow us soon — great things are on the way!</p>
+
+  <div class="social-chips">
+    <a href="#" class="chip"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    <a href="#" class="chip"><i class="fab fa-github"></i> GitHub</a>
+    <a href="#" class="chip"><i class="fab fa-twitter"></i> Twitter / X</a>
+    <a href="#" class="chip"><i class="fab fa-instagram"></i> Instagram</a>
+  </div>
+
+  <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+</div>
+</body>
+</html>
