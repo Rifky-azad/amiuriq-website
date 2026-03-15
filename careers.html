@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers & Culture | Amiuriq Pvt Ltd</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script>(function(){var t=localStorage.getItem("aq-theme")||"light";document.documentElement.setAttribute("data-theme",t);})()</script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--p:#D4940A;--p2:#e05252;--s:#F5C500;--g1:linear-gradient(135deg,#D4940A,#F5C500);--bg:#fffdf0;--card:rgba(255,255,255,.72);--txt:#1a1200;--muted:#7a5c20;--cbr:rgba(212,148,10,.15)}
+[data-theme=dark]{--bg:#0e0a00;--card:rgba(20,12,0,.7);--txt:#f5e9c8;--muted:#a08040;--cbr:rgba(212,148,10,.18)}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh}
+[data-theme=dark] body{background:radial-gradient(ellipse at 20% 10%,rgba(212,148,10,.08) 0%,transparent 50%),radial-gradient(ellipse at 80% 90%,rgba(245,197,0,.06) 0%,transparent 50%),var(--bg)}
+body:not([data-theme=dark]){background:radial-gradient(ellipse at 15% 10%,rgba(255,210,50,.18) 0%,transparent 50%),radial-gradient(ellipse at 85% 8%,rgba(255,220,60,.13) 0%,transparent 48%),var(--bg)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 32px;height:70px;display:flex;align-items:center;background:rgba(255,253,240,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--cbr);transition:background .3s}
+[data-theme=dark] nav{background:rgba(14,10,0,.85)}
+.nc{max-width:1200px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-icon{width:38px;height:38px;background:var(--g1);border-radius:10px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(212,148,10,.4)}
+.logo-word{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:800;background:var(--g1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.nlinks{display:flex;gap:28px;list-style:none}
+.nlinks a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;transition:color .2s}
+.nlinks a:hover{color:var(--p)}
+.btn-p{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;background:var(--g1);color:#fff;font-size:14px;font-weight:600;font-family:'Space Grotesk',sans-serif;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(212,148,10,.3)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(212,148,10,.45)}
+.theme-toggle{width:36px;height:36px;border-radius:10px;border:1px solid var(--cbr);background:transparent;color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.theme-toggle:hover{background:rgba(212,148,10,.1);color:var(--p)}
+
+/* HERO */
+.careers-hero{padding:140px 32px 80px;text-align:center;max-width:800px;margin:0 auto}
+.slabel{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:50px;background:rgba(212,148,10,.1);border:1px solid rgba(212,148,10,.2);font-size:13px;font-weight:600;color:var(--p);margin-bottom:24px}
+.careers-hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,6vw,60px);font-weight:800;line-height:1.1;letter-spacing:-2px;margin-bottom:20px}
+.gt{background:var(--g1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.careers-hero p{font-size:18px;color:var(--muted);line-height:1.75;max-width:600px;margin:0 auto 40px}
+.hero-chips{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:50px;background:var(--card);border:1px solid var(--cbr);font-size:14px;font-weight:500;color:var(--muted);backdrop-filter:blur(12px)}
+.chip i{color:var(--p)}
+
+/* SECTION */
+.section{padding:80px 32px}
+.container{max-width:1200px;margin:0 auto}
+.sh{margin-bottom:56px}
+.sh.c{text-align:center}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;line-height:1.2;margin-bottom:14px}
+.ssub{font-size:17px;color:var(--muted);line-height:1.7;max-width:580px}
+.sh.c .ssub{margin:0 auto}
+
+/* POLICY CARDS */
+.policy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:64px}
+.pcard{background:var(--card);border:1px solid var(--cbr);border-radius:22px;padding:32px 28px;backdrop-filter:blur(16px);transition:all .3s}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(212,148,10,.12);border-color:rgba(212,148,10,.3)}
+.pcard-icon{width:52px;height:52px;background:rgba(212,148,10,.1);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--p);margin-bottom:20px}
+.pcard h3{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;margin-bottom:10px}
+.pcard p{font-size:14px;color:var(--muted);line-height:1.7}
+.badge{display:inline-block;padding:3px 12px;border-radius:50px;font-size:12px;font-weight:600;margin-top:12px}
+.badge-green{background:rgba(72,199,142,.15);color:#2d9e6b;border:1px solid rgba(72,199,142,.25)}
+.badge-amber{background:rgba(212,148,10,.12);color:var(--p);border:1px solid rgba(212,148,10,.22)}
+
+/* WORK MODE BANNER */
+.wmode-banner{background:var(--g1);border-radius:24px;padding:48px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;margin-bottom:80px;flex-wrap:wrap}
+.wmode-left h2{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-1px}
+.wmode-left p{color:rgba(255,255,255,.82);font-size:15px;line-height:1.6;max-width:480px}
+.wmode-pills{display:flex;gap:12px;flex-wrap:wrap}
+.wpill{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:50px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:14px;font-weight:600;backdrop-filter:blur(8px)}
+.wpill i{font-size:16px}
+
+/* VALUES */
+.values-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.vcard{display:flex;gap:18px;align-items:flex-start;background:var(--card);border:1px solid var(--cbr);border-radius:18px;padding:24px;backdrop-filter:blur(12px);transition:all .3s}
+.vcard:hover{border-color:rgba(212,148,10,.3);transform:translateY(-3px)}
+.vnum{width:40px;height:40px;border-radius:10px;background:var(--g1);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:16px;color:#fff;flex-shrink:0}
+.vcard h4{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;margin-bottom:6px}
+.vcard p{font-size:14px;color:var(--muted);line-height:1.6}
+
+/* PERKS */
+.perks-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pkcard{background:var(--card);border:1px solid var(--cbr);border-radius:18px;padding:28px 22px;text-align:center;backdrop-filter:blur(12px);transition:all .3s}
+.pkcard:hover{transform:translateY(-5px);border-color:rgba(212,148,10,.3);box-shadow:0 16px 48px rgba(212,148,10,.1)}
+.pkcard i{font-size:28px;color:var(--p);margin-bottom:14px;display:block}
+.pkcard h4{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px}
+.pkcard p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* OPEN ROLES */
+.roles-list{display:flex;flex-direction:column;gap:16px}
+.role-card{display:flex;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--cbr);border-radius:18px;padding:24px 28px;backdrop-filter:blur(12px);transition:all .3s;flex-wrap:wrap;gap:16px}
+.role-card:hover{border-color:rgba(212,148,10,.3);box-shadow:0 12px 40px rgba(212,148,10,.1);transform:translateX(4px)}
+.role-left{display:flex;align-items:center;gap:18px}
+.role-icon{width:46px;height:46px;border-radius:12px;background:rgba(212,148,10,.1);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--p)}
+.role-title{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin-bottom:4px}
+.role-meta{display:flex;gap:10px;flex-wrap:wrap}
+.role-tag{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:var(--muted);font-weight:500}
+.role-tag i{font-size:11px;color:var(--p)}
+.apply-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;background:var(--g1);color:#fff;font-size:13px;font-weight:600;font-family:'Space Grotesk',sans-serif;text-decoration:none;border:none;cursor:pointer;transition:all .3s;white-space:nowrap}
+.apply-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,148,10,.4)}
+.no-roles{text-align:center;padding:60px 24px;background:var(--card);border:1px solid var(--cbr);border-radius:22px;color:var(--muted)}
+.no-roles i{font-size:36px;color:var(--p);opacity:.5;margin-bottom:16px;display:block}
+.no-roles h3{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin-bottom:8px;color:var(--txt)}
+
+/* CTA */
+.cta-band{background:var(--card);border:1px solid var(--cbr);border-radius:24px;padding:56px 40px;text-align:center;backdrop-filter:blur(16px)}
+.cta-band h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,4vw,38px);font-weight:800;letter-spacing:-1.5px;margin-bottom:14px}
+.cta-band p{color:var(--muted);font-size:16px;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto}
+
+/* FOOTER */
+footer{padding:32px;text-align:center;border-top:1px solid var(--cbr);color:var(--muted);font-size:14px}
+footer a{color:var(--p);text-decoration:none}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.policy-grid{grid-template-columns:repeat(2,1fr)}.perks-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.policy-grid{grid-template-columns:1fr}.values-grid{grid-template-columns:1fr}.perks-grid{grid-template-columns:repeat(2,1fr)}.wmode-banner{flex-direction:column}.nlinks{display:none}.section{padding:60px 20px}.careers-hero{padding:120px 20px 60px}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nc">
+    <a href="index.html" class="logo">
+      <div class="logo-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 1.5L2 6.5v7L10 18.5l8-5v-7L10 1.5z" fill="rgba(255,255,255,0.13)" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"/><path d="M6.5 14.5L10 5l3.5 9.5M8.2 11.5h3.6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <span class="logo-word">Amiuriq</span>
+    </a>
+    <ul class="nlinks">
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#portfolio">Portfolio</a></li>
+      <li><a href="index.html#team">Team</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a href="index.html#contact" class="btn-p">Get Started <i class="fas fa-arrow-right"></i></a>
+      <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="careers-hero">
+  <span class="slabel"><i class="fas fa-heart"></i> Life at Amiuriq</span>
+  <h1>Build the Future.<br>From <span class="gt">Anywhere.</span></h1>
+  <p>We're a hybrid team of engineers, designers, and problem-solvers on a mission to build world-class digital products. Join us and do the best work of your life.</p>
+  <div class="hero-chips">
+    <span class="chip"><i class="fas fa-laptop-house"></i> Hybrid Work Model</span>
+    <span class="chip"><i class="fas fa-globe"></i> Global Team</span>
+    <span class="chip"><i class="fas fa-rocket"></i> Fast-Growing</span>
+    <span class="chip"><i class="fas fa-graduation-cap"></i> Learning Culture</span>
+  </div>
+</div>
+
+<!-- WORK MODE BANNER -->
+<div class="section" style="padding-top:0">
+  <div class="container">
+    <div class="wmode-banner">
+      <div class="wmode-left">
+        <h2>Our Work Policy</h2>
+        <p>Amiuriq operates on a <strong>Hybrid work model</strong> — combining the flexibility of remote work with the energy of in-person collaboration. Currently, our team works <strong>fully remote</strong> while we build towards our hybrid setup. We believe great work happens when people have the freedom and tools to do it well.</p>
+      </div>
+      <div class="wmode-pills">
+        <span class="wpill"><i class="fas fa-wifi"></i> Currently Remote</span>
+        <span class="wpill"><i class="fas fa-building"></i> Hybrid Soon</span>
+        <span class="wpill"><i class="fas fa-clock"></i> Flexible Hours</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- POLICY DETAILS -->
+<div class="section" style="padding-top:0">
+  <div class="container">
+    <div class="sh c">
+      <span class="slabel"><i class="fas fa-file-alt"></i> Workplace Policy</span>
+      <h2 class="stitle">How We <span class="gt">Work Together</span></h2>
+      <p class="ssub">Clear policies, flexible structure, and a culture built on trust and accountability.</p>
+    </div>
+    <div class="policy-grid">
+      <div class="pcard">
+        <div class="pcard-icon"><i class="fas fa-laptop-house"></i></div>
+        <h3>Work Model</h3>
+        <p>Hybrid model — employees enjoy the flexibility to work remotely while occasionally collaborating in person. Currently operating fully remote as we grow.</p>
+        <span class="badge badge-amber">Hybrid (Remote Now)</span>
+      </div>
+      <div class="pcard">
+        <div class="pcard-icon"><i class="fas fa-clock"></i></div>
+        <h3>Working Hours</h3>
+        <p>Flexible working hours with core collaboration windows. We value output and delivery over rigid time tracking. Work when you're at your best.</p>
+        <span class="badge badge-green">Flexible</span>
+      </div>
+      <div class="pcard">
+        <div class="pcard-icon"><i class="fas fa-comments"></i></div>
+        <h3>Communication</h3>
+        <p>Async-first communication with regular team syncs. We keep meetings minimal and meaningful — your focus time is protected.</p>
+        <span class="badge badge-green">Async-First</span>
+      </div>
+      <div class="pcard">
+        <div class="pcard-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Transparency & Trust</h3>
+        <p>No micromanagement. We hire talented people and trust them to deliver. Radical transparency in goals, decisions, and company direction.</p>
+        <span class="badge badge-green">High Trust</span>
+      </div>
+      <div class="pcard">
+        <div class="pcard-icon"><i class="fas fa-user-tie"></i></div>
+        <h3>Code of Conduct</h3>
+        <p>Respectful, inclusive, and professional environment for everyone. Zero tolerance for discrimination. Every voice matters here.</p>
+        <span class="badge badge-green">Inclusive</span>
+      </div>
+      <div class="pcard">
+        <div class="pcard-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Growth & Learning</h3>
+        <p>Continuous learning is part of the culture. We support certifications, courses, and conference attendance to help you grow your skills.</p>
+        <span class="badge badge-amber">Growth-First</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VALUES -->
+<div class="section" style="padding-top:0">
+  <div class="container">
+    <div class="sh c">
+      <span class="slabel"><i class="fas fa-star"></i> Our Values</span>
+      <h2 class="stitle">What We <span class="gt">Stand For</span></h2>
+      <p class="ssub">The principles that guide everything we do — from how we build to how we treat each other.</p>
+    </div>
+    <div class="values-grid">
+      <div class="vcard"><div class="vnum">01</div><div><h4>People Over Process</h4><p>We build systems that serve our team, not the other way around. Great people with the right environment will always outperform rigid processes.</p></div></div>
+      <div class="vcard"><div class="vnum">02</div><div><h4>Ownership Mentality</h4><p>Every team member owns their work end-to-end. We take pride in quality, take responsibility for outcomes, and celebrate every win together.</p></div></div>
+      <div class="vcard"><div class="vnum">03</div><div><h4>Move Fast, Build Right</h4><p>We ship quickly without cutting corners. Speed and quality are not opposites — we prove that every day with every product we deliver.</p></div></div>
+      <div class="vcard"><div class="vnum">04</div><div><h4>Radical Transparency</h4><p>Open communication, honest feedback, and clear goals. No politics, no hidden agendas — just straightforward collaboration toward shared success.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PERKS -->
+<div class="section" style="padding-top:0">
+  <div class="container">
+    <div class="sh c">
+      <span class="slabel"><i class="fas fa-gift"></i> Perks & Benefits</span>
+      <h2 class="stitle">Why You'll <span class="gt">Love It Here</span></h2>
+    </div>
+    <div class="perks-grid">
+      <div class="pkcard"><i class="fas fa-laptop"></i><h4>Remote Setup Support</h4><p>We help you set up a productive home workspace with the tools you need.</p></div>
+      <div class="pkcard"><i class="fas fa-book-open"></i><h4>Learning Budget</h4><p>Annual budget for courses, books, certifications, and conferences.</p></div>
+      <div class="pkcard"><i class="fas fa-umbrella-beach"></i><h4>Flexible Time Off</h4><p>Generous leave policy. Rest when you need to — we trust you.</p></div>
+      <div class="pkcard"><i class="fas fa-users"></i><h4>Team Retreats</h4><p>Periodic in-person meetups and team events to bond and collaborate.</p></div>
+      <div class="pkcard"><i class="fas fa-rocket"></i><h4>Fast Career Growth</h4><p>Early-stage means big impact. Grow fast in a company that values your contribution.</p></div>
+      <div class="pkcard"><i class="fas fa-code-branch"></i><h4>Open Source Friendly</h4><p>We encourage and support contributions to open source projects.</p></div>
+      <div class="pkcard"><i class="fas fa-heartbeat"></i><h4>Work-Life Balance</h4><p>Flexible hours so you can work at your peak and live a full life outside work.</p></div>
+      <div class="pkcard"><i class="fas fa-trophy"></i><h4>Performance Rewards</h4><p>Exceptional work gets recognized and rewarded — always.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- OPEN ROLES -->
+<div class="section" style="padding-top:0">
+  <div class="container">
+    <div class="sh c">
+      <span class="slabel"><i class="fas fa-briefcase"></i> Open Positions</span>
+      <h2 class="stitle">Join Our <span class="gt">Growing Team</span></h2>
+      <p class="ssub">We're always looking for talented people. Check back for openings or send us a general application.</p>
+    </div>
+    <div class="roles-list">
+      <div class="no-roles">
+        <i class="fas fa-binoculars"></i>
+        <h3>No Open Roles Right Now</h3>
+        <p>We're not actively hiring at the moment, but we're always interested in connecting with exceptional talent. Send your CV to <strong>careers@amiuriq.org</strong> and we'll reach out when the right role opens up.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="section" style="padding-top:0">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Don't See the Right Role? <span class="gt">Reach Out Anyway.</span></h2>
+      <p>We're building something great and we'd love to hear from exceptional people — even if there's no open position right now.</p>
+      <a href="mailto:careers@amiuriq.org" class="btn-p">Send Your CV <i class="fas fa-paper-plane"></i></a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Amiuriq Pvt Ltd · <a href="index.html">Back to Home</a> · <a href="index.html#contact">Contact Us</a></p>
+</footer>
+
+<script>
+const tt=document.getElementById('themeToggle');
+function applyTheme(t){document.documentElement.setAttribute('data-theme',t);tt.innerHTML=t==='dark'?'<i class="fas fa-sun"></i>':'<i class="fas fa-moon"></i>';}
+applyTheme(localStorage.getItem('aq-theme')||'light');
+tt.addEventListener('click',()=>{const t=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';localStorage.setItem('aq-theme',t);applyTheme(t);});
+</script>
+</body>
+</html>
