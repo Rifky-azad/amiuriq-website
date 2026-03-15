@@ -88,7 +88,14 @@ h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:700}
 .cta-acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
 .btn-white{background:#fff;color:var(--p);font-weight:700}.btn-white:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.2)}
 .btn-outline-white{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6)}.btn-outline-white:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
-footer{background:rgba(20,14,0,.96);color:rgba(255,255,255,.7);padding:60px 0 30px}
+footer{background:linear-gradient(135deg,#1c1000 0%,#2e1a00 40%,#1c1000 70%,#0e0800 100%);padding:60px 0 30px;position:relative;overflow:hidden;border-top:none}
+footer .ft-orb1{position:absolute;top:-120px;left:-80px;width:420px;height:420px;background:radial-gradient(circle,rgba(212,148,10,.22) 0%,transparent 68%);border-radius:50%;animation:ftFloat1 9s ease-in-out infinite alternate;pointer-events:none;z-index:0}
+footer .ft-orb2{position:absolute;bottom:-100px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(245,197,0,.18) 0%,transparent 68%);border-radius:50%;animation:ftFloat2 11s ease-in-out infinite alternate;pointer-events:none;z-index:0}
+footer .ft-orb3{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:200px;background:radial-gradient(ellipse,rgba(212,148,10,.06) 0%,transparent 70%);border-radius:50%;animation:ftFloat3 14s ease-in-out infinite alternate;pointer-events:none;z-index:0}
+@keyframes ftFloat1{0%{transform:translate(0,0) scale(1)}100%{transform:translate(60px,80px) scale(1.25)}}
+@keyframes ftFloat2{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-50px,-60px) scale(1.2)}}
+@keyframes ftFloat3{0%{transform:translate(-50%,-50%) scale(1)}100%{transform:translate(-50%,-50%) scale(1.4)}}
+footer .container{position:relative;z-index:1}
 .fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
 .fbrand p{font-size:14px;line-height:1.75;margin-top:14px;color:rgba(255,255,255,.5)}
 .logo-ft{display:flex;align-items:center;gap:9px;text-decoration:none}
@@ -299,6 +306,9 @@ footer{background:rgba(20,14,0,.96);color:rgba(255,255,255,.7);padding:60px 0 30
 </section>
 
 <footer>
+  <div class="ft-orb1"></div>
+  <div class="ft-orb2"></div>
+  <div class="ft-orb3"></div>
   <div class="container">
     <div class="fgrid">
       <div class="fbrand"><a href="index.html" class="logo-ft"><div class="logo-icon" style="width:32px;height:32px;border-radius:9px"><svg width="15" height="15" viewBox="0 0 20 20" fill="none"><path d="M10 1.5L2 6.5v7L10 18.5l8-5v-7L10 1.5z" fill="rgba(255,255,255,0.13)" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"/><path d="M6.5 14.5L10 5l3.5 9.5M8.2 11.5h3.6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="logo-text"><span class="logo-word" style="font-size:18px">Amiuriq</span></div></a><p>Building tomorrow's digital solutions today. We craft software that transforms businesses and drives real growth.</p><div class="fsocs"><a href="coming-soon.html" class="socbtn"><i class="fab fa-linkedin-in"></i></a><a href="coming-soon.html" class="socbtn"><i class="fab fa-github"></i></a><a href="coming-soon.html" class="socbtn"><i class="fab fa-twitter"></i></a><a href="coming-soon.html" class="socbtn"><i class="fab fa-instagram"></i></a></div></div>
