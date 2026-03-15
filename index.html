@@ -294,7 +294,7 @@ footer .container{position:relative;z-index:1}
 .fblinks{display:flex;gap:22px}
 .fblinks a{text-decoration:none;transition:color .3s}
 .fblinks a:hover{color:#F5C500}
-.socbtn{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)}
+.socbtn{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:13px;text-decoration:none;transition:all .3s}
 .socbtn:hover{background:rgba(212,148,10,.25);border-color:var(--p);color:#fff}
 
 /* ANIMATIONS */
@@ -381,7 +381,13 @@ footer .container{position:relative;z-index:1}
 [data-theme=dark] .pcard:hover{background:rgba(14,30,75,.72);border-color:rgba(212,148,10,.3);box-shadow:0 32px 80px rgba(212,148,10,.1)}
 [data-theme=dark] .tpill{background:rgba(10,22,60,.92);border-color:rgba(60,120,255,.28);color:#e2eaf5}
 [data-theme=dark] .tpill:hover{background:rgba(60,120,255,.18);color:#fff}
-[data-theme=dark] #services,[data-theme=dark] #portfolio{background:rgba(6,14,42,.5)}
+[data-theme=dark] #services{background:rgba(10,6,0,.6)}
+[data-theme=dark] #portfolio{background:rgba(6,14,42,.5)}
+[data-theme=dark] .scard{background:rgba(30,18,0,.7)!important;border-color:rgba(212,148,10,.2)!important}
+[data-theme=dark] .scard:hover{background:rgba(44,26,0,.85)!important;border-color:rgba(212,148,10,.42)!important;box-shadow:0 28px 70px rgba(212,148,10,.2),0 8px 24px rgba(212,148,10,.12)!important}
+[data-theme=dark] .scard .stname{color:#f0e0c0}
+[data-theme=dark] .scard .stdesc{color:rgba(240,224,192,.55)}
+[data-theme=dark] .scard .slink{color:rgba(245,197,0,.8);border-color:rgba(212,148,10,.25);background:rgba(212,148,10,.08)}
 [data-theme=dark] #tech{background:linear-gradient(180deg,#060e2c 0%,#04091a 100%);border-top:1px solid rgba(60,120,255,.1);border-bottom:1px solid rgba(60,120,255,.1)}
 [data-theme=dark] #testi{background:rgba(6,14,42,.55)}
 [data-theme=dark] .sbtn{background:rgba(8,18,50,.85);border-color:rgba(60,120,255,.28);color:#e2eaf5}
