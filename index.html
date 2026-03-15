@@ -100,23 +100,21 @@ section{padding:100px 0;position:relative}
 /* SERVICES */
 #services{background:rgba(255,255,255,.5)}
 .sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.scard{padding:36px 30px;position:relative;border-top:3px solid transparent;transition:all .4s cubic-bezier(.4,0,.2,1)}
-.scard:hover{transform:translateY(-10px);box-shadow:0 24px 64px rgba(212,148,10,.12)!important;background:rgba(255,255,255,.97)!important;border-color:var(--p)!important}
-.scard:hover .sicon{transform:translateY(-4px) scale(1.1)}
-.scard:hover .slink{gap:11px;color:var(--p)}
-.sicon{width:58px;height:58px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:23px;margin-bottom:22px;transition:all .4s cubic-bezier(.4,0,.2,1);box-shadow:0 4px 14px rgba(0,0,0,.07)}
-.si1{background:linear-gradient(135deg,rgba(108,99,255,.22),rgba(108,99,255,.07));color:#6C63FF;border:1px solid rgba(108,99,255,.2)}
-.si2{background:linear-gradient(135deg,rgba(0,212,255,.22),rgba(0,212,255,.07));color:#00AAC4;border:1px solid rgba(0,212,255,.2)}
-.si3{background:linear-gradient(135deg,rgba(255,107,157,.22),rgba(255,107,157,.07));color:#d94d88;border:1px solid rgba(255,107,157,.2)}
-.si4{background:linear-gradient(135deg,rgba(255,139,107,.22),rgba(255,139,107,.07));color:#c95e28;border:1px solid rgba(255,139,107,.2)}
-.si5{background:linear-gradient(135deg,rgba(72,199,142,.22),rgba(72,199,142,.07));color:#33a46e;border:1px solid rgba(72,199,142,.2)}
-.si6{background:linear-gradient(135deg,rgba(255,193,7,.22),rgba(255,193,7,.07));color:#c48b00;border:1px solid rgba(255,193,7,.2)}
-.stname{font-size:20px;margin-bottom:12px;font-weight:700;transition:all .35s}
-.stdesc{color:var(--muted);font-size:14px;line-height:1.78;margin-bottom:22px}
-.slink{color:var(--p2);font-size:14px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .35s;padding:8px 0}
-.slink i{transition:transform .35s}
-.slink:hover{gap:11px}
-.slink:hover i{transform:translateX(4px)}
+.scard{padding:0;position:relative;overflow:hidden;min-height:380px;background:none!important;border:none!important;backdrop-filter:none!important;transition:all .45s cubic-bezier(.4,0,.2,1)}
+.scard:hover{transform:translateY(-10px);box-shadow:0 32px 80px rgba(0,0,0,.28)!important}
+.scard-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .65s cubic-bezier(.4,0,.2,1)}
+.scard:hover .scard-bg{transform:scale(1.09)}
+.scard-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.86) 0%,rgba(0,0,0,.42) 55%,rgba(0,0,0,.12) 100%);transition:all .45s}
+.scard:hover .scard-overlay{background:linear-gradient(0deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.55) 55%,rgba(0,0,0,.2) 100%)}
+.scard-content{position:relative;z-index:2;padding:26px 28px 28px;min-height:380px;display:flex;flex-direction:column;justify-content:flex-end}
+.scard-num{position:absolute;top:20px;right:20px;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;color:rgba(255,255,255,.65);letter-spacing:1.5px;background:rgba(255,255,255,.12);padding:4px 11px;border-radius:20px;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.18);z-index:3}
+.sicon{width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.15);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;margin-bottom:16px;transition:all .45s cubic-bezier(.4,0,.2,1);flex-shrink:0}
+.scard:hover .sicon{background:rgba(255,255,255,.26);transform:translateY(-5px) scale(1.1)}
+.stname{color:#fff;font-size:19px;font-weight:700;margin-bottom:9px;line-height:1.25;text-shadow:0 1px 4px rgba(0,0,0,.3)}
+.stdesc{color:rgba(255,255,255,.72);font-size:13.5px;line-height:1.7;margin-bottom:18px}
+.slink{color:#fff;background:rgba(255,255,255,.14);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.3);padding:8px 18px;border-radius:50px;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:7px;transition:all .35s;align-self:flex-start;text-decoration:none}
+.scard:hover .slink{background:rgba(255,255,255,.26);border-color:rgba(255,255,255,.5);gap:11px}
+.slink i{transition:transform .35s}.slink:hover i{transform:translateX(3px)}
 
 /* ABOUT */
 #about{background:transparent}
@@ -526,12 +524,78 @@ footer{background:rgba(255,224,224,.7);border-top:1px solid rgba(212,148,10,.15)
       <p class="ssub">End-to-end software solutions tailored to your business — built with cutting-edge technologies and delivered by experts.</p>
     </div>
     <div class="sgrid">
-      <div class="gc scard fu"><span class="scard-num">01</span><div class="sicon si1"><i class="fas fa-globe"></i></div><h3 class="stname">Web Development</h3><p class="stdesc">High-performance web apps built with React, Next.js & Vue.js that deliver exceptional user experiences and drive conversions.</p><a href="web-development.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
-      <div class="gc scard fu"><span class="scard-num">02</span><div class="sicon si2"><i class="fas fa-mobile-alt"></i></div><h3 class="stname">Mobile App Development</h3><p class="stdesc">Native and cross-platform iOS & Android apps using Flutter and React Native that engage users and scale with your growth.</p><a href="mobile-app-development.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
-      <div class="gc scard fu"><span class="scard-num">03</span><div class="sicon si3"><i class="fas fa-brain"></i></div><h3 class="stname">AI & Machine Learning</h3><p class="stdesc">Intelligent solutions powered by ML, NLP, and computer vision — automating operations and delivering smarter business insights.</p><a href="ai-machine-learning.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
-      <div class="gc scard fu"><span class="scard-num">04</span><div class="sicon si4"><i class="fas fa-cloud"></i></div><h3 class="stname">Cloud Solutions</h3><p class="stdesc">Scalable cloud architecture on AWS, GCP & Azure — DevOps, CI/CD pipelines, microservices, and containerization.</p><a href="cloud-solutions.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
-      <div class="gc scard fu"><span class="scard-num">05</span><div class="sicon si5"><i class="fas fa-palette"></i></div><h3 class="stname">UI/UX Design</h3><p class="stdesc">User-centered design that blends aesthetics with functionality — wireframes, prototypes, and pixel-perfect interfaces that convert.</p><a href="ui-ux-design.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
-      <div class="gc scard fu"><span class="scard-num">06</span><div class="sicon si6"><i class="fas fa-shield-alt"></i></div><h3 class="stname">Cybersecurity</h3><p class="stdesc">Security audits, penetration testing, and secure architecture to protect your digital assets and ensure full compliance.</p><a href="cybersecurity.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a></div>
+      <!-- Card 01: Web Development -->
+      <div class="gc scard fu">
+        <div class="scard-bg" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=700&h=460&fit=crop&auto=format&q=82')"></div>
+        <div class="scard-overlay"></div>
+        <div class="scard-content">
+          <span class="scard-num">01</span>
+          <div class="sicon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="2" y="4" width="22" height="18" rx="3" stroke="white" stroke-width="1.8"/><path d="M2 9h22" stroke="white" stroke-width="1.8"/><circle cx="6" cy="6.5" r="1.1" fill="white"/><circle cx="9.5" cy="6.5" r="1.1" fill="white"/><circle cx="13" cy="6.5" r="1.1" fill="white"/><path d="M7 14.5l3 2.5-3 2.5" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 19.5h5" stroke="white" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <h3 class="stname">Web Development</h3>
+          <p class="stdesc">High-performance web apps built with React, Next.js & Vue.js that deliver exceptional user experiences and drive conversions.</p>
+          <a href="web-development.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <!-- Card 02: Mobile App -->
+      <div class="gc scard fu">
+        <div class="scard-bg" style="background-image:url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=700&h=460&fit=crop&auto=format&q=82')"></div>
+        <div class="scard-overlay"></div>
+        <div class="scard-content">
+          <span class="scard-num">02</span>
+          <div class="sicon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="7" y="2" width="12" height="22" rx="3" stroke="white" stroke-width="1.8"/><path d="M11 5.5h4" stroke="white" stroke-width="1.6" stroke-linecap="round"/><circle cx="13" cy="20.5" r="1.2" fill="white"/><path d="M10 10.5h6M10 13.5h4" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+          <h3 class="stname">Mobile App Development</h3>
+          <p class="stdesc">Native and cross-platform iOS & Android apps using Flutter and React Native that engage users and scale with your growth.</p>
+          <a href="mobile-app-development.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <!-- Card 03: AI & ML -->
+      <div class="gc scard fu">
+        <div class="scard-bg" style="background-image:url('https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=700&h=460&fit=crop&auto=format&q=82')"></div>
+        <div class="scard-overlay"></div>
+        <div class="scard-content">
+          <span class="scard-num">03</span>
+          <div class="sicon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="5" cy="8" r="2.2" stroke="white" stroke-width="1.6"/><circle cx="5" cy="18" r="2.2" stroke="white" stroke-width="1.6"/><circle cx="13" cy="4" r="2.2" stroke="white" stroke-width="1.6"/><circle cx="13" cy="13" r="2.2" stroke="white" stroke-width="1.6"/><circle cx="13" cy="22" r="2.2" stroke="white" stroke-width="1.6"/><circle cx="21" cy="8" r="2.2" stroke="white" stroke-width="1.6"/><circle cx="21" cy="18" r="2.2" stroke="white" stroke-width="1.6"/><line x1="7.2" y1="8.5" x2="10.8" y2="6" stroke="white" stroke-width="1.1"/><line x1="7.2" y1="8.5" x2="10.8" y2="13" stroke="white" stroke-width="1.1"/><line x1="7.2" y1="17.5" x2="10.8" y2="13" stroke="white" stroke-width="1.1"/><line x1="7.2" y1="17.5" x2="10.8" y2="22" stroke="white" stroke-width="1.1"/><line x1="15.2" y1="5" x2="18.8" y2="7.5" stroke="white" stroke-width="1.1"/><line x1="15.2" y1="13" x2="18.8" y2="8.5" stroke="white" stroke-width="1.1"/><line x1="15.2" y1="13" x2="18.8" y2="17.5" stroke="white" stroke-width="1.1"/><line x1="15.2" y1="22" x2="18.8" y2="18.5" stroke="white" stroke-width="1.1"/></svg></div>
+          <h3 class="stname">AI & Machine Learning</h3>
+          <p class="stdesc">Intelligent solutions powered by ML, NLP, and computer vision — automating operations and delivering smarter business insights.</p>
+          <a href="ai-machine-learning.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <!-- Card 04: Cloud -->
+      <div class="gc scard fu">
+        <div class="scard-bg" style="background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=700&h=460&fit=crop&auto=format&q=82')"></div>
+        <div class="scard-overlay"></div>
+        <div class="scard-content">
+          <span class="scard-num">04</span>
+          <div class="sicon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M20 18.5a4.5 4.5 0 000-9 .4.4 0 01-.4-.35A6 6 0 107.5 17" stroke="white" stroke-width="1.8" stroke-linecap="round"/><path d="M13 23v-8M10 17.5l3-3 3 3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3 class="stname">Cloud Solutions</h3>
+          <p class="stdesc">Scalable cloud architecture on AWS, GCP & Azure — DevOps, CI/CD pipelines, microservices, and containerization.</p>
+          <a href="cloud-solutions.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <!-- Card 05: UI/UX -->
+      <div class="gc scard fu">
+        <div class="scard-bg" style="background-image:url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=700&h=460&fit=crop&auto=format&q=82')"></div>
+        <div class="scard-overlay"></div>
+        <div class="scard-content">
+          <span class="scard-num">05</span>
+          <div class="sicon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M5 21l4-1.5 9.5-9.5a2.1 2.1 0 00-3-3L6 16.5 5 21z" stroke="white" stroke-width="1.7" stroke-linejoin="round"/><path d="M15.5 7.5l3 3" stroke="white" stroke-width="1.7" stroke-linecap="round"/><path d="M8 5h3M19.5 16v3M21 17.5h-3" stroke="white" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <h3 class="stname">UI/UX Design</h3>
+          <p class="stdesc">User-centered design that blends aesthetics with functionality — wireframes, prototypes, and pixel-perfect interfaces that convert.</p>
+          <a href="ui-ux-design.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <!-- Card 06: Cybersecurity -->
+      <div class="gc scard fu">
+        <div class="scard-bg" style="background-image:url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=700&h=460&fit=crop&auto=format&q=82')"></div>
+        <div class="scard-overlay"></div>
+        <div class="scard-content">
+          <span class="scard-num">06</span>
+          <div class="sicon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 2.5l9.5 3.5v6.5c0 5.8-4.2 10.5-9.5 12-5.3-1.5-9.5-6.2-9.5-12V6L13 2.5z" stroke="white" stroke-width="1.8" stroke-linejoin="round"/><rect x="9.5" y="13" width="7" height="5.5" rx="1.2" stroke="white" stroke-width="1.6"/><path d="M11 13v-1.5a2 2 0 114 0V13" stroke="white" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <h3 class="stname">Cybersecurity</h3>
+          <p class="stdesc">Security audits, penetration testing, and secure architecture to protect your digital assets and ensure full compliance.</p>
+          <a href="cybersecurity.html" class="slink">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
