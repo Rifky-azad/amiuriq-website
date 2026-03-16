@@ -49,11 +49,8 @@ section{padding:100px 0;position:relative}
 .logo{display:flex;align-items:center;gap:11px;text-decoration:none;transition:transform .3s;line-height:1;flex-shrink:0}
 .logo:hover{transform:scale(1.04)}
 .logo:hover .logo-icon{box-shadow:0 8px 32px rgba(212,148,10,.8);transform:rotate(-4deg) scale(1.1)}
-.logo-icon{width:42px;height:42px;background:linear-gradient(135deg,#D4940A 0%,#F5C500 100%);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 20px rgba(212,148,10,.5),inset 0 1px 0 rgba(255,255,255,.25);transition:all .35s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden}
-.logo-icon::after{content:'';position:absolute;top:0;left:-100%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);animation:logoShimmer 3s ease-in-out infinite}
-@keyframes logoShimmer{0%{left:-100%}60%,100%{left:160%}}
-.logo-text{display:flex;flex-direction:column;line-height:1}
-.logo-word{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:800;color:#D4940A;letter-spacing:-0.5px;line-height:1.1}
+.logo-icon{width:44px;height:44px;background:#D4940A;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-word{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:800;color:#D4940A;letter-spacing:-0.5px;line-height:1}
 .nlinks{display:flex;align-items:center;gap:20px;list-style:none}
 .nlinks a{text-decoration:none;color:var(--muted);font-size:13px;font-weight:500;transition:color .3s}
 .nlinks a:hover{color:var(--txt)}
@@ -446,7 +443,14 @@ footer .container{position:relative;z-index:1}
 <nav id="nav">
   <div class="nc">
     <a href="index.html" class="logo">
-      <img src="logo.svg" alt="Amiuriq" style="height:44px;width:auto;display:block;flex-shrink:0">
+      <div class="logo-icon">
+        <svg width="24" height="24" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="40,8 12,72 24,72 35,44 40,22" fill="white"/>
+          <polygon points="40,8 68,72 56,72 45,44 40,22" fill="white"/>
+          <rect x="20" y="46" width="40" height="9" rx="4" fill="white"/>
+        </svg>
+      </div>
+      <span class="logo-word">Amiuriq</span>
     </a>
     <ul class="nlinks">
       <li><a href="#services">Services</a></li>
