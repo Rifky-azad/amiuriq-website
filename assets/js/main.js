@@ -1,4 +1,4 @@
-/* Amiuriq — site interactions */
+/* Amiuriq site interactions */
 (function () {
   'use strict';
 
@@ -375,7 +375,7 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       btn.disabled = true;
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending';
       status.className = 'form-status';
       status.textContent = '';
       fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
