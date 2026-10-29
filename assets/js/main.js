@@ -8,6 +8,8 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   var saveData = navigator.connection && navigator.connection.saveData;
+  // page zoom applied on large screens (see main.css); pixel maths must divide by it
+  var zoom = function () { return parseFloat(getComputedStyle(doc).zoom) || 1; };
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
 
@@ -200,16 +202,18 @@
       var card = e.target.closest && e.target.closest('.spotlight');
       if (!card) return;
       var r = card.getBoundingClientRect();
-      card.style.setProperty('--x', (e.clientX - r.left) + 'px');
-      card.style.setProperty('--y', (e.clientY - r.top) + 'px');
+      var z = zoom();
+      card.style.setProperty('--x', (e.clientX - r.left) / z + 'px');
+      card.style.setProperty('--y', (e.clientY - r.top) / z + 'px');
     });
 
     // magnetic buttons
     $$('[data-magnetic]').forEach(function (btn) {
       btn.addEventListener('pointermove', function (e) {
         var r = btn.getBoundingClientRect();
-        btn.style.setProperty('--mx', ((e.clientX - r.left - r.width / 2) * 0.25) + 'px');
-        btn.style.setProperty('--my', ((e.clientY - r.top - r.height / 2) * 0.35) + 'px');
+        var z = zoom();
+        btn.style.setProperty('--mx', ((e.clientX - r.left - r.width / 2) * 0.25 / z) + 'px');
+        btn.style.setProperty('--my', ((e.clientY - r.top - r.height / 2) * 0.35 / z) + 'px');
       });
       btn.addEventListener('pointerleave', function () {
         btn.style.setProperty('--mx', '0px');
@@ -253,7 +257,8 @@
     (function loop() {
       gx += (tx - gx) * 0.12;
       gy += (ty - gy) * 0.12;
-      glow.style.transform = 'translate(' + gx + 'px,' + gy + 'px)';
+      var z = zoom();
+      glow.style.transform = 'translate(' + gx / z + 'px,' + gy / z + 'px)';
       requestAnimationFrame(loop);
     })();
   }
@@ -345,7 +350,7 @@
     var dotsWrap = $('.dots');
     var prev = $('#testiPrev'), next = $('#testiNext');
     var pos = 0, timer = null;
-    var perView = function () { return window.innerWidth <= 640 ? 1 : window.innerWidth <= 960 ? 2 : 3; };
+    var perView = function () { var vw = window.innerWidth / zoom(); return vw <= 640 ? 1 : vw <= 960 ? 2 : 3; };
     var pages = function () { return Math.max(1, slides.length - perView() + 1); };
     var buildDots = function () {
       dotsWrap.innerHTML = '';
@@ -360,7 +365,7 @@
       var total = pages();
       pos = (n + total) % total;
       var gap = 24;
-      var w = slides[0].getBoundingClientRect().width + gap;
+      var w = slides[0].getBoundingClientRect().width / zoom() + gap;
       track.style.transform = 'translateX(' + (-pos * w) + 'px)';
       $$('button', dotsWrap).forEach(function (d, i) { d.classList.toggle('active', i === pos); });
     };
