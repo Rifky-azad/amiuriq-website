@@ -807,41 +807,34 @@ html, body { overflow-x: clip; }
   .hero-visual { height: 520px; }
 }
 
-/* Lucide line icons (ISC) */
-.lucide { display: block; width: 1em; height: 1em; flex: none; }
-.icon-tile { color: #6d4dff; background: #f1eeff; border: 1px solid rgba(124, 92, 255, 0.16); box-shadow: none; }
-.icon-tile .lucide { width: 46%; height: 46%; stroke-width: 1.75; }
-.icon-tile.cyan { color: #0891b2; background: #e7f8fc; border-color: rgba(8, 145, 178, 0.16); box-shadow: none; }
-.icon-tile.mint { color: #059669; background: #e7f8f1; border-color: rgba(5, 150, 105, 0.16); box-shadow: none; }
-.icon-tile.rose { color: #e11d48; background: #fdecef; border-color: rgba(225, 29, 72, 0.14); box-shadow: none; }
-.icon-tile.amber { color: #d97706; background: #fef5e2; border-color: rgba(217, 119, 6, 0.16); box-shadow: none; }
-.icon-tile.indigo { color: #4f46e5; background: #eef0ff; border-color: rgba(79, 70, 229, 0.16); box-shadow: none; }
-.card:hover .icon-tile { transform: translateY(-3px); }
-.svc-card.media .icon-tile { color: #fff; background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.25); }
-.tech-pill .lucide { width: 22px; height: 22px; color: var(--violet); stroke-width: 1.75; }
-.tech-cloud .pill .lucide { width: 18px; height: 18px; color: var(--violet); stroke-width: 1.9; }
+/* Icons as on the original Amiuriq site: white Font Awesome icons on the amber
+   gradient tile, and the original custom service icons on tinted tiles */
+.icon-tile, .icon-tile.cyan, .icon-tile.mint, .icon-tile.rose, .icon-tile.amber, .icon-tile.indigo {
+  width: 52px; height: 52px; border-radius: 14px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;
+  font-size: 20px; color: #fff; border: 0; background: linear-gradient(135deg, #d4940a, #f5c500);
+  box-shadow: 0 8px 24px rgba(212, 148, 10, 0.3); }
+.card:hover .icon-tile { transform: translateY(-4px) rotate(-6deg); }
+.ci .icon-tile { width: 48px; height: 48px; font-size: 18px; margin: 0; }
+.perk .icon-tile, .other-svcs .icon-tile { width: 44px; height: 44px; border-radius: 12px; font-size: 17px; }
+.mega .mi { width: 40px !important; height: 40px !important; border-radius: 12px !important; font-size: 15px !important; }
+.float-chip .icon-tile { font-size: 16px !important; }
+.empty-state .icon-tile { width: 60px; height: 60px; border-radius: 16px; font-size: 24px; }
 
-/* Icon tiles: Lucide's native 24px grid inside a compact rounded frame */
-.icon-tile { width: 48px; height: 48px; border-radius: 14px; margin-bottom: 22px; display: grid; place-items: center;
-  background: linear-gradient(180deg, #f6f4ff 0%, #ebe6ff 100%); border: 1px solid rgba(124, 92, 255, 0.18);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 6px 14px -8px rgba(80, 60, 200, 0.35); }
-.icon-tile .lucide { width: 24px; height: 24px; stroke-width: 2; }
-.icon-tile.cyan { background: linear-gradient(180deg, #effbfe 0%, #dcf4fa 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 6px 14px -8px rgba(8, 145, 178, 0.35); }
-.icon-tile.mint { background: linear-gradient(180deg, #effbf6 0%, #dbf4e9 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 6px 14px -8px rgba(5, 150, 105, 0.35); }
-.icon-tile.rose { background: linear-gradient(180deg, #fff2f4 0%, #fde1e6 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 6px 14px -8px rgba(225, 29, 72, 0.3); }
-.icon-tile.amber { background: linear-gradient(180deg, #fffaf0 0%, #fdeecb 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 6px 14px -8px rgba(217, 119, 6, 0.35); }
-.icon-tile.indigo { background: linear-gradient(180deg, #f3f4ff 0%, #e2e5ff 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 6px 14px -8px rgba(79, 70, 229, 0.35); }
-.svc-card.media .icon-tile { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.28); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2); backdrop-filter: blur(8px); }
-/* compact contexts */
-.ci .icon-tile { width: 44px; height: 44px; border-radius: 12px; }
-.ci .icon-tile .lucide { width: 22px; height: 22px; }
-.perk .icon-tile { width: 42px; height: 42px; border-radius: 12px; margin-bottom: 16px; }
-.perk .icon-tile .lucide, .other-svcs .icon-tile .lucide { width: 20px; height: 20px; }
-.other-svcs .icon-tile { width: 40px; height: 40px; border-radius: 11px; }
-.mega .mi { width: 38px !important; height: 38px !important; border-radius: 11px !important; }
-.mega .mi .lucide { width: 19px; height: 19px; }
-.float-chip .icon-tile { width: 40px !important; height: 40px !important; border-radius: 11px !important; }
-.float-chip .icon-tile .lucide { width: 20px; height: 20px; }
-.empty-state .icon-tile { width: 56px; height: 56px; border-radius: 16px; }
-.empty-state .icon-tile .lucide { width: 26px; height: 26px; }
+.icon-tile.sicon { width: 56px; height: 56px; border-radius: 16px; margin-bottom: 20px; }
+.sicon svg { width: 26px; height: 26px; }
+.si1 { background: linear-gradient(135deg, rgba(108, 99, 255, 0.18), rgba(108, 99, 255, 0.05)); border: 1px solid rgba(108, 99, 255, 0.22); box-shadow: 0 4px 16px rgba(108, 99, 255, 0.1); }
+.si2 { background: linear-gradient(135deg, rgba(0, 180, 255, 0.18), rgba(0, 180, 255, 0.05)); border: 1px solid rgba(0, 180, 255, 0.22); box-shadow: 0 4px 16px rgba(0, 180, 255, 0.1); }
+.si3 { background: linear-gradient(135deg, rgba(168, 85, 247, 0.18), rgba(168, 85, 247, 0.05)); border: 1px solid rgba(168, 85, 247, 0.22); box-shadow: 0 4px 16px rgba(168, 85, 247, 0.1); }
+.si4 { background: linear-gradient(135deg, rgba(16, 185, 129, 0.18), rgba(16, 185, 129, 0.05)); border: 1px solid rgba(16, 185, 129, 0.22); box-shadow: 0 4px 16px rgba(16, 185, 129, 0.1); }
+.si5 { background: linear-gradient(135deg, rgba(245, 158, 11, 0.18), rgba(245, 158, 11, 0.05)); border: 1px solid rgba(245, 158, 11, 0.22); box-shadow: 0 4px 16px rgba(245, 158, 11, 0.1); }
+.si6 { background: linear-gradient(135deg, rgba(239, 68, 68, 0.18), rgba(239, 68, 68, 0.05)); border: 1px solid rgba(239, 68, 68, 0.22); box-shadow: 0 4px 16px rgba(239, 68, 68, 0.1); }
+.si1 svg :is(path, rect, circle, line) { stroke: #6c63ff !important; } .si1 svg [fill="white"] { fill: #6c63ff !important; }
+.si2 svg :is(path, rect, circle, line) { stroke: #00a8e8 !important; } .si2 svg [fill="white"] { fill: #00a8e8 !important; }
+.si3 svg :is(path, rect, circle, line) { stroke: #a855f7 !important; } .si3 svg [fill="white"] { fill: #a855f7 !important; }
+.si4 svg :is(path, rect, circle, line) { stroke: #10b981 !important; } .si4 svg [fill="white"] { fill: #10b981 !important; }
+.si5 svg :is(path, rect, circle, line) { stroke: #f59e0b !important; } .si5 svg [fill="white"] { fill: #f59e0b !important; }
+.si6 svg :is(path, rect, circle, line) { stroke: #ef4444 !important; } .si6 svg [fill="white"] { fill: #ef4444 !important; }
+.svc-card.media .sicon { background: rgba(255, 255, 255, 0.92); }
+.tech-pill i { font-size: 22px; width: 26px; text-align: center; }
+.tech-cloud .pill i { color: #d4940a; }
 .skip-link:not(:focus) { transform: translateY(-200%); opacity: 0; pointer-events: none; }
