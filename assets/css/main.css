@@ -807,13 +807,16 @@ html, body { overflow-x: clip; }
   .hero-visual { height: 520px; }
 }
 
-/* 3D icons (Fluent Emoji, Microsoft, MIT) inside icon tiles */
-.icon-tile { background: linear-gradient(145deg, #ffffff, #f2f0ff); border: 1px solid var(--border); box-shadow: 0 12px 26px -16px rgba(60, 50, 160, 0.45); }
-.icon-tile.cyan { background: linear-gradient(145deg, #ffffff, #e9f9fd); box-shadow: 0 12px 26px -16px rgba(14, 165, 233, 0.45); }
-.icon-tile.mint { background: linear-gradient(145deg, #ffffff, #e8faf2); box-shadow: 0 12px 26px -16px rgba(16, 185, 129, 0.45); }
-.icon-tile.rose { background: linear-gradient(145deg, #ffffff, #fdeef1); box-shadow: 0 12px 26px -16px rgba(225, 29, 72, 0.4); }
-.icon-tile.amber { background: linear-gradient(145deg, #ffffff, #fff6e0); box-shadow: 0 12px 26px -16px rgba(245, 158, 11, 0.45); }
-.icon-tile.indigo { background: linear-gradient(145deg, #ffffff, #eef0ff); box-shadow: 0 12px 26px -16px rgba(79, 70, 229, 0.45); }
-.icon-tile img { width: 70%; height: 70%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(20, 20, 60, 0.12)); }
-.mega .mi img { width: 72%; height: 72%; }
-.tech-cloud .pill img { width: 22px; height: 22px; object-fit: contain; flex: none; }
+/* Lucide line icons (ISC) */
+.lucide { display: block; width: 1em; height: 1em; flex: none; }
+.icon-tile { color: #6d4dff; background: #f1eeff; border: 1px solid rgba(124, 92, 255, 0.16); box-shadow: none; }
+.icon-tile .lucide { width: 46%; height: 46%; stroke-width: 1.75; }
+.icon-tile.cyan { color: #0891b2; background: #e7f8fc; border-color: rgba(8, 145, 178, 0.16); box-shadow: none; }
+.icon-tile.mint { color: #059669; background: #e7f8f1; border-color: rgba(5, 150, 105, 0.16); box-shadow: none; }
+.icon-tile.rose { color: #e11d48; background: #fdecef; border-color: rgba(225, 29, 72, 0.14); box-shadow: none; }
+.icon-tile.amber { color: #d97706; background: #fef5e2; border-color: rgba(217, 119, 6, 0.16); box-shadow: none; }
+.icon-tile.indigo { color: #4f46e5; background: #eef0ff; border-color: rgba(79, 70, 229, 0.16); box-shadow: none; }
+.card:hover .icon-tile { transform: translateY(-3px); }
+.svc-card.media .icon-tile { color: #fff; background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.25); }
+.tech-pill .lucide { width: 22px; height: 22px; color: var(--violet); stroke-width: 1.75; }
+.tech-cloud .pill .lucide { width: 18px; height: 18px; color: var(--violet); stroke-width: 1.9; }
