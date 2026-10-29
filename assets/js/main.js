@@ -223,7 +223,7 @@
     });
 
     // hero parallax
-    var hv = $('.hero-visual') || $('.robot-stage');
+    var hv = $('.hero-visual');
     if (hv) {
       var layers = $$('[data-depth]', hv);
       window.addEventListener('pointermove', function (e) {
@@ -238,27 +238,41 @@
 
   }
 
-  /* ---------- Welcome robot: follows the pointer, waves and talks ---------- */
-  var stage = $('.robot-stage');
+  /* ---------- Welcome fox: follows the pointer, talks and asks questions ---------- */
+  // own scope: other widgets below also use names like go/timer
+  (function () {
+  var stage = $('.fox-stage');
   if (stage) {
-    var bot = $('.robot', stage);
-    var head = $('#rb-head', bot), face = $('#rb-face', bot), eyes = $('#rb-eyes', bot), torso = $('#rb-torso', bot);
-    var textEl = $('.rb-text', stage);
-    var messages = [
-      'Hi there! \ud83d\udc4b Welcome to Amiuriq.',
-      'I help build web, mobile & AI products.',
-      'Got an idea? Let\u2019s bring it to life!',
-      'Psst\u2026 our team replies within 24 hours.'
-    ];
-    var msgIdx = 0, typingTimer = null;
-    var tx = 0, ty = 0, cx = 0, cy = 0, lastMove = 0, visible = true;
+    var fox = $('.fox', stage);
+    var head = $('#fx-head', fox), face = $('#fx-face', fox), body = $('#fx-body', fox);
+    var pupils = $$('.fx-pupil', fox);
+    var textEl = $('.fx-text', stage), optsEl = $('.fx-options', stage);
+    var contact = '#contact';
+
+    // conversation tree: each node is what Foxy says, plus the answers offered
+    var talk = {
+      hello: { say: 'Hey there! 👋 I’m Foxy from Amiuriq.', next: 'ask', mood: 'wave' },
+      ask: { say: 'What are you looking to build today?', ask: true, opts: [
+        ['🌐 A website', 'web'], ['📱 A mobile app', 'mobile'], ['🤖 An AI solution', 'ai'], ['👀 Just browsing', 'browse']] },
+      web: { say: 'Awesome! We build fast, beautiful websites that turn visitors into customers.', mood: 'happy', opts: [
+        ['Show me how →', 'web-development.html', 1], ['Talk to the team', contact], ['Ask me again', 'ask']] },
+      mobile: { say: 'Apps are my favourite! iPhone and Android — we’ve got you covered.', mood: 'happy', opts: [
+        ['Explore mobile apps →', 'mobile-app-development.html', 1], ['Get a free quote', contact], ['Ask me again', 'ask']] },
+      ai: { say: 'Ooh, clever choice! Let’s make your business smarter with AI.', mood: 'happy', opts: [
+        ['Explore AI & ML →', 'ai-machine-learning.html', 1], ['Get a free quote', contact], ['Ask me again', 'ask']] },
+      browse: { say: 'No problem! Have a look at our work — I’ll be right here. 🦊', mood: 'wave', opts: [
+        ['See our work →', '#work', 1], ['Meet the team', '#team'], ['Ask me again', 'ask']] },
+      tickle: { say: 'Hehe, that tickles! 😄', next: 'ask', mood: 'happy' }
+    };
+
+    var tx = 0, ty = 0, cx = 0, cy = 0, lastMove = 0, visible = true, timer = null;
 
     var aim = function (x, y) {
-      var r = bot.getBoundingClientRect();
+      var r = fox.getBoundingClientRect();
       var dx = x - (r.left + r.width * 0.5);
-      var dy = y - (r.top + r.height * 0.3);
+      var dy = y - (r.top + r.height * 0.42);
       var dist = Math.max(1, Math.sqrt(dx * dx + dy * dy));
-      var k = Math.min(1, dist / (r.width * 1.2));
+      var k = Math.min(1, dist / (r.width * 1.1));
       tx = dx / dist * k;
       ty = dy / dist * k;
       lastMove = Date.now();
@@ -266,22 +280,31 @@
     window.addEventListener('pointermove', function (e) { aim(e.clientX, e.clientY); }, { passive: true });
     window.addEventListener('touchstart', function (e) { var t = e.touches[0]; aim(t.clientX, t.clientY); }, { passive: true });
 
-    // idle: glance around when the pointer has been still for a while
+    var flash = function (cls, ms) {
+      fox.classList.remove(cls);
+      void fox.getBoundingClientRect();
+      fox.classList.add(cls);
+      setTimeout(function () { fox.classList.remove(cls); }, ms);
+    };
+
+    // idle life: glance around, twitch an ear now and then
     setInterval(function () {
+      if (!visible) return;
       if (Date.now() - lastMove > 3500) {
         tx = (Math.random() * 2 - 1) * 0.8;
-        ty = (Math.random() * 2 - 1) * 0.5;
+        ty = (Math.random() * 2 - 1) * 0.4;
       }
-    }, 2400);
+      if (!reduceMotion && Math.random() < 0.45) flash(Math.random() < 0.5 ? 'twitch-l' : 'twitch-r', 520);
+    }, 2300);
 
     var frame = function () {
       if (visible) {
-        cx += (tx - cx) * 0.09;
-        cy += (ty - cy) * 0.09;
-        head.style.transform = 'translate(' + (cx * 12) + 'px,' + (cy * 7) + 'px) rotate(' + (cx * 7) + 'deg)';
+        cx += (tx - cx) * 0.08;
+        cy += (ty - cy) * 0.08;
+        head.style.transform = 'translate(' + (cx * 10) + 'px,' + (cy * 6) + 'px) rotate(' + (cx * 8 + (fox.classList.contains('asking') ? -6 : 0)) + 'deg)';
         face.style.transform = 'translate(' + (cx * 7) + 'px,' + (cy * 5) + 'px)';
-        eyes.style.transform = 'translate(' + (cx * 11) + 'px,' + (cy * 9) + 'px)';
-        torso.style.transform = 'rotate(' + (cx * 3) + 'deg)';
+        pupils.forEach(function (p) { p.style.transform = 'translate(' + (cx * 6) + 'px,' + (cy * 6) + 'px)'; });
+        body.style.translate = (cx * 3) + 'px 0';
       }
       requestAnimationFrame(frame);
     };
@@ -290,42 +313,52 @@
       new IntersectionObserver(function (en) { visible = en[0].isIntersecting; }).observe(stage);
     }
 
-    var say = function (text) {
-      clearTimeout(typingTimer);
-      if (reduceMotion) { textEl.textContent = text; return; }
+    var showOptions = function (opts) {
+      optsEl.innerHTML = '';
+      (opts || []).forEach(function (o, i) {
+        var target = o[1];
+        var isLink = /\.html|^#/.test(target);
+        var el = document.createElement(isLink ? 'a' : 'button');
+        el.className = 'fx-opt' + (o[2] ? ' primary' : '');
+        el.style.setProperty('--i', i);
+        el.textContent = o[0];
+        if (isLink) el.href = target;
+        else { el.type = 'button'; el.addEventListener('click', function () { go(target); }); }
+        optsEl.appendChild(el);
+      });
+    };
+
+    var go = function (key) {
+      var node = talk[key];
+      clearTimeout(timer);
+      optsEl.innerHTML = '';
+      fox.classList.toggle('asking', !!node.ask);
+      if (node.mood === 'wave' && !reduceMotion) flash('waving', 2250);
+      if (node.mood === 'happy' && !reduceMotion) { flash('hop', 720); flash('happy', 1100); }
+      var done = function () {
+        fox.classList.remove('talking');
+        showOptions(node.opts);
+        if (node.next) timer = setTimeout(function () { go(node.next); }, 1300);
+      };
+      if (reduceMotion) { textEl.textContent = node.say; done(); return; }
       var i = 0;
-      bot.classList.add('talking');
+      fox.classList.add('talking');
+      var caret = '<span class="caret" aria-hidden="true"></span>';
       var step = function () {
-        textEl.textContent = text.slice(0, ++i);
-        if (i < text.length) typingTimer = setTimeout(step, 32);
-        else typingTimer = setTimeout(function () { bot.classList.remove('talking'); }, 250);
+        i++;
+        textEl.innerHTML = '';
+        textEl.appendChild(document.createTextNode(node.say.slice(0, i)));
+        textEl.insertAdjacentHTML('beforeend', caret);
+        if (i < node.say.length) timer = setTimeout(step, 30);
+        else timer = setTimeout(done, 200);
       };
       step();
     };
-    var wave = function () {
-      if (reduceMotion) return;
-      bot.classList.remove('waving');
-      void bot.getBoundingClientRect();
-      bot.classList.add('waving');
-      setTimeout(function () { bot.classList.remove('waving'); }, 2450);
-    };
-    var nextMsg = function () {
-      msgIdx = (msgIdx + 1) % messages.length;
-      say(messages[msgIdx]);
-    };
 
-    setTimeout(function () { wave(); say(messages[0]); }, 900);
-    var cycle = 0;
-    setInterval(function () {
-      if (!visible) return;
-      nextMsg();
-      if (++cycle % 3 === 0) wave();
-    }, 6500);
-    stage.addEventListener('click', function () { wave(); nextMsg(); });
-    stage.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); wave(); nextMsg(); }
-    });
+    setTimeout(function () { go('hello'); }, 800);
+    fox.addEventListener('click', function () { go('tickle'); });
   }
+  })();
 
   /* ---------- Background videos: play only while visible ---------- */
   var vids = $$('video[data-autoplay]');
