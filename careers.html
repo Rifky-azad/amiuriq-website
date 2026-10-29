@@ -1,298 +1,172 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="no-js" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Careers & Culture | Amiuriq Pvt Ltd</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Careers at Amiuriq — Build the Future, From Anywhere</title>
+<meta name="description" content="Join Amiuriq Pvt Ltd — a remote-first, hybrid team of engineers and designers building world-class digital products.">
+<link rel="canonical" href="https://www.amiuriq.org/careers.html">
+<meta name="theme-color" content="#05060f">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Amiuriq">
+<meta property="og:title" content="Careers at Amiuriq — Build the Future, From Anywhere">
+<meta property="og:description" content="Join Amiuriq Pvt Ltd — a remote-first, hybrid team of engineers and designers building world-class digital products.">
+<meta property="og:url" content="https://www.amiuriq.org/careers.html">
+<meta property="og:image" content="https://www.amiuriq.org/assets/img/brand/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Careers at Amiuriq — Build the Future, From Anywhere">
+<meta name="twitter:description" content="Join Amiuriq Pvt Ltd — a remote-first, hybrid team of engineers and designers building world-class digital products.">
+<meta name="twitter:image" content="https://www.amiuriq.org/assets/img/brand/og-image.jpg">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+<link rel="apple-touch-icon" href="assets/img/brand/apple-touch-icon.png">
+<script>try{var t=localStorage.getItem('amiuriq-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script>(function(){var t=localStorage.getItem("aq-theme")||"light";document.documentElement.setAttribute("data-theme",t);})()</script>
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--p:#D4940A;--p2:#e05252;--s:#F5C500;--g1:linear-gradient(135deg,#D4940A,#F5C500);--bg:#fffdf0;--card:rgba(255,255,255,.72);--txt:#1a1200;--muted:#7a5c20;--cbr:rgba(212,148,10,.15)}
-[data-theme=dark]{--bg:#0e0a00;--card:rgba(20,12,0,.7);--txt:#f5e9c8;--muted:#a08040;--cbr:rgba(212,148,10,.18)}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh}
-[data-theme=dark] body{background:radial-gradient(ellipse at 20% 10%,rgba(212,148,10,.08) 0%,transparent 50%),radial-gradient(ellipse at 80% 90%,rgba(245,197,0,.06) 0%,transparent 50%),var(--bg)}
-body:not([data-theme=dark]){background:radial-gradient(ellipse at 15% 10%,rgba(255,210,50,.18) 0%,transparent 50%),radial-gradient(ellipse at 85% 8%,rgba(255,220,60,.13) 0%,transparent 48%),var(--bg)}
-
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 32px;height:70px;display:flex;align-items:center;background:rgba(255,253,240,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--cbr);transition:background .3s}
-[data-theme=dark] nav{background:rgba(14,10,0,.85)}
-.nc{max-width:1200px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-icon{width:38px;height:38px;background:var(--g1);border-radius:10px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(212,148,10,.4)}
-.logo-word{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:800;background:var(--g1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.nlinks{display:flex;gap:28px;list-style:none}
-.nlinks a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;transition:color .2s}
-.nlinks a:hover{color:var(--p)}
-.btn-p{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;background:var(--g1);color:#fff;font-size:14px;font-weight:600;font-family:'Space Grotesk',sans-serif;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(212,148,10,.3)}
-.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(212,148,10,.45)}
-.theme-toggle{width:36px;height:36px;border-radius:10px;border:1px solid var(--cbr);background:transparent;color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s}
-.theme-toggle:hover{background:rgba(212,148,10,.1);color:var(--p)}
-
-/* HERO */
-.careers-hero{padding:140px 32px 80px;text-align:center;max-width:800px;margin:0 auto}
-.slabel{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:50px;background:rgba(212,148,10,.1);border:1px solid rgba(212,148,10,.2);font-size:13px;font-weight:600;color:var(--p);margin-bottom:24px}
-.careers-hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,6vw,60px);font-weight:800;line-height:1.1;letter-spacing:-2px;margin-bottom:20px}
-.gt{background:var(--g1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.careers-hero p{font-size:18px;color:var(--muted);line-height:1.75;max-width:600px;margin:0 auto 40px}
-.hero-chips{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:50px;background:var(--card);border:1px solid var(--cbr);font-size:14px;font-weight:500;color:var(--muted);backdrop-filter:blur(12px)}
-.chip i{color:var(--p)}
-
-/* SECTION */
-.section{padding:80px 32px}
-.container{max-width:1200px;margin:0 auto}
-.sh{margin-bottom:56px}
-.sh.c{text-align:center}
-.stitle{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;line-height:1.2;margin-bottom:14px}
-.ssub{font-size:17px;color:var(--muted);line-height:1.7;max-width:580px}
-.sh.c .ssub{margin:0 auto}
-
-/* POLICY CARDS */
-.policy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:64px}
-.pcard{background:var(--card);border:1px solid var(--cbr);border-radius:22px;padding:32px 28px;backdrop-filter:blur(16px);transition:all .3s}
-.pcard:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(212,148,10,.12);border-color:rgba(212,148,10,.3)}
-.pcard-icon{width:52px;height:52px;background:rgba(212,148,10,.1);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--p);margin-bottom:20px}
-.pcard h3{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;margin-bottom:10px}
-.pcard p{font-size:14px;color:var(--muted);line-height:1.7}
-.badge{display:inline-block;padding:3px 12px;border-radius:50px;font-size:12px;font-weight:600;margin-top:12px}
-.badge-green{background:rgba(72,199,142,.15);color:#2d9e6b;border:1px solid rgba(72,199,142,.25)}
-.badge-amber{background:rgba(212,148,10,.12);color:var(--p);border:1px solid rgba(212,148,10,.22)}
-
-/* WORK MODE BANNER */
-.wmode-banner{background:var(--g1);border-radius:24px;padding:48px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;margin-bottom:80px;flex-wrap:wrap}
-.wmode-left h2{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-1px}
-.wmode-left p{color:rgba(255,255,255,.82);font-size:15px;line-height:1.6;max-width:480px}
-.wmode-pills{display:flex;gap:12px;flex-wrap:wrap}
-.wpill{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:50px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:14px;font-weight:600;backdrop-filter:blur(8px)}
-.wpill i{font-size:16px}
-
-/* VALUES */
-.values-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.vcard{display:flex;gap:18px;align-items:flex-start;background:var(--card);border:1px solid var(--cbr);border-radius:18px;padding:24px;backdrop-filter:blur(12px);transition:all .3s}
-.vcard:hover{border-color:rgba(212,148,10,.3);transform:translateY(-3px)}
-.vnum{width:40px;height:40px;border-radius:10px;background:var(--g1);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:16px;color:#fff;flex-shrink:0}
-.vcard h4{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;margin-bottom:6px}
-.vcard p{font-size:14px;color:var(--muted);line-height:1.6}
-
-/* PERKS */
-.perks-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.pkcard{background:var(--card);border:1px solid var(--cbr);border-radius:18px;padding:28px 22px;text-align:center;backdrop-filter:blur(12px);transition:all .3s}
-.pkcard:hover{transform:translateY(-5px);border-color:rgba(212,148,10,.3);box-shadow:0 16px 48px rgba(212,148,10,.1)}
-.pkcard i{font-size:28px;color:var(--p);margin-bottom:14px;display:block}
-.pkcard h4{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px}
-.pkcard p{font-size:13px;color:var(--muted);line-height:1.6}
-
-/* OPEN ROLES */
-.roles-list{display:flex;flex-direction:column;gap:16px}
-.role-card{display:flex;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--cbr);border-radius:18px;padding:24px 28px;backdrop-filter:blur(12px);transition:all .3s;flex-wrap:wrap;gap:16px}
-.role-card:hover{border-color:rgba(212,148,10,.3);box-shadow:0 12px 40px rgba(212,148,10,.1);transform:translateX(4px)}
-.role-left{display:flex;align-items:center;gap:18px}
-.role-icon{width:46px;height:46px;border-radius:12px;background:rgba(212,148,10,.1);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--p)}
-.role-title{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin-bottom:4px}
-.role-meta{display:flex;gap:10px;flex-wrap:wrap}
-.role-tag{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:var(--muted);font-weight:500}
-.role-tag i{font-size:11px;color:var(--p)}
-.apply-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;background:var(--g1);color:#fff;font-size:13px;font-weight:600;font-family:'Space Grotesk',sans-serif;text-decoration:none;border:none;cursor:pointer;transition:all .3s;white-space:nowrap}
-.apply-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,148,10,.4)}
-.no-roles{text-align:center;padding:60px 24px;background:var(--card);border:1px solid var(--cbr);border-radius:22px;color:var(--muted)}
-.no-roles i{font-size:36px;color:var(--p);opacity:.5;margin-bottom:16px;display:block}
-.no-roles h3{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin-bottom:8px;color:var(--txt)}
-
-/* CTA */
-.cta-band{background:var(--card);border:1px solid var(--cbr);border-radius:24px;padding:56px 40px;text-align:center;backdrop-filter:blur(16px)}
-.cta-band h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,4vw,38px);font-weight:800;letter-spacing:-1.5px;margin-bottom:14px}
-.cta-band p{color:var(--muted);font-size:16px;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto}
-
-/* FOOTER */
-footer{padding:32px;text-align:center;border-top:1px solid var(--cbr);color:var(--muted);font-size:14px}
-footer a{color:var(--p);text-decoration:none}
-
-/* RESPONSIVE */
-@media(max-width:1024px){.policy-grid{grid-template-columns:repeat(2,1fr)}.perks-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:768px){.policy-grid{grid-template-columns:1fr}.values-grid{grid-template-columns:1fr}.perks-grid{grid-template-columns:repeat(2,1fr)}.wmode-banner{flex-direction:column}.nlinks{display:none}.section{padding:60px 20px}.careers-hero{padding:120px 20px 60px}}
-</style>
+<link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-
-<!-- NAV -->
-<nav>
-  <div class="nc">
-    <a href="index.html" class="logo">
-      <div class="logo-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 1.5L2 6.5v7L10 18.5l8-5v-7L10 1.5z" fill="rgba(255,255,255,0.13)" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"/><path d="M6.5 14.5L10 5l3.5 9.5M8.2 11.5h3.6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <span class="logo-word">Amiuriq</span>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<header class="nav" id="top">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand" aria-label="Amiuriq home">
+      <img class="brand-mark" src="assets/img/brand/logo-mark.svg" alt="" width="38" height="38">
+      <span class="brand-word">amiuriq</span>
     </a>
-    <ul class="nlinks">
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#portfolio">Portfolio</a></li>
-      <li><a href="index.html#team">Team</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-    <div style="display:flex;align-items:center;gap:12px">
-      <a href="index.html#contact" class="btn-p">Get Started <i class="fas fa-arrow-right"></i></a>
-      <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li class="has-mega"><button type="button" aria-haspopup="true">Services <i class="fas fa-chevron-down"></i></button>
+          <div class="mega"><a href="web-development.html"><span class="mi icon-tile " style="margin:0;width:40px;height:40px;font-size:15px;border-radius:12px"><i class="fas fa-code"></i></span><span><strong>Web Development</strong><span>High-performance web apps &amp; platforms</span></span></a><a href="mobile-app-development.html"><span class="mi icon-tile cyan" style="margin:0;width:40px;height:40px;font-size:15px;border-radius:12px"><i class="fas fa-mobile-screen-button"></i></span><span><strong>Mobile Apps</strong><span>Native &amp; cross-platform iOS / Android</span></span></a><a href="ai-machine-learning.html"><span class="mi icon-tile indigo" style="margin:0;width:40px;height:40px;font-size:15px;border-radius:12px"><i class="fas fa-brain"></i></span><span><strong>AI &amp; Machine Learning</strong><span>ML, NLP &amp; computer vision that delivers</span></span></a><a href="cloud-solutions.html"><span class="mi icon-tile mint" style="margin:0;width:40px;height:40px;font-size:15px;border-radius:12px"><i class="fas fa-cloud"></i></span><span><strong>Cloud Solutions</strong><span>AWS, GCP &amp; Azure, DevOps and CI/CD</span></span></a><a href="ui-ux-design.html"><span class="mi icon-tile rose" style="margin:0;width:40px;height:40px;font-size:15px;border-radius:12px"><i class="fas fa-pen-ruler"></i></span><span><strong>UI/UX Design</strong><span>Research-led, pixel-perfect interfaces</span></span></a><a href="cybersecurity.html"><span class="mi icon-tile amber" style="margin:0;width:40px;height:40px;font-size:15px;border-radius:12px"><i class="fas fa-shield-halved"></i></span><span><strong>Cybersecurity</strong><span>Audits, pentesting &amp; secure architecture</span></span></a></div>
+        </li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#team">Team</a></li>
+        <li><a href="blog.html">Company</a></li>
+        <li><a href="careers.html" class="active">Careers</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Toggle colour theme"><i class="fas fa-moon"></i><i class="fas fa-sun"></i></button>
+      <a href="index.html#contact" class="btn btn-primary btn-sm" data-magnetic>Let&rsquo;s talk <i class="fas fa-arrow-right"></i></a>
+      <button class="icon-btn menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
-</nav>
-
-<!-- HERO -->
-<div class="careers-hero">
-  <span class="slabel"><i class="fas fa-heart"></i> Life at Amiuriq</span>
-  <h1>Build the Future.<br>From <span class="gt">Anywhere.</span></h1>
-  <p>We're a hybrid team of engineers, designers, and problem-solvers on a mission to build world-class digital products. Join us and do the best work of your life.</p>
-  <div class="hero-chips">
-    <span class="chip"><i class="fas fa-laptop-house"></i> Hybrid Work Model</span>
-    <span class="chip"><i class="fas fa-globe"></i> Global Team</span>
-    <span class="chip"><i class="fas fa-rocket"></i> Fast-Growing</span>
-    <span class="chip"><i class="fas fa-graduation-cap"></i> Learning Culture</span>
-  </div>
+</header>
+<div class="mobile-menu" role="dialog" aria-label="Menu">
+  <a href="index.html">Home <i class="fas fa-arrow-right"></i></a>
+  <a href="index.html#work">Work <i class="fas fa-arrow-right"></i></a>
+  <a href="index.html#about">About <i class="fas fa-arrow-right"></i></a>
+  <a href="index.html#team">Team <i class="fas fa-arrow-right"></i></a>
+  <a href="blog.html">Company <i class="fas fa-arrow-right"></i></a>
+  <a href="careers.html">Careers <i class="fas fa-arrow-right"></i></a>
+  <div class="mm-label">Services</div>
+  <div class="mm-sub"><a href="web-development.html">Web Development <i class="fas fa-arrow-right"></i></a><a href="mobile-app-development.html">Mobile Apps <i class="fas fa-arrow-right"></i></a><a href="ai-machine-learning.html">AI &amp; Machine Learning <i class="fas fa-arrow-right"></i></a><a href="cloud-solutions.html">Cloud Solutions <i class="fas fa-arrow-right"></i></a><a href="ui-ux-design.html">UI/UX Design <i class="fas fa-arrow-right"></i></a><a href="cybersecurity.html">Cybersecurity <i class="fas fa-arrow-right"></i></a></div>
+  <a href="index.html#contact" class="btn btn-primary btn-lg">Start a project <i class="fas fa-arrow-right"></i></a>
 </div>
-
-<!-- WORK MODE BANNER -->
-<div class="section" style="padding-top:0">
+<main id="main">
+<section class="page-hero noise">
+  <div class="bg-media" aria-hidden="true"><video data-autoplay muted loop playsinline preload="auto" autoplay poster="assets/video/team-collab.webp" aria-hidden="true"><source src="assets/video/team-collab.mp4" type="video/mp4"></video></div>
+  <div class="blob blob-violet" aria-hidden="true"></div><div class="blob blob-cyan" aria-hidden="true"></div><div class="bg-grid" aria-hidden="true"></div>
   <div class="container">
-    <div class="wmode-banner">
-      <div class="wmode-left">
-        <h2>Our Work Policy</h2>
-        <p>Amiuriq operates on a <strong>Hybrid work model</strong> — combining the flexibility of remote work with the energy of in-person collaboration. Currently, our team works <strong>fully remote</strong> while we build towards our hybrid setup. We believe great work happens when people have the freedom and tools to do it well.</p>
-      </div>
-      <div class="wmode-pills">
-        <span class="wpill"><i class="fas fa-wifi"></i> Currently Remote</span>
-        <span class="wpill"><i class="fas fa-building"></i> Hybrid Soon</span>
-        <span class="wpill"><i class="fas fa-clock"></i> Flexible Hours</span>
-      </div>
-    </div>
+    <nav class="crumbs reveal" aria-label="Breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><span>Careers</span></nav>
+    <span class="eyebrow reveal"><span class="pulse"></span>Life at Amiuriq</span>
+    <h1 data-split>Build the future. <span class="grad-text">From anywhere.</span></h1>
+    <p class="lead reveal" style="--d:.3s">We&rsquo;re a hybrid team of engineers, designers and problem-solvers on a mission to build world-class digital products. Join us and do the best work of your life.</p>
+    <div class="btn-row reveal" style="--d:.45s"><a href="#openings" class="btn btn-primary btn-lg" data-magnetic>See open roles <i class="fas fa-arrow-right"></i></a><a href="mailto:info@amiuriq.org?subject=General%20Application" class="btn btn-ghost btn-lg">Send your CV</a></div>
+    <div class="pill-row reveal" style="margin-top:48px;--d:.6s"><span class="pill"><i class="fas fa-house-laptop"></i>Hybrid work model</span><span class="pill"><i class="fas fa-earth-asia"></i>Global team</span><span class="pill"><i class="fas fa-chart-line"></i>Fast-growing</span><span class="pill"><i class="fas fa-lightbulb"></i>Learning culture</span></div>
   </div>
-</div>
+</section>
 
-<!-- POLICY DETAILS -->
-<div class="section" style="padding-top:0">
+<section class="section">
   <div class="container">
-    <div class="sh c">
-      <span class="slabel"><i class="fas fa-file-alt"></i> Workplace Policy</span>
-      <h2 class="stitle">How We <span class="gt">Work Together</span></h2>
-      <p class="ssub">Clear policies, flexible structure, and a culture built on trust and accountability.</p>
+    <div class="section-head">
+      <span class="eyebrow reveal"><span class="dot"><i class="fas fa-building"></i></span>Workplace policy</span>
+      <h2 class="h2" data-split>How we <span class="grad-text">work together</span></h2>
+      <p class="lead reveal">Amiuriq combines the flexibility of remote work with the energy of in-person collaboration. Today we&rsquo;re fully remote while we build towards our hybrid setup.</p>
     </div>
-    <div class="policy-grid">
-      <div class="pcard">
-        <div class="pcard-icon"><i class="fas fa-laptop-house"></i></div>
-        <h3>Work Model</h3>
-        <p>Hybrid model — employees enjoy the flexibility to work remotely while occasionally collaborating in person. Currently operating fully remote as we grow.</p>
-        <span class="badge badge-amber">Hybrid (Remote Now)</span>
-      </div>
-      <div class="pcard">
-        <div class="pcard-icon"><i class="fas fa-clock"></i></div>
-        <h3>Working Hours</h3>
-        <p>Flexible working hours with core collaboration windows. We value output and delivery over rigid time tracking. Work when you're at your best.</p>
-        <span class="badge badge-green">Flexible</span>
-      </div>
-      <div class="pcard">
-        <div class="pcard-icon"><i class="fas fa-comments"></i></div>
-        <h3>Communication</h3>
-        <p>Async-first communication with regular team syncs. We keep meetings minimal and meaningful — your focus time is protected.</p>
-        <span class="badge badge-green">Async-First</span>
-      </div>
-      <div class="pcard">
-        <div class="pcard-icon"><i class="fas fa-shield-alt"></i></div>
-        <h3>Transparency & Trust</h3>
-        <p>No micromanagement. We hire talented people and trust them to deliver. Radical transparency in goals, decisions, and company direction.</p>
-        <span class="badge badge-green">High Trust</span>
-      </div>
-      <div class="pcard">
-        <div class="pcard-icon"><i class="fas fa-user-tie"></i></div>
-        <h3>Code of Conduct</h3>
-        <p>Respectful, inclusive, and professional environment for everyone. Zero tolerance for discrimination. Every voice matters here.</p>
-        <span class="badge badge-green">Inclusive</span>
-      </div>
-      <div class="pcard">
-        <div class="pcard-icon"><i class="fas fa-chart-line"></i></div>
-        <h3>Growth & Learning</h3>
-        <p>Continuous learning is part of the culture. We support certifications, courses, and conference attendance to help you grow your skills.</p>
-        <span class="badge badge-amber">Growth-First</span>
-      </div>
-    </div>
+    <div class="feature-grid" data-stagger="0.07"><div class="card spotlight reveal"><span class="icon-tile "><i class="fas fa-house-laptop"></i></span><h3>Work model</h3><p>Hybrid model — work remotely with occasional in-person collaboration. Currently operating fully remote as we grow.</p><span class="tag" style="display:inline-block;margin-top:18px">Hybrid (remote now)</span></div><div class="card spotlight reveal"><span class="icon-tile cyan"><i class="fas fa-clock"></i></span><h3>Working hours</h3><p>Flexible working hours with core collaboration windows. We value output and delivery over rigid time tracking.</p><span class="tag" style="display:inline-block;margin-top:18px">Flexible</span></div><div class="card spotlight reveal"><span class="icon-tile indigo"><i class="fas fa-comments"></i></span><h3>Communication</h3><p>Async-first communication with regular team syncs. Meetings are minimal and meaningful — your focus time is protected.</p><span class="tag" style="display:inline-block;margin-top:18px">Async-first</span></div><div class="card spotlight reveal"><span class="icon-tile mint"><i class="fas fa-handshake"></i></span><h3>Transparency &amp; trust</h3><p>No micromanagement. We hire talented people and trust them to deliver, with radical transparency in goals and direction.</p><span class="tag" style="display:inline-block;margin-top:18px">High trust</span></div><div class="card spotlight reveal"><span class="icon-tile rose"><i class="fas fa-scale-balanced"></i></span><h3>Code of conduct</h3><p>A respectful, inclusive and professional environment for everyone. Zero tolerance for discrimination — every voice matters.</p><span class="tag" style="display:inline-block;margin-top:18px">Inclusive</span></div><div class="card spotlight reveal"><span class="icon-tile amber"><i class="fas fa-graduation-cap"></i></span><h3>Growth &amp; learning</h3><p>Continuous learning is part of the culture. We support certifications, courses and conferences to help you grow.</p><span class="tag" style="display:inline-block;margin-top:18px">Growth-first</span></div></div>
   </div>
-</div>
+</section>
 
-<!-- VALUES -->
-<div class="section" style="padding-top:0">
+<section class="section section-alt">
   <div class="container">
-    <div class="sh c">
-      <span class="slabel"><i class="fas fa-star"></i> Our Values</span>
-      <h2 class="stitle">What We <span class="gt">Stand For</span></h2>
-      <p class="ssub">The principles that guide everything we do — from how we build to how we treat each other.</p>
-    </div>
-    <div class="values-grid">
-      <div class="vcard"><div class="vnum">01</div><div><h4>People Over Process</h4><p>We build systems that serve our team, not the other way around. Great people with the right environment will always outperform rigid processes.</p></div></div>
-      <div class="vcard"><div class="vnum">02</div><div><h4>Ownership Mentality</h4><p>Every team member owns their work end-to-end. We take pride in quality, take responsibility for outcomes, and celebrate every win together.</p></div></div>
-      <div class="vcard"><div class="vnum">03</div><div><h4>Move Fast, Build Right</h4><p>We ship quickly without cutting corners. Speed and quality are not opposites — we prove that every day with every product we deliver.</p></div></div>
-      <div class="vcard"><div class="vnum">04</div><div><h4>Radical Transparency</h4><p>Open communication, honest feedback, and clear goals. No politics, no hidden agendas — just straightforward collaboration toward shared success.</p></div></div>
+    <div class="section-head"><span class="eyebrow reveal"><span class="dot"><i class="fas fa-gem"></i></span>Our values</span><h2 class="h2" data-split>What we <span class="grad-text">stand for</span></h2><p class="lead reveal">The principles that guide everything we do — from how we build to how we treat each other.</p></div>
+    <div class="values" data-stagger="0.08"><div class="card value reveal"><div class="vn grad-text">01</div><h3>People over process</h3><p>We build systems that serve our team, not the other way around. Great people in the right environment outperform rigid processes.</p></div><div class="card value reveal"><div class="vn grad-text">02</div><h3>Ownership mentality</h3><p>Every team member owns their work end-to-end. We take pride in quality, take responsibility for outcomes and celebrate every win.</p></div><div class="card value reveal"><div class="vn grad-text">03</div><h3>Move fast, build right</h3><p>We ship quickly without cutting corners. Speed and quality are not opposites — we prove it with every product we deliver.</p></div><div class="card value reveal"><div class="vn grad-text">04</div><h3>Radical transparency</h3><p>Open communication, honest feedback and clear goals. No politics, no hidden agendas — just straightforward collaboration.</p></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow reveal"><span class="dot"><i class="fas fa-gift"></i></span>Perks &amp; benefits</span><h2 class="h2" data-split>Why you&rsquo;ll <span class="grad-text">love it here</span></h2></div>
+    <div class="perks" data-stagger="0.05"><div class="card perk spotlight reveal"><span class="icon-tile "><i class="fas fa-couch"></i></span><h3>Remote setup support</h3><p>We help you set up a productive home workspace with the tools you need.</p></div><div class="card perk spotlight reveal"><span class="icon-tile cyan"><i class="fas fa-book-open"></i></span><h3>Learning budget</h3><p>Annual budget for courses, books, certifications and conferences.</p></div><div class="card perk spotlight reveal"><span class="icon-tile indigo"><i class="fas fa-umbrella-beach"></i></span><h3>Flexible time off</h3><p>Generous leave policy. Rest when you need to — we trust you.</p></div><div class="card perk spotlight reveal"><span class="icon-tile mint"><i class="fas fa-people-roof"></i></span><h3>Team retreats</h3><p>Periodic in-person meetups and team events to bond and collaborate.</p></div><div class="card perk spotlight reveal"><span class="icon-tile rose"><i class="fas fa-rocket"></i></span><h3>Fast career growth</h3><p>Early-stage means big impact. Grow fast where your contribution counts.</p></div><div class="card perk spotlight reveal"><span class="icon-tile amber"><i class="fas fa-code-branch"></i></span><h3>Open-source friendly</h3><p>We encourage and support contributions to open-source projects.</p></div><div class="card perk spotlight reveal"><span class="icon-tile "><i class="fas fa-scale-unbalanced"></i></span><h3>Work–life balance</h3><p>Flexible hours so you can work at your peak and live a full life.</p></div><div class="card perk spotlight reveal"><span class="icon-tile cyan"><i class="fas fa-trophy"></i></span><h3>Performance rewards</h3><p>Exceptional work gets recognised and rewarded — always.</p></div></div>
+  </div>
+</section>
+
+<section class="section section-alt" id="openings">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow reveal"><span class="dot"><i class="fas fa-briefcase"></i></span>Open positions</span><h2 class="h2" data-split>Join our <span class="grad-text">growing team</span></h2></div>
+    <div class="card empty-state reveal" style="max-width:820px;margin:0 auto">
+      <span class="icon-tile"><i class="fas fa-magnifying-glass"></i></span>
+      <h3>No open roles right now</h3>
+      <p>We&rsquo;re not actively hiring at the moment, but we&rsquo;re always interested in connecting with exceptional talent. Send your CV to <a href="mailto:info@amiuriq.org" class="grad-text" style="font-weight:600">info@amiuriq.org</a> and we&rsquo;ll reach out when the right role opens up.</p>
+      <a href="mailto:info@amiuriq.org?subject=General%20Application" class="btn btn-primary" data-magnetic>Send your CV <i class="fas fa-paper-plane"></i></a>
     </div>
   </div>
-</div>
+</section>
 
-<!-- PERKS -->
-<div class="section" style="padding-top:0">
+<section class="section-sm">
   <div class="container">
-    <div class="sh c">
-      <span class="slabel"><i class="fas fa-gift"></i> Perks & Benefits</span>
-      <h2 class="stitle">Why You'll <span class="gt">Love It Here</span></h2>
-    </div>
-    <div class="perks-grid">
-      <div class="pkcard"><i class="fas fa-laptop"></i><h4>Remote Setup Support</h4><p>We help you set up a productive home workspace with the tools you need.</p></div>
-      <div class="pkcard"><i class="fas fa-book-open"></i><h4>Learning Budget</h4><p>Annual budget for courses, books, certifications, and conferences.</p></div>
-      <div class="pkcard"><i class="fas fa-umbrella-beach"></i><h4>Flexible Time Off</h4><p>Generous leave policy. Rest when you need to — we trust you.</p></div>
-      <div class="pkcard"><i class="fas fa-users"></i><h4>Team Retreats</h4><p>Periodic in-person meetups and team events to bond and collaborate.</p></div>
-      <div class="pkcard"><i class="fas fa-rocket"></i><h4>Fast Career Growth</h4><p>Early-stage means big impact. Grow fast in a company that values your contribution.</p></div>
-      <div class="pkcard"><i class="fas fa-code-branch"></i><h4>Open Source Friendly</h4><p>We encourage and support contributions to open source projects.</p></div>
-      <div class="pkcard"><i class="fas fa-heartbeat"></i><h4>Work-Life Balance</h4><p>Flexible hours so you can work at your peak and live a full life outside work.</p></div>
-      <div class="pkcard"><i class="fas fa-trophy"></i><h4>Performance Rewards</h4><p>Exceptional work gets recognized and rewarded — always.</p></div>
+    <div class="cta-band reveal zoom">
+      <video data-autoplay muted loop playsinline preload="none" poster="assets/video/hero-network.webp" aria-hidden="true"><source src="assets/video/hero-network.mp4" type="video/mp4"></video>
+      <h2>Don’t see the right role? Reach out anyway.</h2>
+      <p>We’re building something great and we’d love to hear from exceptional people — even if there’s no open position right now.</p>
+      <div class="btn-row"><a href="mailto:info@amiuriq.org?subject=General%20Application" class="btn btn-white btn-lg" data-magnetic>Send your CV <i class="fas fa-arrow-right"></i></a><a href="index.html#about" class="btn btn-outline-light btn-lg">About Amiuriq <i class="fas fa-arrow-up-right"></i></a></div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- OPEN ROLES -->
-<div class="section" style="padding-top:0">
+</main>
+<footer class="footer">
+  <div class="blob blob-violet" aria-hidden="true"></div>
   <div class="container">
-    <div class="sh c">
-      <span class="slabel"><i class="fas fa-briefcase"></i> Open Positions</span>
-      <h2 class="stitle">Join Our <span class="gt">Growing Team</span></h2>
-      <p class="ssub">We're always looking for talented people. Check back for openings or send us a general application.</p>
-    </div>
-    <div class="roles-list">
-      <div class="no-roles">
-        <i class="fas fa-binoculars"></i>
-        <h3>No Open Roles Right Now</h3>
-        <p>We're not actively hiring at the moment, but we're always interested in connecting with exceptional talent. Send your CV to <strong>info@amiuriq.org</strong> and we'll reach out when the right role opens up.</p>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" aria-label="Amiuriq home"><img class="brand-mark" src="assets/img/brand/logo-mark.svg" alt="" width="38" height="38"><span class="brand-word">amiuriq</span></a>
+        <p>Building tomorrow&rsquo;s digital solutions today. We craft software that transforms businesses and drives real growth.</p>
+        <div class="socials-row">
+          <a href="https://www.linkedin.com/company/amiuriq" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="coming-soon.html" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="coming-soon.html" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:info@amiuriq.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="index.html#about">About us</a><a href="index.html#team">Our team</a><a href="index.html#work">Portfolio</a><a href="blog.html">Company &amp; news</a><a href="careers.html">Careers</a><a href="index.html#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="web-development.html">Web Development</a><a href="mobile-app-development.html">Mobile Apps</a><a href="ai-machine-learning.html">AI &amp; Machine Learning</a><a href="cloud-solutions.html">Cloud Solutions</a><a href="ui-ux-design.html">UI/UX Design</a><a href="cybersecurity.html">Cybersecurity</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <a href="mailto:info@amiuriq.org">info@amiuriq.org</a>
+        <a href="tel:+94767592562">+94 76 759 2562</a>
+        <a href="index.html#contact">Colombo, Sri Lanka</a>
+        <a href="index.html#contact">Remote, worldwide</a>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- CTA -->
-<div class="section" style="padding-top:0">
-  <div class="container">
-    <div class="cta-band">
-      <h2>Don't See the Right Role? <span class="gt">Reach Out Anyway.</span></h2>
-      <p>We're building something great and we'd love to hear from exceptional people — even if there's no open position right now.</p>
-      <a href="mailto:info@amiuriq.org" class="btn-p">Send Your CV <i class="fas fa-paper-plane"></i></a>
+    <div class="footer-word" aria-hidden="true">amiuriq</div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> Amiuriq Pvt Ltd. All rights reserved.</span>
+      <nav aria-label="Legal"><a href="privacy-policy.html">Privacy</a><a href="terms-of-service.html">Terms</a><a href="cookie-policy.html">Cookies</a></nav>
     </div>
   </div>
-</div>
-
-<footer>
-  <p>© 2025 Amiuriq Pvt Ltd · <a href="index.html">Back to Home</a> · <a href="index.html#contact">Contact Us</a></p>
 </footer>
-
-<script>
-const tt=document.getElementById('themeToggle');
-function applyTheme(t){document.documentElement.setAttribute('data-theme',t);tt.innerHTML=t==='dark'?'<i class="fas fa-sun"></i>':'<i class="fas fa-moon"></i>';}
-applyTheme(localStorage.getItem('aq-theme')||'light');
-tt.addEventListener('click',()=>{const t=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';localStorage.setItem('aq-theme',t);applyTheme(t);});
-</script>
+<button class="to-top" type="button" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>
