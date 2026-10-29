@@ -806,3 +806,14 @@ html, body { overflow-x: clip; }
   .hero-trust { margin-top: 36px; }
   .hero-visual { height: 520px; }
 }
+
+/* 3D icons (Fluent Emoji, Microsoft, MIT) inside icon tiles */
+.icon-tile { background: linear-gradient(145deg, #ffffff, #f2f0ff); border: 1px solid var(--border); box-shadow: 0 12px 26px -16px rgba(60, 50, 160, 0.45); }
+.icon-tile.cyan { background: linear-gradient(145deg, #ffffff, #e9f9fd); box-shadow: 0 12px 26px -16px rgba(14, 165, 233, 0.45); }
+.icon-tile.mint { background: linear-gradient(145deg, #ffffff, #e8faf2); box-shadow: 0 12px 26px -16px rgba(16, 185, 129, 0.45); }
+.icon-tile.rose { background: linear-gradient(145deg, #ffffff, #fdeef1); box-shadow: 0 12px 26px -16px rgba(225, 29, 72, 0.4); }
+.icon-tile.amber { background: linear-gradient(145deg, #ffffff, #fff6e0); box-shadow: 0 12px 26px -16px rgba(245, 158, 11, 0.45); }
+.icon-tile.indigo { background: linear-gradient(145deg, #ffffff, #eef0ff); box-shadow: 0 12px 26px -16px rgba(79, 70, 229, 0.45); }
+.icon-tile img { width: 70%; height: 70%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(20, 20, 60, 0.12)); }
+.mega .mi img { width: 72%; height: 72%; }
+.tech-cloud .pill img { width: 22px; height: 22px; object-fit: contain; flex: none; }
