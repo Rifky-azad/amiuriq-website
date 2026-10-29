@@ -13,17 +13,6 @@
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
 
-  /* ---------- Theme ---------- */
-  var themeBtn = $('#themeToggle');
-  if (themeBtn) {
-    themeBtn.addEventListener('click', function () {
-      var next = doc.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-      doc.setAttribute('data-theme', next);
-      try { localStorage.setItem('amiuriq-theme', next); } catch (e) {}
-      themeBtn.setAttribute('aria-label', next === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
-    });
-  }
-
   /* ---------- Nav: scrolled state, hide on scroll down ---------- */
   var nav = $('.nav');
   var progress = $('.scroll-progress');
@@ -234,7 +223,7 @@
     });
 
     // hero parallax
-    var hv = $('.hero-visual');
+    var hv = $('.hero-visual') || $('.robot-stage');
     if (hv) {
       var layers = $$('[data-depth]', hv);
       window.addEventListener('pointermove', function (e) {
@@ -247,20 +236,95 @@
       });
     }
 
-    // cursor glow
-    var glow = document.createElement('div');
-    glow.className = 'cursor-glow';
-    glow.setAttribute('aria-hidden', 'true');
-    document.body.appendChild(glow);
-    var gx = 0, gy = 0, tx = 0, ty = 0;
-    window.addEventListener('pointermove', function (e) { tx = e.clientX; ty = e.clientY; });
-    (function loop() {
-      gx += (tx - gx) * 0.12;
-      gy += (ty - gy) * 0.12;
-      var z = zoom();
-      glow.style.transform = 'translate(' + gx / z + 'px,' + gy / z + 'px)';
-      requestAnimationFrame(loop);
-    })();
+  }
+
+  /* ---------- Welcome robot: follows the pointer, waves and talks ---------- */
+  var stage = $('.robot-stage');
+  if (stage) {
+    var bot = $('.robot', stage);
+    var head = $('#rb-head', bot), face = $('#rb-face', bot), eyes = $('#rb-eyes', bot), torso = $('#rb-torso', bot);
+    var textEl = $('.rb-text', stage);
+    var messages = [
+      'Hi there! \ud83d\udc4b Welcome to Amiuriq.',
+      'I help build web, mobile & AI products.',
+      'Got an idea? Let\u2019s bring it to life!',
+      'Psst\u2026 our team replies within 24 hours.'
+    ];
+    var msgIdx = 0, typingTimer = null;
+    var tx = 0, ty = 0, cx = 0, cy = 0, lastMove = 0, visible = true;
+
+    var aim = function (x, y) {
+      var r = bot.getBoundingClientRect();
+      var dx = x - (r.left + r.width * 0.5);
+      var dy = y - (r.top + r.height * 0.3);
+      var dist = Math.max(1, Math.sqrt(dx * dx + dy * dy));
+      var k = Math.min(1, dist / (r.width * 1.2));
+      tx = dx / dist * k;
+      ty = dy / dist * k;
+      lastMove = Date.now();
+    };
+    window.addEventListener('pointermove', function (e) { aim(e.clientX, e.clientY); }, { passive: true });
+    window.addEventListener('touchstart', function (e) { var t = e.touches[0]; aim(t.clientX, t.clientY); }, { passive: true });
+
+    // idle: glance around when the pointer has been still for a while
+    setInterval(function () {
+      if (Date.now() - lastMove > 3500) {
+        tx = (Math.random() * 2 - 1) * 0.8;
+        ty = (Math.random() * 2 - 1) * 0.5;
+      }
+    }, 2400);
+
+    var frame = function () {
+      if (visible) {
+        cx += (tx - cx) * 0.09;
+        cy += (ty - cy) * 0.09;
+        head.style.transform = 'translate(' + (cx * 12) + 'px,' + (cy * 7) + 'px) rotate(' + (cx * 7) + 'deg)';
+        face.style.transform = 'translate(' + (cx * 7) + 'px,' + (cy * 5) + 'px)';
+        eyes.style.transform = 'translate(' + (cx * 11) + 'px,' + (cy * 9) + 'px)';
+        torso.style.transform = 'rotate(' + (cx * 3) + 'deg)';
+      }
+      requestAnimationFrame(frame);
+    };
+    requestAnimationFrame(frame);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (en) { visible = en[0].isIntersecting; }).observe(stage);
+    }
+
+    var say = function (text) {
+      clearTimeout(typingTimer);
+      if (reduceMotion) { textEl.textContent = text; return; }
+      var i = 0;
+      bot.classList.add('talking');
+      var step = function () {
+        textEl.textContent = text.slice(0, ++i);
+        if (i < text.length) typingTimer = setTimeout(step, 32);
+        else typingTimer = setTimeout(function () { bot.classList.remove('talking'); }, 250);
+      };
+      step();
+    };
+    var wave = function () {
+      if (reduceMotion) return;
+      bot.classList.remove('waving');
+      void bot.getBoundingClientRect();
+      bot.classList.add('waving');
+      setTimeout(function () { bot.classList.remove('waving'); }, 2450);
+    };
+    var nextMsg = function () {
+      msgIdx = (msgIdx + 1) % messages.length;
+      say(messages[msgIdx]);
+    };
+
+    setTimeout(function () { wave(); say(messages[0]); }, 900);
+    var cycle = 0;
+    setInterval(function () {
+      if (!visible) return;
+      nextMsg();
+      if (++cycle % 3 === 0) wave();
+    }, 6500);
+    stage.addEventListener('click', function () { wave(); nextMsg(); });
+    stage.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); wave(); nextMsg(); }
+    });
   }
 
   /* ---------- Background videos: play only while visible ---------- */
