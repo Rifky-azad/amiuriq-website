@@ -1,34 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 72" width="300" height="72">
   <defs>
-    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#D4940A"/>
-      <stop offset="100%" stop-color="#F5C500"/>
-    </linearGradient>
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#D4940A"/>
-      <stop offset="100%" stop-color="#F5C500"/>
+    <linearGradient id="am-g" x1="4" y1="4" x2="68" y2="68" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7C5CFF"/>
+      <stop offset=".55" stop-color="#5B7CFF"/>
+      <stop offset="1" stop-color="#22D3EE"/>
     </linearGradient>
   </defs>
-
-  <!-- Icon box: amber gradient rounded square -->
-  <rect x="0" y="0" width="80" height="80" rx="18" ry="18" fill="url(#iconGrad)"/>
-
-  <!-- "A" mark as filled white shapes (no strokes — fully solid) -->
-  <!-- Left leg of A -->
-  <polygon points="40,10 14,70 24,70 34,42 40,24" fill="white"/>
-  <!-- Right leg of A -->
-  <polygon points="40,10 66,70 56,70 46,42 40,24" fill="white"/>
-  <!-- Crossbar -->
-  <rect x="22" y="44" width="36" height="8" rx="4" fill="white"/>
-
-  <!-- Wordmark using safe bold font -->
-  <text
-    x="96"
-    y="54"
-    font-family="Arial Black, Arial, Helvetica, sans-serif"
-    font-size="40"
-    font-weight="900"
-    fill="#D4940A"
-    letter-spacing="-1"
-  >Amiuriq</text>
+  <g transform="translate(4 4)">
+    <rect width="64" height="64" rx="16" fill="url(#am-g)"/>
+    <path d="M17 47 L32 15 L47 47" fill="none" stroke="#fff" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="32" cy="38" r="4.6" fill="#fff"/>
+  </g>
+  <text x="84" y="50" font-family="Sora, 'Plus Jakarta Sans', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="38" font-weight="700" letter-spacing="-1" fill="#0B1020">amiuriq</text>
 </svg>
