@@ -838,3 +838,32 @@ html, body { overflow-x: clip; }
 .tech-pill i { font-size: 22px; width: 26px; text-align: center; }
 .tech-cloud .pill i { color: #d4940a; }
 .skip-link:not(:focus) { transform: translateY(-200%); opacity: 0; pointer-events: none; }
+
+/* Hero badge: spinning 3D cube and words flipping on a 3D prism */
+.eyebrow-3d { gap: 10px; padding: 7px 16px 7px 10px; perspective: 600px; box-shadow: 0 6px 20px -10px rgba(91, 124, 255, 0.45); }
+.eyebrow-3d .cube { --s: 16px; position: relative; width: var(--s); height: var(--s); flex: none; transform-style: preserve-3d; animation: cube-spin 6s linear infinite; }
+.eyebrow-3d .cube i { position: absolute; inset: 0; border-radius: 3px; border: 1px solid rgba(255, 255, 255, 0.55); background: var(--grad); opacity: 0.92; }
+.eyebrow-3d .cube i:nth-child(1) { transform: translateZ(calc(var(--s) / 2)); }
+.eyebrow-3d .cube i:nth-child(2) { transform: rotateY(180deg) translateZ(calc(var(--s) / 2)); }
+.eyebrow-3d .cube i:nth-child(3) { transform: rotateY(90deg) translateZ(calc(var(--s) / 2)); }
+.eyebrow-3d .cube i:nth-child(4) { transform: rotateY(-90deg) translateZ(calc(var(--s) / 2)); }
+.eyebrow-3d .cube i:nth-child(5) { transform: rotateX(90deg) translateZ(calc(var(--s) / 2)); }
+.eyebrow-3d .cube i:nth-child(6) { transform: rotateX(-90deg) translateZ(calc(var(--s) / 2)); }
+@keyframes cube-spin { from { transform: rotateX(-24deg) rotateY(0deg); } to { transform: rotateX(-24deg) rotateY(360deg); } }
+
+.eyebrow-3d .prism-wrap { --h: 1.5em; display: inline-block; height: var(--h); line-height: var(--h); perspective: 300px; }
+.eyebrow-3d .prism { position: relative; display: inline-grid; height: var(--h); transform-style: preserve-3d; transform-origin: 50% 50% calc(var(--h) / -2); animation: prism-turn 10s cubic-bezier(.7, 0, .3, 1) infinite; }
+.eyebrow-3d .prism b { grid-area: 1 / 1; font-weight: 600; white-space: nowrap; color: var(--violet); background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; backface-visibility: hidden; transform-origin: 50% 50% calc(var(--h) / -2); }
+.eyebrow-3d .prism b:nth-child(2) { transform: rotateX(-90deg); }
+.eyebrow-3d .prism b:nth-child(3) { transform: rotateX(-180deg); }
+.eyebrow-3d .prism b:nth-child(4) { transform: rotateX(-270deg); }
+@keyframes prism-turn {
+  0%, 20% { transform: rotateX(0deg); }
+  25%, 45% { transform: rotateX(90deg); }
+  50%, 70% { transform: rotateX(180deg); }
+  75%, 95% { transform: rotateX(270deg); }
+  100% { transform: rotateX(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eyebrow-3d .cube, .eyebrow-3d .prism { animation: none; }
+}
